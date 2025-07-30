@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, Download, Instagram, Facebook, Send, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail, Download, Instagram, Facebook, Send, Twitter, Phone, MessageCircle } from "lucide-react";
 const profilePhoto = "/lovable-uploads/22c7ffb5-a6c2-4d08-8b79-9db5af73351e.png";
 
 export function Hero() {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden transition-colors duration-500">
       {/* Background with gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-hero"></div>
+      <div className="absolute inset-0 bg-gradient-hero transition-colors duration-500"></div>
       
       {/* Floating elements for visual interest */}
       <div className="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-float"></div>
@@ -29,18 +29,20 @@ export function Hero() {
           {/* Main Content */}
           <div className="space-y-6">
             <div className="space-y-2">
-              <h1 className="text-5xl md:text-7xl font-bold text-foreground">
-                Sreejith M S
+              <h1 className="text-5xl md:text-7xl font-bold text-foreground relative z-20 drop-shadow-2xl">
+                <span className="bg-gradient-primary bg-clip-text text-transparent">
+                  Sreejith M S
+                </span>
               </h1>
-              <div className="text-xl md:text-2xl text-primary font-semibold">
+              <div className="text-xl md:text-2xl text-primary font-semibold relative z-20 drop-shadow-lg">
                 DevOps Engineer & Cloud Architect
               </div>
-              <div className="text-lg text-muted-foreground">
+              <div className="text-lg text-muted-foreground relative z-20 drop-shadow-lg">
                 Synnefo Solutions • 7+ Years Experience
               </div>
             </div>
 
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed relative z-20 drop-shadow-lg">
               Passionate DevOps Engineer with expertise in cloud architecture, automation, and mentoring. 
               Transforming ideas into scalable, reliable infrastructure solutions while empowering the next generation of tech professionals.
             </p>
@@ -108,7 +110,21 @@ export function Hero() {
                 <Twitter className="h-6 w-6 transition-transform group-hover:rotate-12" />
               </a>
               <a
-                href="mailto:sreejith@example.com"
+                href="https://wa.me/+918848585640"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-whatsapp hover:text-white group"
+              >
+                <MessageCircle className="h-6 w-6 transition-transform group-hover:rotate-12" />
+              </a>
+              <a
+                href="tel:+918848585640"
+                className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-call hover:text-white group"
+              >
+                <Phone className="h-6 w-6 transition-transform group-hover:rotate-12" />
+              </a>
+              <a
+                href="mailto:sreejithmsreenivas@gmail.com"
                 className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-primary hover:text-white group"
               >
                 <Mail className="h-6 w-6 transition-transform group-hover:rotate-12" />

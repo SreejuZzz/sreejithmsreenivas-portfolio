@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Heart, Instagram, Facebook, Send, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail, Heart, Instagram, Facebook, Send, Twitter, Phone, MessageCircle } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -74,7 +74,23 @@ export function Footer() {
               <Twitter className="h-5 w-5 transition-transform group-hover:rotate-12" />
             </a>
             <a
-              href="mailto:sreejith@example.com"
+              href="https://wa.me/+918848585640"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-whatsapp hover:text-white group"
+              aria-label="WhatsApp"
+            >
+              <MessageCircle className="h-5 w-5 transition-transform group-hover:rotate-12" />
+            </a>
+            <a
+              href="tel:+918848585640"
+              className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-call hover:text-white group"
+              aria-label="Phone"
+            >
+              <Phone className="h-5 w-5 transition-transform group-hover:rotate-12" />
+            </a>
+            <a
+              href="mailto:sreejithmsreenivas@gmail.com"
               className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-primary hover:text-white group"
               aria-label="Email"
             >
