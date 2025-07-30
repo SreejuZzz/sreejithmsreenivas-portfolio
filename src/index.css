@@ -46,8 +46,12 @@
     --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     
     --gradient-primary: linear-gradient(135deg, hsl(210 90% 55%), hsl(195 90% 60%));
-    --gradient-hero: linear-gradient(135deg, hsl(220 20% 98%), hsl(210 30% 95%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 20% 98%) 0%, hsl(210 30% 95%) 50%, hsl(195 50% 90%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.8), hsl(0 0% 100% / 0.4));
+    --gradient-instagram: linear-gradient(135deg, hsl(320 90% 50%), hsl(45 100% 55%));
+    --gradient-facebook: linear-gradient(135deg, hsl(221 90% 55%), hsl(221 90% 45%));
+    --gradient-telegram: linear-gradient(135deg, hsl(200 90% 55%), hsl(200 90% 45%));
+    --gradient-twitter: linear-gradient(135deg, hsl(203 89% 53%), hsl(203 89% 43%));
     
     --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     --shadow-neumorphism: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
@@ -110,8 +114,12 @@
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.7);
     
     --gradient-primary: linear-gradient(135deg, hsl(210 90% 60%), hsl(195 90% 65%));
-    --gradient-hero: linear-gradient(135deg, hsl(220 25% 8%), hsl(220 20% 12%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 25% 8%) 0%, hsl(220 20% 12%) 50%, hsl(210 30% 15%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(0 0% 0% / 0.3), hsl(0 0% 0% / 0.1));
+    --gradient-instagram: linear-gradient(135deg, hsl(320 90% 60%), hsl(45 100% 65%));
+    --gradient-facebook: linear-gradient(135deg, hsl(221 90% 65%), hsl(221 90% 55%));
+    --gradient-telegram: linear-gradient(135deg, hsl(200 90% 65%), hsl(200 90% 55%));
+    --gradient-twitter: linear-gradient(135deg, hsl(203 89% 63%), hsl(203 89% 53%));
     
     --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.7);
     --shadow-neumorphism: 20px 20px 60px #0a0a0a, -20px -20px 60px #1e1e1e;
@@ -180,6 +188,22 @@
 
   .bg-gradient-card {
     background: var(--gradient-card);
+  }
+
+  .bg-gradient-instagram {
+    background: var(--gradient-instagram);
+  }
+
+  .bg-gradient-facebook {
+    background: var(--gradient-facebook);
+  }
+
+  .bg-gradient-telegram {
+    background: var(--gradient-telegram);
+  }
+
+  .bg-gradient-twitter {
+    background: var(--gradient-twitter);
   }
 
   /* Custom scrollbar */

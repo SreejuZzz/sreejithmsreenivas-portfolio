@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Mail, Heart, Instagram, Facebook, Send, Twitter } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -18,31 +18,67 @@ export function Footer() {
           </p>
           
           {/* Social Links */}
-          <div className="flex justify-center space-x-6">
+          <div className="flex justify-center flex-wrap gap-4">
             <a
               href="https://www.linkedin.com/in/sreejith-sreenivas-110bb217a/"
               target="_blank"
               rel="noopener noreferrer"
-              className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-primary hover:text-white"
+              className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-primary hover:text-white group"
               aria-label="LinkedIn"
             >
-              <Linkedin className="h-5 w-5" />
+              <Linkedin className="h-5 w-5 transition-transform group-hover:rotate-12" />
             </a>
             <a
               href="https://github.com/SreejuZzz"
               target="_blank"
               rel="noopener noreferrer"
-              className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-primary hover:text-white"
+              className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-primary hover:text-white group"
               aria-label="GitHub"
             >
-              <Github className="h-5 w-5" />
+              <Github className="h-5 w-5 transition-transform group-hover:rotate-12" />
+            </a>
+            <a
+              href="https://www.instagram.com/matte_black003/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-instagram hover:text-white group"
+              aria-label="Instagram"
+            >
+              <Instagram className="h-5 w-5 transition-transform group-hover:rotate-12" />
+            </a>
+            <a
+              href="https://www.facebook.com/SreejithSreejuZzz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-facebook hover:text-white group"
+              aria-label="Facebook"
+            >
+              <Facebook className="h-5 w-5 transition-transform group-hover:rotate-12" />
+            </a>
+            <a
+              href="https://t.me/Matte_Black"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-telegram hover:text-white group"
+              aria-label="Telegram"
+            >
+              <Send className="h-5 w-5 transition-transform group-hover:rotate-12" />
+            </a>
+            <a
+              href="https://x.com/Matte_Black003"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-twitter hover:text-white group"
+              aria-label="X (Twitter)"
+            >
+              <Twitter className="h-5 w-5 transition-transform group-hover:rotate-12" />
             </a>
             <a
               href="mailto:sreejith@example.com"
-              className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-primary hover:text-white"
+              className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-primary hover:text-white group"
               aria-label="Email"
             >
-              <Mail className="h-5 w-5" />
+              <Mail className="h-5 w-5 transition-transform group-hover:rotate-12" />
             </a>
           </div>
           

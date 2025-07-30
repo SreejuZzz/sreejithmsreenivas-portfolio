@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, Download } from "lucide-react";
-import profilePhoto from "@/assets/profile-photo.jpg";
+import { Github, Linkedin, Mail, Download, Instagram, Facebook, Send, Twitter } from "lucide-react";
+const profilePhoto = "/lovable-uploads/22c7ffb5-a6c2-4d08-8b79-9db5af73351e.png";
 
 export function Hero() {
   return (
@@ -58,28 +58,60 @@ export function Hero() {
             </div>
 
             {/* Social Links */}
-            <div className="flex justify-center space-x-6 pt-8">
+            <div className="flex justify-center flex-wrap gap-4 pt-8">
               <a
                 href="https://www.linkedin.com/in/sreejith-sreenivas-110bb217a/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-primary hover:text-white"
+                className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-primary hover:text-white group"
               >
-                <Linkedin className="h-6 w-6" />
+                <Linkedin className="h-6 w-6 transition-transform group-hover:rotate-12" />
               </a>
               <a
                 href="https://github.com/SreejuZzz"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-primary hover:text-white"
+                className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-primary hover:text-white group"
               >
-                <Github className="h-6 w-6" />
+                <Github className="h-6 w-6 transition-transform group-hover:rotate-12" />
+              </a>
+              <a
+                href="https://www.instagram.com/matte_black003/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-instagram hover:text-white group"
+              >
+                <Instagram className="h-6 w-6 transition-transform group-hover:rotate-12" />
+              </a>
+              <a
+                href="https://www.facebook.com/SreejithSreejuZzz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-facebook hover:text-white group"
+              >
+                <Facebook className="h-6 w-6 transition-transform group-hover:rotate-12" />
+              </a>
+              <a
+                href="https://t.me/Matte_Black"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-telegram hover:text-white group"
+              >
+                <Send className="h-6 w-6 transition-transform group-hover:rotate-12" />
+              </a>
+              <a
+                href="https://x.com/Matte_Black003"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-twitter hover:text-white group"
+              >
+                <Twitter className="h-6 w-6 transition-transform group-hover:rotate-12" />
               </a>
               <a
                 href="mailto:sreejith@example.com"
-                className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-primary hover:text-white"
+                className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-primary hover:text-white group"
               >
-                <Mail className="h-6 w-6" />
+                <Mail className="h-6 w-6 transition-transform group-hover:rotate-12" />
               </a>
             </div>
           </div>
