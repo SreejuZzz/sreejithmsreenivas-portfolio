@@ -15,15 +15,15 @@ export function Hero() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center space-y-8 animate-fade-in">
           {/* Profile Photo */}
-          <div className="relative mx-auto w-48 h-48 mb-8">
-            <div className="glass rounded-full p-2 neumorphism">
+          <div className="relative mx-auto w-48 h-48 mb-8 z-30">
+            <div className="glass rounded-full p-2 neumorphism relative z-30">
               <img
                 src={profilePhoto}
                 alt="Sreejith M S"
-                className="w-full h-full object-cover rounded-full"
+                className="w-full h-full object-cover rounded-full relative z-30"
               />
             </div>
-            <div className="absolute -inset-4 bg-gradient-primary rounded-full blur-md opacity-20"></div>
+            <div className="absolute -inset-4 bg-gradient-primary rounded-full blur-md opacity-20 z-10"></div>
           </div>
 
           {/* Main Content */}

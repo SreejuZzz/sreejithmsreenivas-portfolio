@@ -148,22 +148,32 @@
     @apply bg-background text-foreground font-sans;
     font-family: 'Inter', sans-serif;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Optimize performance */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    /* GPU acceleration for better performance */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
   }
 
-  /* Ultra smooth mode transitions */
+  /* Ultra smooth mode transitions with GPU acceleration */
   .dark-mode-transition {
     transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
                 color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
                 border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
                 opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: background-color, color, border-color;
   }
 
-  /* Smooth scrolling improvements */
+  /* Smooth scrolling improvements with GPU optimization */
   @media (prefers-reduced-motion: no-preference) {
     html {
       scroll-behavior: smooth;
@@ -172,6 +182,13 @@
     * {
       scroll-behavior: smooth;
     }
+  }
+
+  /* GPU acceleration for better performance */
+  .glass, .neumorphism, .transition-buttery, .transition-spring, .transition-smooth {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: transform, opacity, background-color;
   }
 
   /* Glassmorphism utilities */

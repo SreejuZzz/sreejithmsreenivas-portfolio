@@ -201,10 +201,6 @@ export function Contact() {
                     </div>
                   ))}
                 </div>
-
-                <Button variant="outline" className="w-full glass hover:bg-primary hover:text-white transition-buttery">
-                  Schedule a Call
-                </Button>
               </div>
             </Card>
           </div>

@@ -6,7 +6,6 @@ import {
   Container, 
   GitBranch, 
   Monitor, 
-  Shield, 
   Zap,
   Server,
   Database,
@@ -72,14 +71,6 @@ export function Skills() {
     }
   ];
 
-  const certifications = [
-    "AWS Solutions Architect",
-    "Azure DevOps Engineer",
-    "Kubernetes Certified",
-    "Docker Certified Associate",
-    "Terraform Associate",
-    "Linux Professional"
-  ];
 
   const tools = [
     "Git", "Jira", "Confluence", "Slack", "PagerDuty", "SonarQube",
@@ -103,7 +94,7 @@ export function Skills() {
           {skillCategories.map((category, index) => (
             <Card
               key={index}
-              className="glass border-0 neumorphism p-6 hover:scale-105 transition-spring"
+              className="glass border-0 neumorphism p-6 hover:scale-105 transition-buttery"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="space-y-4">
@@ -133,45 +124,22 @@ export function Skills() {
           ))}
         </div>
 
-        {/* Additional Skills Grid */}
-        <div className="grid lg:grid-cols-2 gap-8">
-          {/* Certifications */}
-          <Card className="glass border-0 neumorphism p-6">
+        {/* Tools & Technologies - Single Column */}
+        <div className="max-w-4xl mx-auto">
+          <Card className="glass border-0 neumorphism p-6 transition-buttery">
             <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-                  <Shield className="h-5 w-5 text-white" />
-                </div>
-                <h3 className="text-lg font-semibold text-foreground">Certifications & Specializations</h3>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {certifications.map((cert, index) => (
-                  <div
-                    key={index}
-                    className="bg-muted/30 rounded-lg p-3 text-center text-sm font-medium text-foreground hover:bg-primary hover:text-white transition-smooth cursor-pointer"
-                  >
-                    {cert}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Card>
-
-          {/* Tools & Technologies */}
-          <Card className="glass border-0 neumorphism p-6">
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center justify-center gap-3">
                 <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
                   <Zap className="h-5 w-5 text-white" />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground">Tools & Technologies</h3>
               </div>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap justify-center gap-2">
                 {tools.map((tool, index) => (
                   <Badge
                     key={index}
                     variant="secondary"
-                    className="bg-muted/50 text-foreground hover:bg-primary hover:text-white transition-smooth cursor-pointer"
+                    className="bg-muted/50 text-foreground hover:bg-primary hover:text-white transition-buttery cursor-pointer"
                   >
                     {tool}
                   </Badge>
@@ -183,7 +151,7 @@ export function Skills() {
 
         {/* Mentoring Skills */}
         <div className="mt-12">
-          <Card className="glass border-0 neumorphism p-8 text-center">
+          <Card className="glass border-0 neumorphism p-8 text-center transition-buttery">
             <div className="space-y-4">
               <div className="flex items-center justify-center gap-3">
                 <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
@@ -198,7 +166,7 @@ export function Skills() {
               </p>
               <div className="flex flex-wrap justify-center gap-2 pt-4">
                 {["Technical Mentoring", "Career Coaching", "Team Leadership", "Knowledge Transfer", "Training Delivery"].map((skill, index) => (
-                  <Badge key={index} className="bg-accent text-white border-0">
+                  <Badge key={index} className="bg-accent text-white border-0 transition-buttery">
                     {skill}
                   </Badge>
                 ))}
