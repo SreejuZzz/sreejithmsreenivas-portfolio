@@ -29,8 +29,8 @@ export function Hero() {
           {/* Main Content */}
           <div className="space-y-6">
             <div className="space-y-2">
-              <h1 className="text-5xl md:text-7xl font-bold text-foreground relative z-20 drop-shadow-2xl">
-                <span className="bg-gradient-primary bg-clip-text text-transparent">
+              <h1 className="text-5xl md:text-7xl font-bold relative z-20 drop-shadow-2xl">
+                <span className="bg-gradient-primary bg-clip-text text-transparent transition-buttery">
                   Sreejith M S
                 </span>
               </h1>
@@ -42,7 +42,7 @@ export function Hero() {
               </div>
             </div>
 
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed relative z-20 drop-shadow-lg">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed relative z-20 drop-shadow-lg transition-buttery">
               Passionate DevOps Engineer with expertise in cloud architecture, automation, and mentoring. 
               Transforming ideas into scalable, reliable infrastructure solutions while empowering the next generation of tech professionals.
             </p>

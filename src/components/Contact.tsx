@@ -79,10 +79,10 @@ export function Contact() {
     <section id="contact" className="py-20 relative">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Let's Connect
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 transition-buttery">
+            Get In Touch
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto transition-buttery">
             Ready to discuss your next project or explore mentoring opportunities? I'd love to hear from you.
           </p>
         </div>
@@ -174,45 +174,14 @@ export function Contact() {
 
           {/* Contact Information */}
           <div className="space-y-8">
-            {/* Contact Cards */}
-            <div className="space-y-4">
-              {contactInfo.map((item, index) => (
-                <Card
-                  key={index}
-                  className="glass border-0 neumorphism p-6 hover:scale-105 transition-spring"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
-                      <item.icon className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground">{item.title}</h4>
-                      {item.link ? (
-                        <a
-                          href={item.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-primary hover:text-primary-glow transition-smooth"
-                        >
-                          {item.value}
-                        </a>
-                      ) : (
-                        <p className="text-muted-foreground">{item.value}</p>
-                      )}
-                    </div>
-                  </div>
-                </Card>
-              ))}
-            </div>
-
-            {/* Quick Connect Options */}
-            <Card className="glass border-0 neumorphism p-6">
+            {/* Experience & Mentoring */}
+            <Card className="glass border-0 neumorphism p-6 transition-buttery">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
                     <Calendar className="h-5 w-5 text-white" />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground">Quick Connect</h3>
+                  <h3 className="text-lg font-semibold text-foreground">Services Available</h3>
                 </div>
                 
                 <p className="text-muted-foreground text-sm">
@@ -227,13 +196,13 @@ export function Contact() {
                     "Infrastructure Review & Optimization"
                   ].map((service, index) => (
                     <div key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full transition-buttery"></div>
                       {service}
                     </div>
                   ))}
                 </div>
 
-                <Button variant="outline" className="w-full glass hover:bg-primary hover:text-white transition-smooth">
+                <Button variant="outline" className="w-full glass hover:bg-primary hover:text-white transition-buttery">
                   Schedule a Call
                 </Button>
               </div>

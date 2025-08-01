@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Users, Lightbulb, Target, Award } from "lucide-react";
+import { QuoteRotation } from "./QuoteRotation";
 
 export function About() {
   const highlights = [
@@ -84,16 +85,7 @@ export function About() {
           </div>
         </div>
 
-        {/* Quote */}
-        <div className="mt-16 text-center">
-          <div className="glass rounded-2xl p-8 max-w-4xl mx-auto neumorphism">
-            <blockquote className="text-xl md:text-2xl font-medium text-foreground italic">
-              "Technology is best when it brings people together. My mission is to bridge the gap 
-              between complex infrastructure and practical solutions while empowering others to grow."
-            </blockquote>
-            <cite className="text-primary font-semibold mt-4 block">— Sreejith M S</cite>
-          </div>
-        </div>
+        <QuoteRotation />
       </div>
     </section>
   );

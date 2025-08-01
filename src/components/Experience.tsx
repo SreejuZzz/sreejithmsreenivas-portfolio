@@ -15,7 +15,7 @@ export function Experience() {
     },
     {
       title: "Cloud Architect",
-      company: "Previous Organization",
+      company: "Synnefo Solutions",
       location: "Remote",
       period: "2022 - 2023",
       description: "Designed and implemented scalable cloud architectures, optimized infrastructure costs, and established cloud governance frameworks. Led multi-cloud strategy initiatives.",
@@ -24,7 +24,7 @@ export function Experience() {
     },
     {
       title: "Linux Administrator",
-      company: "Previous Organization",
+      company: "Synnefo Solutions",
       location: "On-site",
       period: "2020 - 2022",
       description: "Managed Linux servers, implemented automation scripts, configured monitoring solutions, and maintained high availability systems. Established backup and disaster recovery procedures.",
@@ -33,7 +33,7 @@ export function Experience() {
     },
     {
       title: "Network Administrator",
-      company: "Previous Organization",
+      company: "SDC Networks",
       location: "On-site",
       period: "2018 - 2020",
       description: "Foundation role managing network infrastructure, configuring switches and routers, implementing security policies, and troubleshooting connectivity issues.",
@@ -77,7 +77,7 @@ export function Experience() {
                 <Card
                   className={`glass border-0 neumorphism w-full md:w-5/12 ml-12 md:ml-0 ${
                     index % 2 === 0 ? 'md:mr-auto md:ml-0' : 'md:ml-auto md:mr-0'
-                  } hover:scale-105 transition-spring`}
+                  } hover:scale-105 transition-buttery`}
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
                   <div className="p-6 space-y-4">
