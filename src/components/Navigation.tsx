@@ -13,16 +13,8 @@ export function Navigation() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      // Always keep navigation visible with smooth animations
+      // Keep navigation always visible (persistent)
       setIsVisible(true);
-      
-      // Only hide when scrolling down very fast (aggressive scrolling)
-      const scrollDelta = Math.abs(currentScrollY - lastScrollY);
-      if (currentScrollY > lastScrollY && scrollDelta > 50 && currentScrollY > 300) {
-        setIsVisible(false);
-      } else if (currentScrollY < lastScrollY || scrollDelta <= 20) {
-        setIsVisible(true);
-      }
       
       // Glass effect after scrolling
       setScrolled(currentScrollY > 50);
