@@ -13,15 +13,14 @@ export function Navigation() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      // Show/hide logic based on scroll direction
-      if (currentScrollY < 100) {
-        // Always show when near top
-        setIsVisible(true);
-      } else if (currentScrollY > lastScrollY && currentScrollY > 200) {
-        // Hide when scrolling down and past threshold
+      // Always keep navigation visible with smooth animations
+      setIsVisible(true);
+      
+      // Only hide when scrolling down very fast (aggressive scrolling)
+      const scrollDelta = Math.abs(currentScrollY - lastScrollY);
+      if (currentScrollY > lastScrollY && scrollDelta > 50 && currentScrollY > 300) {
         setIsVisible(false);
-      } else if (currentScrollY < lastScrollY) {
-        // Show when scrolling up
+      } else if (currentScrollY < lastScrollY || scrollDelta <= 20) {
         setIsVisible(true);
       }
       
