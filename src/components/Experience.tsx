@@ -62,56 +62,63 @@ export function Experience() {
             {experiences.map((exp, index) => (
               <div 
                 key={index} 
-                className={`relative group ${
+                className={`relative group animate-fade-in-up hover:animate-pulse ${
                   index % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right'
                 }`}
-                style={{ animationDelay: `${index * 0.2}s` }}
+                style={{ 
+                  animationDelay: `${index * 0.3}s`,
+                  animationFillMode: 'backwards'
+                }}
               >
                 {/* Timeline dot */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background shadow-lg group-hover:scale-125 transition-bounce z-10"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-primary rounded-full border-4 border-background shadow-lg group-hover:scale-150 group-hover:rotate-12 transition-all duration-500 ease-out z-10 animate-pulse"></div>
                 
                 {/* Content */}
                 <div className={`flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
                   <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
-                    <div className="glass rounded-2xl p-6 group-hover:scale-[1.02] transition-elastic hover-elastic bg-gradient-to-br from-background/90 to-primary/5">
+                    <div className="glass rounded-2xl p-6 group-hover:scale-110 group-hover:rotate-1 transition-all duration-500 ease-out hover-elastic bg-gradient-to-br from-background/90 to-primary/5 shadow-lg group-hover:shadow-2xl group-hover:shadow-primary/20">
                       <div className="space-y-4">
                         {/* Header */}
                         <div className="space-y-2">
-                          <div className="flex items-center gap-2">
-                            <h3 className="text-xl font-semibold text-foreground">{exp.title}</h3>
+                          <div className="flex items-center gap-2 group-hover:animate-bounce">
+                            <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300">{exp.title}</h3>
                             {exp.current && (
-                              <span className="bg-gradient-primary text-white px-2 py-1 rounded-full text-xs animate-pulse">Current</span>
+                              <span className="bg-gradient-primary text-white px-2 py-1 rounded-full text-xs animate-pulse group-hover:scale-110 transition-transform duration-300">Current</span>
                             )}
                           </div>
                           
                           <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-                            <span className="flex items-center gap-1 hover-bounce">
-                              <Building size={14} />
+                            <span className="flex items-center gap-1 hover-bounce group-hover:text-primary transition-colors duration-300">
+                              <Building size={14} className="group-hover:rotate-12 transition-transform duration-300" />
                               {exp.company}
                             </span>
-                            <span className="flex items-center gap-1 hover-bounce">
-                              <Calendar size={14} />
+                            <span className="flex items-center gap-1 hover-bounce group-hover:text-primary transition-colors duration-300">
+                              <Calendar size={14} className="group-hover:rotate-12 transition-transform duration-300" />
                               {exp.period}
                             </span>
-                            <span className="flex items-center gap-1 hover-bounce">
-                              <MapPin size={14} />
+                            <span className="flex items-center gap-1 hover-bounce group-hover:text-primary transition-colors duration-300">
+                              <MapPin size={14} className="group-hover:rotate-12 transition-transform duration-300" />
                               {exp.location}
                             </span>
                           </div>
                         </div>
 
                         {/* Description */}
-                        <p className="text-muted-foreground">{exp.description}</p>
+                        <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">{exp.description}</p>
 
                         {/* Technologies */}
                         <div className="space-y-2">
-                          <h4 className="text-sm font-medium text-foreground">Key Technologies:</h4>
+                          <h4 className="text-sm font-medium text-foreground group-hover:text-primary transition-colors duration-300">Key Technologies:</h4>
                           <div className="flex flex-wrap gap-2">
                             {exp.technologies.map((tech, techIndex) => (
                               <Badge
                                 key={techIndex}
                                 variant="secondary"
-                                className="hover-bounce bg-gradient-to-r from-primary/10 to-primary/5 hover:from-primary/20 hover:to-primary/10 transition-all duration-300"
+                                className="hover-bounce bg-gradient-to-r from-primary/10 to-primary/5 hover:from-primary/20 hover:to-primary/10 transition-all duration-300 group-hover:scale-110 hover:rotate-2 cursor-default"
+                                style={{ 
+                                  animationDelay: `${techIndex * 0.1}s`,
+                                  animationFillMode: 'backwards'
+                                }}
                               >
                                 {tech}
                               </Badge>

@@ -100,18 +100,21 @@ export function Skills() {
           {skillCategories.map((category, index) => (
             <div
               key={category.title}
-              className={`glass rounded-2xl p-6 group hover-elastic transition-all duration-500 bg-gradient-to-br from-background/90 to-primary/5 ${
+              className={`glass rounded-2xl p-6 group hover-elastic transition-all duration-500 bg-gradient-to-br from-background/90 to-primary/5 hover:scale-105 hover:rotate-1 shadow-lg hover:shadow-2xl hover:shadow-primary/10 ${
                 index % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right'
               }`}
-              style={{ animationDelay: `${index * 0.1}s` }}
+              style={{ 
+                animationDelay: `${index * 0.2}s`,
+                animationFillMode: 'backwards'
+              }}
             >
               {/* Icon Header */}
-              <div className={`${category.gradient} p-4 rounded-xl mb-4 group-hover:scale-110 transition-bounce`}>
-                <category.icon className="w-8 h-8 text-white mx-auto" />
+              <div className={`${category.gradient} p-4 rounded-xl mb-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 animate-pulse`}>
+                <category.icon className="w-8 h-8 text-white mx-auto group-hover:animate-bounce" />
               </div>
 
               {/* Title */}
-              <h3 className="text-lg font-semibold text-foreground mb-4 text-center">
+              <h3 className="text-lg font-semibold text-foreground mb-4 text-center group-hover:text-primary group-hover:scale-110 transition-all duration-300">
                 {category.title}
               </h3>
 
@@ -120,7 +123,11 @@ export function Skills() {
                 {category.skills.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium hover-bounce cursor-default"
+                    className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium hover-bounce cursor-default hover:bg-primary/20 hover:scale-110 hover:rotate-2 transition-all duration-300 group-hover:animate-pulse"
+                    style={{ 
+                      animationDelay: `${skillIndex * 0.1}s`,
+                      animationFillMode: 'backwards'
+                    }}
                   >
                     {skill}
                   </span>
