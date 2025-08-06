@@ -27,8 +27,9 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="py-20 relative">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-20 relative bg-gradient-to-br from-background via-primary/5 to-background">
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent opacity-40"></div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div className="space-y-8 animate-slide-in-left">
@@ -41,7 +42,7 @@ export function About() {
               </p>
             </div>
             
-            <div className="glass rounded-2xl p-8 neumorphism">
+            <div className="glass rounded-2xl p-8 neumorphism hover-elastic bg-gradient-to-br from-background/95 to-primary/10">
               <h3 className="text-2xl font-semibold text-foreground mb-4">My Journey</h3>
               <div className="space-y-4 text-muted-foreground">
                 <p>
@@ -67,7 +68,7 @@ export function About() {
 
           {/* Right Content */}
           <div className="relative animate-slide-in-right">
-            <div className="glass rounded-3xl p-8 hover-elastic">
+            <div className="glass rounded-3xl p-8 hover-elastic bg-gradient-to-tl from-background/90 to-primary/5">
               <div className="grid grid-cols-2 gap-6 text-center">
                 <div className="hover-bounce">
                   <div className="text-3xl font-bold text-primary mb-2">5+</div>

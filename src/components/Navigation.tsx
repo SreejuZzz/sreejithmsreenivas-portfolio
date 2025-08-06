@@ -6,36 +6,17 @@ import { Button } from "@/components/ui/button";
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
-      // Always keep navigation visible - truly persistent
-      setIsVisible(true);
-      
-      // Glass effect after scrolling
+      // Only change glass effect, never hide the navbar
       setScrolled(currentScrollY > 50);
-      setLastScrollY(currentScrollY);
     };
 
-    // Throttle scroll events for better performance
-    let ticking = false;
-    const throttledHandleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          handleScroll();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    window.addEventListener("scroll", throttledHandleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", throttledHandleScroll);
-  }, [lastScrollY]);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
     { href: "#home", label: "Home" },
@@ -52,9 +33,6 @@ export function Navigation() {
           ? "glass backdrop-blur-md shadow-lg border-b border-white/10" 
           : "bg-transparent"
       }`}
-      style={{
-        willChange: 'background-color, backdrop-filter',
-      }}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">

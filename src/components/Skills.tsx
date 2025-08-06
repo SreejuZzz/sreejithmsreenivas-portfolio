@@ -100,7 +100,7 @@ export function Skills() {
           {skillCategories.map((category, index) => (
             <div
               key={category.title}
-              className={`glass rounded-2xl p-6 group hover-elastic transition-all duration-500 ${
+              className={`glass rounded-2xl p-6 group hover-elastic transition-all duration-500 bg-gradient-to-br from-background/90 to-primary/5 ${
                 index % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right'
               }`}
               style={{ animationDelay: `${index * 0.1}s` }}

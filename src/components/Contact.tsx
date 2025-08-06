@@ -92,7 +92,7 @@ export function Contact() {
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Info */}
             <div className="space-y-8 animate-slide-in-left">
-              <div className="glass rounded-2xl p-6 hover-elastic">
+              <div className="glass rounded-2xl p-6 hover-elastic bg-gradient-to-br from-background/95 to-primary/10">
                 <div className="flex items-center space-x-4 mb-4">
                   <div className="bg-gradient-primary p-3 rounded-xl hover-bounce">
                     <Mail className="w-6 h-6 text-white" />
@@ -104,7 +104,7 @@ export function Contact() {
                 </div>
               </div>
 
-              <div className="glass rounded-2xl p-6 hover-elastic">
+              <div className="glass rounded-2xl p-6 hover-elastic bg-gradient-to-br from-background/95 to-primary/10">
                 <div className="flex items-center space-x-4 mb-4">
                   <div className="bg-gradient-telegram p-3 rounded-xl hover-bounce">
                     <Phone className="w-6 h-6 text-white" />
@@ -119,7 +119,7 @@ export function Contact() {
 
             {/* Contact Form */}
             <div className="animate-slide-in-right">
-              <form className="glass rounded-2xl p-6 space-y-6 hover-elastic">
+              <form className="glass rounded-2xl p-6 space-y-6 hover-elastic bg-gradient-to-br from-background/95 to-primary/10">
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
                     Name

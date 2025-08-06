@@ -54,66 +54,70 @@ export function Experience() {
           </p>
         </div>
 
-        <div className="relative">
+        <div className="relative max-w-6xl mx-auto">
           {/* Timeline line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-primary opacity-30"></div>
+          <div className="absolute left-1/2 transform -translate-x-0.5 top-0 bottom-0 w-0.5 bg-gradient-primary opacity-30"></div>
           
           <div className="space-y-12">
             {experiences.map((exp, index) => (
               <div 
                 key={index} 
-                className={`relative flex items-start space-x-8 group ${
+                className={`relative group ${
                   index % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right'
                 }`}
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 {/* Timeline dot */}
-                <div className="w-4 h-4 bg-primary rounded-full border-4 border-background shadow-lg group-hover:scale-125 transition-bounce"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background shadow-lg group-hover:scale-125 transition-bounce z-10"></div>
                 
                 {/* Content */}
-                <div className="flex-1 glass rounded-2xl p-6 group-hover:scale-[1.02] transition-elastic hover-elastic">
-                  <div className="space-y-4">
-                    {/* Header */}
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2">
-                        <h3 className="text-xl font-semibold text-foreground">{exp.title}</h3>
-                        {exp.current && (
-                          <span className="bg-gradient-primary text-white px-2 py-1 rounded-full text-xs">Current</span>
-                        )}
-                      </div>
-                      
-                      <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-                        <span className="flex items-center gap-1">
-                          <Building size={14} />
-                          {exp.company}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Calendar size={14} />
-                          {exp.period}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <MapPin size={14} />
-                          {exp.location}
-                        </span>
-                      </div>
-                    </div>
+                <div className={`flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+                  <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
+                    <div className="glass rounded-2xl p-6 group-hover:scale-[1.02] transition-elastic hover-elastic bg-gradient-to-br from-background/90 to-primary/5">
+                      <div className="space-y-4">
+                        {/* Header */}
+                        <div className="space-y-2">
+                          <div className="flex items-center gap-2">
+                            <h3 className="text-xl font-semibold text-foreground">{exp.title}</h3>
+                            {exp.current && (
+                              <span className="bg-gradient-primary text-white px-2 py-1 rounded-full text-xs animate-pulse">Current</span>
+                            )}
+                          </div>
+                          
+                          <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+                            <span className="flex items-center gap-1 hover-bounce">
+                              <Building size={14} />
+                              {exp.company}
+                            </span>
+                            <span className="flex items-center gap-1 hover-bounce">
+                              <Calendar size={14} />
+                              {exp.period}
+                            </span>
+                            <span className="flex items-center gap-1 hover-bounce">
+                              <MapPin size={14} />
+                              {exp.location}
+                            </span>
+                          </div>
+                        </div>
 
-                    {/* Description */}
-                    <p className="text-muted-foreground">{exp.description}</p>
+                        {/* Description */}
+                        <p className="text-muted-foreground">{exp.description}</p>
 
-                    {/* Technologies */}
-                    <div className="space-y-2">
-                      <h4 className="text-sm font-medium text-foreground">Key Technologies:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {exp.technologies.map((tech, techIndex) => (
-                          <Badge
-                            key={techIndex}
-                            variant="secondary"
-                            className="hover-bounce"
-                          >
-                            {tech}
-                          </Badge>
-                        ))}
+                        {/* Technologies */}
+                        <div className="space-y-2">
+                          <h4 className="text-sm font-medium text-foreground">Key Technologies:</h4>
+                          <div className="flex flex-wrap gap-2">
+                            {exp.technologies.map((tech, techIndex) => (
+                              <Badge
+                                key={techIndex}
+                                variant="secondary"
+                                className="hover-bounce bg-gradient-to-r from-primary/10 to-primary/5 hover:from-primary/20 hover:to-primary/10 transition-all duration-300"
+                              >
+                                {tech}
+                              </Badge>
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
