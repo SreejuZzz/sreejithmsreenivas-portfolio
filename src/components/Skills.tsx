@@ -84,8 +84,9 @@ export function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-20 relative overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section id="skills" className="py-20 relative overflow-hidden bg-gradient-to-bl from-background via-primary/5 to-background">
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent opacity-60"></div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 hover-bounce">
             Tools & Technologies

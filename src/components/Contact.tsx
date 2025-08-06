@@ -76,8 +76,9 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-20 relative overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-20 relative overflow-hidden bg-gradient-to-br from-background via-background/95 to-primary/5">
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent opacity-50"></div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 hover-bounce">
             Let's Connect

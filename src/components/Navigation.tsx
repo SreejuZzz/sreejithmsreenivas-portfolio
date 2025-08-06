@@ -13,7 +13,7 @@ export function Navigation() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      // Keep navigation always visible (persistent)
+      // Always keep navigation visible - truly persistent
       setIsVisible(true);
       
       // Glass effect after scrolling
@@ -47,16 +47,13 @@ export function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out transform ${
-        isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
-      } ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out ${
         scrolled 
           ? "glass backdrop-blur-md shadow-lg border-b border-white/10" 
           : "bg-transparent"
       }`}
       style={{
-        willChange: 'transform, opacity, background-color',
-        transform: isVisible ? 'translateY(0) translateZ(0)' : 'translateY(-100%) translateZ(0)'
+        willChange: 'background-color, backdrop-filter',
       }}
     >
       <div className="container mx-auto px-4">

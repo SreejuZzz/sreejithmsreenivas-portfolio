@@ -71,44 +71,52 @@ export function Experience() {
                 <div className="w-4 h-4 bg-primary rounded-full border-4 border-background shadow-lg group-hover:scale-125 transition-bounce"></div>
                 
                 {/* Content */}
-              <div className="flex-1 glass rounded-2xl p-6 group-hover:scale-[1.02] transition-elastic hover-elastic">
-                <div className="space-y-4">
-                  {/* Header */}
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2">
-                      <h3 className="text-xl font-semibold text-foreground">{exp.title}</h3>
-                      {exp.current && (
-                        <span className="bg-gradient-primary text-white px-2 py-1 rounded-full text-xs">Current</span>
-                      )}
-                    </div>
-                    
-                    <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-                      <span>{exp.company}</span>
-                      <span>•</span>
-                      <span>{exp.period}</span>
-                      <span>•</span>
-                      <span>{exp.location}</span>
-                    </div>
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-muted-foreground">{exp.description}</p>
-
-                  {/* Technologies */}
-                  <div className="space-y-2">
-                    <h4 className="text-sm font-medium text-foreground">Key Technologies:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {exp.technologies.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-medium hover-bounce"
-                        >
-                          {tech}
+                <div className="flex-1 glass rounded-2xl p-6 group-hover:scale-[1.02] transition-elastic hover-elastic">
+                  <div className="space-y-4">
+                    {/* Header */}
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <h3 className="text-xl font-semibold text-foreground">{exp.title}</h3>
+                        {exp.current && (
+                          <span className="bg-gradient-primary text-white px-2 py-1 rounded-full text-xs">Current</span>
+                        )}
+                      </div>
+                      
+                      <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+                        <span className="flex items-center gap-1">
+                          <Building size={14} />
+                          {exp.company}
                         </span>
-                      ))}
+                        <span className="flex items-center gap-1">
+                          <Calendar size={14} />
+                          {exp.period}
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <MapPin size={14} />
+                          {exp.location}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-muted-foreground">{exp.description}</p>
+
+                    {/* Technologies */}
+                    <div className="space-y-2">
+                      <h4 className="text-sm font-medium text-foreground">Key Technologies:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.technologies.map((tech, techIndex) => (
+                          <Badge
+                            key={techIndex}
+                            variant="secondary"
+                            className="hover-bounce"
+                          >
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
                 </div>
               </div>
             ))}
