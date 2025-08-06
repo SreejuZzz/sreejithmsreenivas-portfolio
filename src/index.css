@@ -57,8 +57,11 @@
     --shadow-neumorphism: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
     --shadow-hover: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
     
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --transition-buttery: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    --transition-bounce: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-elastic: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
 
@@ -140,16 +143,54 @@
 @layer base {
   * {
     @apply border-border;
-    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   body {
     @apply bg-background text-foreground font-sans;
     font-family: 'Inter', sans-serif;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Optimize performance */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    /* GPU acceleration for better performance */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+
+  /* Ultra smooth mode transitions with GPU acceleration */
+  .dark-mode-transition {
+    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: background-color, color, border-color;
+  }
+
+  /* Smooth scrolling improvements with GPU optimization */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    * {
+      scroll-behavior: smooth;
+    }
+  }
+
+  /* GPU acceleration for better performance */
+  .glass, .neumorphism, .transition-buttery, .transition-spring, .transition-smooth {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: transform, opacity, background-color;
   }
 
   /* Glassmorphism utilities */
@@ -180,6 +221,33 @@
     transition: var(--transition-spring);
   }
 
+  .transition-buttery {
+    transition: var(--transition-buttery);
+  }
+
+  /* Enhanced mobile responsiveness */
+  @media (max-width: 768px) {
+    .glass {
+      backdrop-filter: blur(15px);
+    }
+  }
+
+  /* Scroll performance optimizations */
+  .scroll-optimized {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: transform;
+    contain: layout style paint;
+  }
+
+  /* Prevent layout shifts during animations */
+  .nav-fixed {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: transform, opacity, background-color;
+    contain: layout style paint;
+  }
+
   /* Gradient backgrounds */
   .bg-gradient-primary {
     background: var(--gradient-primary);
@@ -207,6 +275,100 @@
 
   .bg-gradient-twitter {
     background: var(--gradient-twitter);
+  }
+
+  /* Scroll animations */
+  .animate-slide-in-left {
+    animation: slideInLeft 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+
+  .animate-bounce-in {
+    animation: bounceIn 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+
+  /* Physics-based hover effects */
+  .hover-bounce {
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .hover-bounce:hover {
+    transform: scale(1.05) translateY(-2px);
+  }
+
+  .hover-elastic {
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .hover-elastic:hover {
+    transform: scale(1.1) rotate(2deg);
+  }
+
+  @keyframes slideInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(60px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.3);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    70% {
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Enhanced physics transitions */
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  .transition-elastic {
+    transition: var(--transition-elastic);
   }
 
   /* Custom scrollbar */

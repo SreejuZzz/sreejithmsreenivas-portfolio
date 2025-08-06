@@ -15,7 +15,7 @@ export function Experience() {
     },
     {
       title: "Cloud Architect",
-      company: "Previous Organization",
+      company: "Synnefo Solutions",
       location: "Remote",
       period: "2022 - 2023",
       description: "Designed and implemented scalable cloud architectures, optimized infrastructure costs, and established cloud governance frameworks. Led multi-cloud strategy initiatives.",
@@ -24,7 +24,7 @@ export function Experience() {
     },
     {
       title: "Linux Administrator",
-      company: "Previous Organization",
+      company: "Synnefo Solutions",
       location: "On-site",
       period: "2020 - 2022",
       description: "Managed Linux servers, implemented automation scripts, configured monitoring solutions, and maintained high availability systems. Established backup and disaster recovery procedures.",
@@ -33,7 +33,7 @@ export function Experience() {
     },
     {
       title: "Network Administrator",
-      company: "Previous Organization",
+      company: "SDC Networks",
       location: "On-site",
       period: "2018 - 2020",
       description: "Foundation role managing network infrastructure, configuring switches and routers, implementing security policies, and troubleshooting connectivity issues.",
@@ -45,111 +45,93 @@ export function Experience() {
   return (
     <section id="experience" className="py-20 relative">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+        <div className="text-center mb-16 animate-fade-in-up">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 hover-bounce">
             Professional Journey
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            7+ years of continuous growth and technological evolution
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            A track record of delivering scalable infrastructure solutions and optimizing cloud operations
           </p>
         </div>
 
-        <div className="relative">
+        <div className="relative max-w-6xl mx-auto">
           {/* Timeline line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-primary transform md:-translate-x-1/2"></div>
-
+          <div className="absolute left-1/2 transform -translate-x-0.5 top-0 bottom-0 w-0.5 bg-gradient-primary opacity-30"></div>
+          
           <div className="space-y-12">
             {experiences.map((exp, index) => (
-              <div
-                key={index}
-                className={`relative flex items-center ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                } flex-col`}
+              <div 
+                key={index} 
+                className={`relative group animate-fade-in-up hover:animate-pulse ${
+                  index % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right'
+                }`}
+                style={{ 
+                  animationDelay: `${index * 0.3}s`,
+                  animationFillMode: 'backwards'
+                }}
               >
                 {/* Timeline dot */}
-                <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-primary rounded-full transform md:-translate-x-1/2 z-10 border-4 border-background">
-                  {exp.current && (
-                    <div className="absolute inset-0 bg-primary rounded-full animate-ping"></div>
-                  )}
-                </div>
-
-                {/* Content card */}
-                <Card
-                  className={`glass border-0 neumorphism w-full md:w-5/12 ml-12 md:ml-0 ${
-                    index % 2 === 0 ? 'md:mr-auto md:ml-0' : 'md:ml-auto md:mr-0'
-                  } hover:scale-105 transition-spring`}
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
-                  <div className="p-6 space-y-4">
-                    {/* Header */}
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2">
-                        <h3 className="text-xl font-semibold text-foreground">{exp.title}</h3>
-                        {exp.current && (
-                          <Badge className="bg-gradient-primary text-white border-0">Current</Badge>
-                        )}
-                      </div>
-                      
-                      <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-                        <div className="flex items-center gap-1">
-                          <Building className="h-4 w-4" />
-                          <span>{exp.company}</span>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-primary rounded-full border-4 border-background shadow-lg group-hover:scale-150 group-hover:rotate-12 transition-all duration-500 ease-out z-10 animate-pulse"></div>
+                
+                {/* Content */}
+                <div className={`flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+                  <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
+                    <div className="glass rounded-2xl p-6 group-hover:scale-110 group-hover:rotate-1 transition-all duration-500 ease-out hover-elastic bg-gradient-to-br from-background/90 to-primary/5 shadow-lg group-hover:shadow-2xl group-hover:shadow-primary/20">
+                      <div className="space-y-4">
+                        {/* Header */}
+                        <div className="space-y-2">
+                          <div className="flex items-center gap-2 group-hover:animate-bounce">
+                            <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300">{exp.title}</h3>
+                            {exp.current && (
+                              <span className="bg-gradient-primary text-white px-2 py-1 rounded-full text-xs animate-pulse group-hover:scale-110 transition-transform duration-300">Current</span>
+                            )}
+                          </div>
+                          
+                          <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+                            <span className="flex items-center gap-1 hover-bounce group-hover:text-primary transition-colors duration-300">
+                              <Building size={14} className="group-hover:rotate-12 transition-transform duration-300" />
+                              {exp.company}
+                            </span>
+                            <span className="flex items-center gap-1 hover-bounce group-hover:text-primary transition-colors duration-300">
+                              <Calendar size={14} className="group-hover:rotate-12 transition-transform duration-300" />
+                              {exp.period}
+                            </span>
+                            <span className="flex items-center gap-1 hover-bounce group-hover:text-primary transition-colors duration-300">
+                              <MapPin size={14} className="group-hover:rotate-12 transition-transform duration-300" />
+                              {exp.location}
+                            </span>
+                          </div>
                         </div>
-                        <div className="flex items-center gap-1">
-                          <Calendar className="h-4 w-4" />
-                          <span>{exp.period}</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <MapPin className="h-4 w-4" />
-                          <span>{exp.location}</span>
-                        </div>
-                      </div>
-                    </div>
 
-                    {/* Description */}
-                    <p className="text-muted-foreground">{exp.description}</p>
+                        {/* Description */}
+                        <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">{exp.description}</p>
 
-                    {/* Technologies */}
-                    <div className="space-y-2">
-                      <h4 className="text-sm font-medium text-foreground">Key Technologies:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {exp.technologies.map((tech, techIndex) => (
-                          <Badge
-                            key={techIndex}
-                            variant="secondary"
-                            className="bg-muted/50 text-foreground hover:bg-primary hover:text-white transition-smooth"
-                          >
-                            {tech}
-                          </Badge>
-                        ))}
+                        {/* Technologies */}
+                        <div className="space-y-2">
+                          <h4 className="text-sm font-medium text-foreground group-hover:text-primary transition-colors duration-300">Key Technologies:</h4>
+                          <div className="flex flex-wrap gap-2">
+                            {exp.technologies.map((tech, techIndex) => (
+                              <Badge
+                                key={techIndex}
+                                variant="secondary"
+                                className="hover-bounce bg-gradient-to-r from-primary/10 to-primary/5 hover:from-primary/20 hover:to-primary/10 transition-all duration-300 group-hover:scale-110 hover:rotate-2 cursor-default"
+                                style={{ 
+                                  animationDelay: `${techIndex * 0.1}s`,
+                                  animationFillMode: 'backwards'
+                                }}
+                              >
+                                {tech}
+                              </Badge>
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </Card>
+                </div>
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Mentoring section */}
-        <div className="mt-20">
-          <Card className="glass border-0 neumorphism p-8 text-center">
-            <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-foreground">Mentoring & Training</h3>
-              <p className="text-muted-foreground max-w-3xl mx-auto">
-                Alongside my professional roles, I actively mentor students and working professionals, 
-                helping them navigate the complexities of DevOps, Cloud Architecture, and Infrastructure Management. 
-                I believe in sharing knowledge and fostering the next generation of tech professionals.
-              </p>
-              <div className="flex flex-wrap justify-center gap-2 pt-4">
-                {["DevOps Mentoring", "Cloud Training", "Career Guidance", "Technical Workshops"].map((item, index) => (
-                  <Badge key={index} className="bg-gradient-primary text-white border-0">
-                    {item}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-          </Card>
         </div>
       </div>
     </section>

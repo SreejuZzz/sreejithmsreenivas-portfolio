@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Users, Lightbulb, Target, Award } from "lucide-react";
+import { QuoteRotation } from "./QuoteRotation";
 
 export function About() {
   const highlights = [
@@ -26,21 +27,22 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="py-20 relative">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            About Me
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A journey of continuous learning and technological evolution
-          </p>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Story */}
-          <div className="space-y-6">
-            <div className="glass rounded-2xl p-8 neumorphism">
+    <section id="about" className="py-20 relative bg-gradient-to-br from-background via-primary/5 to-background">
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent opacity-40"></div>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left Content */}
+          <div className="space-y-8 animate-slide-in-left">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 hover-bounce">
+                About Me
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                A journey of continuous learning and technological evolution
+              </p>
+            </div>
+            
+            <div className="glass rounded-2xl p-8 neumorphism hover-elastic bg-gradient-to-br from-background/95 to-primary/10">
               <h3 className="text-2xl font-semibold text-foreground mb-4">My Journey</h3>
               <div className="space-y-4 text-muted-foreground">
                 <p>
@@ -64,36 +66,32 @@ export function About() {
             </div>
           </div>
 
-          {/* Highlights Grid */}
-          <div className="grid sm:grid-cols-2 gap-6">
-            {highlights.map((item, index) => (
-              <Card
-                key={index}
-                className="glass p-6 hover:scale-105 transition-spring border-0 neumorphism"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="text-center space-y-4">
-                  <div className="mx-auto w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center">
-                    <item.icon className="h-8 w-8 text-white" />
-                  </div>
-                  <h4 className="text-lg font-semibold text-foreground">{item.title}</h4>
-                  <p className="text-sm text-muted-foreground">{item.description}</p>
+          {/* Right Content */}
+          <div className="relative animate-slide-in-right">
+            <div className="glass rounded-3xl p-8 hover-elastic bg-gradient-to-tl from-background/90 to-primary/5">
+              <div className="grid grid-cols-2 gap-6 text-center">
+                <div className="hover-bounce">
+                  <div className="text-3xl font-bold text-primary mb-2">7+</div>
+                  <div className="text-muted-foreground">Years Experience</div>
                 </div>
-              </Card>
-            ))}
+                <div className="hover-bounce">
+                  <div className="text-3xl font-bold text-primary mb-2">30+</div>
+                  <div className="text-muted-foreground">Projects Delivered</div>
+                </div>
+                <div className="hover-bounce">
+                  <div className="text-3xl font-bold text-primary mb-2">24/7</div>
+                  <div className="text-muted-foreground">Availability</div>
+                </div>
+                <div className="hover-bounce">
+                  <div className="text-3xl font-bold text-primary mb-2">99.999%</div>
+                  <div className="text-muted-foreground">Uptime</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Quote */}
-        <div className="mt-16 text-center">
-          <div className="glass rounded-2xl p-8 max-w-4xl mx-auto neumorphism">
-            <blockquote className="text-xl md:text-2xl font-medium text-foreground italic">
-              "Technology is best when it brings people together. My mission is to bridge the gap 
-              between complex infrastructure and practical solutions while empowering others to grow."
-            </blockquote>
-            <cite className="text-primary font-semibold mt-4 block">— Sreejith M S</cite>
-          </div>
-        </div>
+        <QuoteRotation />
       </div>
     </section>
   );

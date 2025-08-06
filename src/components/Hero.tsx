@@ -15,22 +15,22 @@ export function Hero() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center space-y-8 animate-fade-in">
           {/* Profile Photo */}
-          <div className="relative mx-auto w-48 h-48 mb-8">
-            <div className="glass rounded-full p-2 neumorphism">
+          <div className="relative mx-auto w-48 h-48 mb-8 z-30">
+            <div className="glass rounded-full p-2 neumorphism relative z-30">
               <img
                 src={profilePhoto}
                 alt="Sreejith M S"
-                className="w-full h-full object-cover rounded-full"
+                className="w-full h-full object-cover rounded-full relative z-30"
               />
             </div>
-            <div className="absolute -inset-4 bg-gradient-primary rounded-full blur-md opacity-20"></div>
+            <div className="absolute -inset-4 bg-gradient-primary rounded-full blur-md opacity-20 z-10"></div>
           </div>
 
           {/* Main Content */}
           <div className="space-y-6">
             <div className="space-y-2">
-              <h1 className="text-5xl md:text-7xl font-bold text-foreground relative z-20 drop-shadow-2xl">
-                <span className="bg-gradient-primary bg-clip-text text-transparent">
+              <h1 className="text-5xl md:text-7xl font-bold relative z-20 drop-shadow-2xl">
+                <span className="bg-gradient-primary bg-clip-text text-transparent transition-buttery">
                   Sreejith M S
                 </span>
               </h1>
@@ -42,7 +42,7 @@ export function Hero() {
               </div>
             </div>
 
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed relative z-20 drop-shadow-lg">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed relative z-20 drop-shadow-lg transition-buttery">
               Passionate DevOps Engineer with expertise in cloud architecture, automation, and mentoring. 
               Transforming ideas into scalable, reliable infrastructure solutions while empowering the next generation of tech professionals.
             </p>
