@@ -71,11 +71,11 @@ export function About() {
             <div className="glass rounded-3xl p-8 hover-elastic bg-gradient-to-tl from-background/90 to-primary/5">
               <div className="grid grid-cols-2 gap-6 text-center">
                 <div className="hover-bounce">
-                  <div className="text-3xl font-bold text-primary mb-2">5+</div>
+                  <div className="text-3xl font-bold text-primary mb-2">7+</div>
                   <div className="text-muted-foreground">Years Experience</div>
                 </div>
                 <div className="hover-bounce">
-                  <div className="text-3xl font-bold text-primary mb-2">100+</div>
+                  <div className="text-3xl font-bold text-primary mb-2">30+</div>
                   <div className="text-muted-foreground">Projects Delivered</div>
                 </div>
                 <div className="hover-bounce">
@@ -83,7 +83,7 @@ export function About() {
                   <div className="text-muted-foreground">Availability</div>
                 </div>
                 <div className="hover-bounce">
-                  <div className="text-3xl font-bold text-primary mb-2">99.9%</div>
+                  <div className="text-3xl font-bold text-primary mb-2">99.999%</div>
                   <div className="text-muted-foreground">Uptime</div>
                 </div>
               </div>
