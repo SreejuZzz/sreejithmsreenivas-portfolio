@@ -44,7 +44,7 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.SSH_HSTNGR }}
           script: |
-            IMAGE_NAME=ghcr.io/sreejuzzz/portfolio:latest
+            IMAGE_NAME=ghcr.io/sreejuzzz/sreejithmsreenivas-portfolio:latest
             echo "${{ secrets.GHCR_PAT }}" | docker login ghcr.io -u sreejuzzz --password-stdin
             docker pull $IMAGE_NAME
             docker stop portfolio || true
