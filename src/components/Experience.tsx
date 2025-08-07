@@ -76,7 +76,12 @@ export function Experience() {
                 {/* Content */}
                 <div className={`flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
                   <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
-                    <div className="glass rounded-2xl p-6 group-hover:scale-110 group-hover:rotate-1 transition-all duration-500 ease-out hover-elastic bg-gradient-to-br from-background/90 to-primary/5 shadow-lg group-hover:shadow-2xl group-hover:shadow-primary/20">
+                    <div className={`glass rounded-2xl p-6 transition-all duration-500 ease-out shadow-lg hover:shadow-2xl ${
+                      index % 4 === 0 ? 'bg-gradient-to-br from-background/90 to-purple/5 hover:shadow-purple/20 group-hover:scale-105 group-hover:translate-x-2' :
+                      index % 4 === 1 ? 'bg-gradient-to-br from-background/90 to-orange/5 hover:shadow-orange/20 group-hover:scale-105 group-hover:translate-x-2' :
+                      index % 4 === 2 ? 'bg-gradient-to-br from-background/90 to-green/5 hover:shadow-green/20 group-hover:scale-105 group-hover:translate-x-2' :
+                      'bg-gradient-to-br from-background/90 to-pink/5 hover:shadow-pink/20 group-hover:scale-105 group-hover:translate-x-2'
+                    }`}>
                       <div className="space-y-4">
                         {/* Header */}
                         <div className="space-y-2">

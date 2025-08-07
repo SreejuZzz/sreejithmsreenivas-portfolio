@@ -52,6 +52,12 @@
     --gradient-facebook: linear-gradient(135deg, hsl(221 90% 55%), hsl(221 90% 45%));
     --gradient-telegram: linear-gradient(135deg, hsl(200 90% 55%), hsl(200 90% 45%));
     --gradient-twitter: linear-gradient(135deg, hsl(203 89% 53%), hsl(203 89% 43%));
+    --gradient-purple: linear-gradient(135deg, hsl(280 90% 55%), hsl(260 90% 65%));
+    --gradient-orange: linear-gradient(135deg, hsl(25 90% 55%), hsl(45 90% 65%));
+    --gradient-green: linear-gradient(135deg, hsl(142 80% 55%), hsl(120 70% 50%));
+    --gradient-pink: linear-gradient(135deg, hsl(330 90% 55%), hsl(310 90% 65%));
+    --gradient-cosmic: linear-gradient(135deg, hsl(270 90% 50%), hsl(300 90% 60%), hsl(330 90% 55%));
+    --gradient-sunset: linear-gradient(135deg, hsl(15 90% 55%), hsl(35 90% 65%), hsl(55 90% 75%));
     
     --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     --shadow-neumorphism: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
@@ -125,6 +131,12 @@
     --gradient-twitter: linear-gradient(135deg, hsl(203 89% 63%), hsl(203 89% 53%));
     --gradient-whatsapp: linear-gradient(135deg, hsl(122 60% 60%), hsl(142 80% 55%));
     --gradient-call: linear-gradient(135deg, hsl(142 80% 55%), hsl(120 70% 50%));
+    --gradient-purple: linear-gradient(135deg, hsl(280 90% 65%), hsl(260 90% 75%));
+    --gradient-orange: linear-gradient(135deg, hsl(25 90% 65%), hsl(45 90% 75%));
+    --gradient-green: linear-gradient(135deg, hsl(142 80% 65%), hsl(120 70% 60%));
+    --gradient-pink: linear-gradient(135deg, hsl(330 90% 65%), hsl(310 90% 75%));
+    --gradient-cosmic: linear-gradient(135deg, hsl(270 90% 60%), hsl(300 90% 70%), hsl(330 90% 65%));
+    --gradient-sunset: linear-gradient(135deg, hsl(15 90% 65%), hsl(35 90% 75%), hsl(55 90% 85%));
     
     --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.7);
     --shadow-neumorphism: 20px 20px 60px #0a0a0a, -20px -20px 60px #1e1e1e;
@@ -276,6 +288,30 @@
   .bg-gradient-twitter {
     background: var(--gradient-twitter);
   }
+  
+  .bg-gradient-purple {
+    background: var(--gradient-purple);
+  }
+  
+  .bg-gradient-orange {
+    background: var(--gradient-orange);
+  }
+  
+  .bg-gradient-green {
+    background: var(--gradient-green);
+  }
+  
+  .bg-gradient-pink {
+    background: var(--gradient-pink);
+  }
+  
+  .bg-gradient-cosmic {
+    background: var(--gradient-cosmic);
+  }
+  
+  .bg-gradient-sunset {
+    background: var(--gradient-sunset);
+  }
 
   /* Scroll animations */
   .animate-slide-in-left {
@@ -300,7 +336,7 @@
   }
 
   .hover-bounce:hover {
-    transform: scale(1.05) translateY(-2px);
+    transform: scale(1.05) translateY(-2px) translateX(5px);
   }
 
   .hover-elastic {
@@ -308,7 +344,15 @@
   }
 
   .hover-elastic:hover {
-    transform: scale(1.1) rotate(2deg);
+    transform: scale(1.1) rotate(2deg) translateX(8px);
+  }
+  
+  .hover-slide-right {
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .hover-slide-right:hover {
+    transform: translateX(10px) scale(1.05);
   }
 
   @keyframes slideInLeft {
