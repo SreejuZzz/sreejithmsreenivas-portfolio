@@ -76,7 +76,7 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-20 relative overflow-hidden bg-gradient-to-br from-background via-cosmic/5 to-sunset/5">
+    <section id="contact" className="py-20 relative overflow-hidden bg-gradient-to-br from-background via-cosmic/5 to-sunset/5 scroll-mt-16">
       <div className="absolute inset-0 bg-gradient-to-t from-pink/10 via-orange/5 to-purple/10 opacity-50"></div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12 sm:mb-16 animate-fade-in-up px-4 sm:px-0">

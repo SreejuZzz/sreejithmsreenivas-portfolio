@@ -84,7 +84,7 @@ export function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-20 relative overflow-hidden bg-gradient-to-bl from-background via-green/5 to-pink/5">
+    <section id="skills" className="py-20 relative overflow-hidden bg-gradient-to-bl from-background via-green/5 to-pink/5 scroll-mt-16">
       <div className="absolute inset-0 bg-gradient-to-r from-purple/5 via-orange/5 to-cosmic/5 opacity-60"></div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12 sm:mb-16 animate-fade-in-up px-4 sm:px-0">

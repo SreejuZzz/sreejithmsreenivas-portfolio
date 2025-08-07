@@ -43,7 +43,7 @@ export function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-20 relative bg-gradient-to-br from-background via-sunset/5 to-cosmic/5 overflow-hidden">
+    <section id="experience" className="py-20 relative bg-gradient-to-br from-background via-sunset/5 to-cosmic/5 overflow-hidden scroll-mt-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 sm:mb-16 animate-fade-in-up px-4 sm:px-0">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6 hover-bounce">
