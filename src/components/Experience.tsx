@@ -43,7 +43,7 @@ export function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-20 relative">
+    <section id="experience" className="py-20 relative bg-gradient-to-br from-background via-sunset/5 to-cosmic/5 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 hover-bounce">
@@ -76,12 +76,7 @@ export function Experience() {
                 {/* Content */}
                 <div className={`flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
                   <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
-                    <div className={`glass rounded-2xl p-6 transition-all duration-500 ease-out shadow-lg hover:shadow-2xl ${
-                      index % 4 === 0 ? 'bg-gradient-to-br from-background/90 to-purple/5 hover:shadow-purple/20 group-hover:scale-105 group-hover:translate-x-2' :
-                      index % 4 === 1 ? 'bg-gradient-to-br from-background/90 to-orange/5 hover:shadow-orange/20 group-hover:scale-105 group-hover:translate-x-2' :
-                      index % 4 === 2 ? 'bg-gradient-to-br from-background/90 to-green/5 hover:shadow-green/20 group-hover:scale-105 group-hover:translate-x-2' :
-                      'bg-gradient-to-br from-background/90 to-pink/5 hover:shadow-pink/20 group-hover:scale-105 group-hover:translate-x-2'
-                    }`}>
+                    <div className="glass rounded-2xl p-6 transition-all duration-500 ease-out shadow-lg hover:shadow-2xl bg-gradient-to-br from-background/90 to-primary/5 hover:shadow-primary/20 hover:scale-[1.02] hover:translate-x-1">
                       <div className="space-y-4">
                         {/* Header */}
                         <div className="space-y-2">
