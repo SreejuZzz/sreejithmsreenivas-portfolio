@@ -79,39 +79,39 @@ export function Contact() {
     <section id="contact" className="py-20 relative overflow-hidden bg-gradient-to-br from-background via-cosmic/5 to-sunset/5">
       <div className="absolute inset-0 bg-gradient-to-t from-pink/10 via-orange/5 to-purple/10 opacity-50"></div>
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 hover-bounce">
+        <div className="text-center mb-12 sm:mb-16 animate-fade-in-up px-4 sm:px-0">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6 hover-bounce">
             Let's Connect
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             Ready to discuss your next project or explore collaboration opportunities
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12">
+        <div className="max-w-4xl mx-auto px-4 sm:px-0">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             {/* Contact Info */}
-            <div className="space-y-8 animate-slide-in-left">
-              <div className="glass rounded-2xl p-6 hover-elastic bg-gradient-to-br from-background/95 to-primary/10">
+            <div className="space-y-6 sm:space-y-8 animate-slide-in-left">
+              <div className="glass rounded-2xl p-4 sm:p-6 hover-elastic bg-gradient-to-br from-background/95 to-primary/10">
                 <div className="flex items-center space-x-4 mb-4">
                   <div className="bg-gradient-primary p-3 rounded-xl hover-bounce">
                     <Mail className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-foreground">Email</h3>
-                    <p className="text-muted-foreground">sreejithmsreenivas@gmail.com</p>
+                    <h3 className="text-lg sm:text-xl font-semibold text-foreground">Email</h3>
+                    <p className="text-sm sm:text-base text-muted-foreground break-all">sreejithmsreenivas@gmail.com</p>
                   </div>
                 </div>
               </div>
 
-              <div className="glass rounded-2xl p-6 hover-elastic bg-gradient-to-br from-background/95 to-primary/10">
+              <div className="glass rounded-2xl p-4 sm:p-6 hover-elastic bg-gradient-to-br from-background/95 to-primary/10">
                 <div className="flex items-center space-x-4 mb-4">
                   <div className="bg-gradient-telegram p-3 rounded-xl hover-bounce">
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-foreground">Phone</h3>
-                    <p className="text-muted-foreground">+91 8848585640</p>
+                    <h3 className="text-lg sm:text-xl font-semibold text-foreground">Phone</h3>
+                    <p className="text-sm sm:text-base text-muted-foreground">+91 8848585640</p>
                   </div>
                 </div>
               </div>
@@ -119,7 +119,7 @@ export function Contact() {
 
             {/* Contact Form */}
             <div className="animate-slide-in-right">
-              <form className="glass rounded-2xl p-6 space-y-6 hover-elastic bg-gradient-to-br from-background/95 to-primary/10">
+              <form className="glass rounded-2xl p-4 sm:p-6 space-y-4 sm:space-y-6 hover-elastic bg-gradient-to-br from-background/95 to-primary/10">
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
                     Name

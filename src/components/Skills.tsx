@@ -87,20 +87,20 @@ export function Skills() {
     <section id="skills" className="py-20 relative overflow-hidden bg-gradient-to-bl from-background via-green/5 to-pink/5">
       <div className="absolute inset-0 bg-gradient-to-r from-purple/5 via-orange/5 to-cosmic/5 opacity-60"></div>
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 hover-bounce">
+        <div className="text-center mb-12 sm:mb-16 animate-fade-in-up px-4 sm:px-0">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6 hover-bounce">
             Tools & Technologies
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             Comprehensive expertise across the modern DevOps and cloud infrastructure landscape
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-0">
           {skillCategories.map((category, index) => (
             <div
               key={category.title}
-              className={`glass rounded-2xl p-6 group hover-elastic transition-all duration-500 bg-gradient-to-br from-background/90 to-primary/5 hover:scale-105 hover:rotate-1 shadow-lg hover:shadow-2xl hover:shadow-primary/10 ${
+              className={`glass rounded-2xl p-4 sm:p-6 group hover-elastic transition-all duration-500 bg-gradient-to-br from-background/90 to-primary/5 hover:scale-105 hover:rotate-1 shadow-lg hover:shadow-2xl hover:shadow-primary/10 ${
                 index % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right'
               }`}
               style={{ 
@@ -109,12 +109,12 @@ export function Skills() {
               }}
             >
               {/* Icon Header */}
-              <div className={`${category.gradient} p-4 rounded-xl mb-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 animate-pulse`}>
-                <category.icon className="w-8 h-8 text-white mx-auto group-hover:animate-bounce" />
+              <div className={`${category.gradient} p-3 sm:p-4 rounded-xl mb-3 sm:mb-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 animate-pulse`}>
+                <category.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white mx-auto group-hover:animate-bounce" />
               </div>
 
               {/* Title */}
-              <h3 className="text-lg font-semibold text-foreground mb-4 text-center group-hover:text-primary group-hover:scale-110 transition-all duration-300">
+              <h3 className="text-base sm:text-lg font-semibold text-foreground mb-3 sm:mb-4 text-center group-hover:text-primary group-hover:scale-110 transition-all duration-300">
                 {category.title}
               </h3>
 

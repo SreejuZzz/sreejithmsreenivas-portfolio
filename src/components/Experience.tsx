@@ -45,24 +45,24 @@ export function Experience() {
   return (
     <section id="experience" className="py-20 relative bg-gradient-to-br from-background via-sunset/5 to-cosmic/5 overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 hover-bounce">
+        <div className="text-center mb-12 sm:mb-16 animate-fade-in-up px-4 sm:px-0">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6 hover-bounce">
             Professional Journey
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             A track record of delivering scalable infrastructure solutions and optimizing cloud operations
           </p>
         </div>
 
-        <div className="relative max-w-6xl mx-auto">
-          {/* Timeline line */}
-          <div className="absolute left-1/2 transform -translate-x-0.5 top-0 bottom-0 w-0.5 bg-gradient-primary opacity-30"></div>
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-0">
+          {/* Timeline line - Hidden on mobile */}
+          <div className="hidden sm:block absolute left-1/2 transform -translate-x-0.5 top-0 bottom-0 w-0.5 bg-gradient-primary opacity-30"></div>
           
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {experiences.map((exp, index) => (
               <div 
                 key={index} 
-                className={`relative group animate-fade-in-up hover:animate-pulse ${
+                className={`relative group animate-fade-in-up ${
                   index % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right'
                 }`}
                 style={{ 
@@ -70,24 +70,24 @@ export function Experience() {
                   animationFillMode: 'backwards'
                 }}
               >
-                {/* Timeline dot */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-primary rounded-full border-4 border-background shadow-lg group-hover:scale-150 group-hover:rotate-12 transition-all duration-500 ease-out z-10 animate-pulse"></div>
+                {/* Timeline dot - Hidden on mobile */}
+                <div className="hidden sm:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 sm:w-6 sm:h-6 bg-gradient-primary rounded-full border-2 sm:border-4 border-background shadow-lg group-hover:scale-125 sm:group-hover:scale-150 group-hover:rotate-12 transition-all duration-500 ease-out z-10 animate-pulse"></div>
                 
                 {/* Content */}
-                <div className={`flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
-                  <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
-                    <div className="glass rounded-2xl p-6 transition-all duration-500 ease-out shadow-lg hover:shadow-2xl bg-gradient-to-br from-background/90 to-primary/5 hover:shadow-primary/20 hover:scale-[1.02] hover:translate-x-1">
+                <div className={`flex ${index % 2 === 0 ? 'sm:justify-start' : 'sm:justify-end'} justify-center`}>
+                  <div className={`w-full sm:w-5/12 ${index % 2 === 0 ? 'sm:pr-8' : 'sm:pl-8'}`}>
+                    <div className="glass rounded-2xl p-4 sm:p-6 transition-all duration-500 ease-out shadow-lg hover:shadow-2xl bg-gradient-to-br from-background/90 to-primary/5 hover:shadow-primary/20 hover:scale-[1.02] hover:translate-x-1">
                       <div className="space-y-4">
                         {/* Header */}
                         <div className="space-y-2">
-                          <div className="flex items-center gap-2 group-hover:animate-bounce">
-                            <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300">{exp.title}</h3>
+                          <div className="flex flex-col sm:flex-row sm:items-center gap-2 group-hover:animate-bounce">
+                            <h3 className="text-lg sm:text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300">{exp.title}</h3>
                             {exp.current && (
                               <span className="bg-gradient-primary text-white px-2 py-1 rounded-full text-xs animate-pulse group-hover:scale-110 transition-transform duration-300">Current</span>
                             )}
                           </div>
                           
-                          <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+                          <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-2 sm:gap-4 text-sm text-muted-foreground">
                             <span className="flex items-center gap-1 hover-bounce group-hover:text-primary transition-colors duration-300">
                               <Building size={14} className="group-hover:rotate-12 transition-transform duration-300" />
                               {exp.company}
@@ -104,7 +104,7 @@ export function Experience() {
                         </div>
 
                         {/* Description */}
-                        <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">{exp.description}</p>
+                        <p className="text-sm sm:text-base text-muted-foreground group-hover:text-foreground transition-colors duration-300">{exp.description}</p>
 
                         {/* Technologies */}
                         <div className="space-y-2">
