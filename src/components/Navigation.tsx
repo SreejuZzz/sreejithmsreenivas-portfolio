@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { ThemeToggle } from "./ThemeToggle";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -42,12 +43,25 @@ export function Navigation() {
     }
   };
 
-  return (
-    <nav className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-300 ease-out ${
-      scrolled 
-        ? 'bg-background/95 backdrop-blur-xl shadow-lg border-b border-border' 
-        : 'bg-background/80 backdrop-blur-md border-b border-white/10'
-    }`}>
+  const navigationContent = (
+    <nav 
+      className="fixed top-0 left-0 right-0 z-[99999] transition-all duration-300 ease-out"
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        width: '100vw',
+        zIndex: 99999,
+        backgroundColor: scrolled ? 'hsl(var(--background) / 0.95)' : 'hsl(var(--background) / 0.8)',
+        backdropFilter: scrolled ? 'blur(20px)' : 'blur(16px)',
+        borderBottom: scrolled ? '1px solid hsl(var(--border))' : '1px solid rgba(255, 255, 255, 0.1)',
+        boxShadow: scrolled ? '0 4px 6px -1px rgba(0, 0, 0, 0.1)' : 'none',
+        WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'blur(16px)',
+        transform: 'translateZ(0)', // Force hardware acceleration
+        willChange: 'background-color, backdrop-filter, border-color, box-shadow'
+      }}
+    >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -127,4 +141,9 @@ export function Navigation() {
       </div>
     </nav>
   );
+
+  // Render navigation as a portal to bypass any container constraints
+  return typeof document !== 'undefined' 
+    ? createPortal(navigationContent, document.body)
+    : navigationContent;
 }
