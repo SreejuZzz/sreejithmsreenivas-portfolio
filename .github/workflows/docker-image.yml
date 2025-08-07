@@ -1,0 +1,52 @@
+name: Build and Deploy to VPS
+
+on:
+  push:
+    branches: [ main ]
+
+env:
+  IMAGE_NAME: ghcr.io/${{ github.repository_owner }}/sreejithmsreenivas-portfolio:latest
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set lowercase IMAGE_NAME
+        run: echo "IMAGE_NAME=ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/sreejithmsreenivas-portfolio:latest" >> $GITHUB_ENV
+      - name: Show IMAGE_NAME
+        run: echo $IMAGE_NAME
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GHCR_PAT }}
+
+      - name: Build Docker image
+        run: docker build -t $IMAGE_NAME .
+
+      - name: Push Docker image to GHCR
+        run: docker push $IMAGE_NAME
+
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to EC2 via SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.VPS_IP }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.SSH_HSTNGR }}
+          script: |
+            IMAGE_NAME=ghcr.io/sreejuzzz/portfolio:latest
+            echo "${{ secrets.GHCR_PAT }}" | docker login ghcr.io -u sreejuzzz --password-stdin
+            docker pull $IMAGE_NAME
+            docker stop portfolio || true
+            docker rm portfolio || true
+            docker run -d --name portfolio -p 3333:8080 $IMAGE_NAME
