@@ -27,7 +27,7 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="py-20 relative bg-gradient-to-br from-background via-purple/5 to-orange/5 overflow-hidden">
+    <section id="about" className="py-20 relative bg-gradient-to-br from-background via-purple/5 to-orange/5 overflow-hidden scroll-mt-16">
       <div className="absolute inset-0 bg-gradient-to-r from-pink/10 via-primary/10 to-green/10 opacity-40"></div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">

@@ -4,7 +4,7 @@ const profilePhoto = "/lovable-uploads/22c7ffb5-a6c2-4d08-8b79-9db5af73351e.png"
 
 export function Hero() {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden transition-colors duration-500">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden transition-colors duration-500 pt-16">
       {/* Background with gradient overlay */}
       <div className="absolute inset-0 bg-gradient-hero transition-colors duration-500"></div>
       
@@ -21,6 +21,10 @@ export function Hero() {
                 src={profilePhoto}
                 alt="Sreejith M S"
                 className="w-full h-full object-cover rounded-full relative z-30"
+                loading="eager"
+                decoding="async"
+                width="192"
+                height="192"
               />
             </div>
             <div className="absolute -inset-2 sm:-inset-4 bg-gradient-primary rounded-full blur-md opacity-20 z-10"></div>
@@ -30,7 +34,7 @@ export function Hero() {
           <div className="space-y-6">
             <div className="space-y-2">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold relative z-20 drop-shadow-2xl">
-                <span className="bg-gradient-primary bg-clip-text text-transparent transition-buttery">
+                <span className="bg-gradient-primary bg-clip-text text-transparent">
                   Sreejith M S
                 </span>
               </h1>
@@ -42,7 +46,7 @@ export function Hero() {
               </div>
             </div>
 
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed relative z-20 drop-shadow-lg transition-buttery px-4 sm:px-0">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed relative z-20 drop-shadow-lg px-4 sm:px-0">
               Passionate DevOps Engineer with expertise in cloud architecture, automation, and mentoring. 
               Transforming ideas into scalable, reliable infrastructure solutions while empowering the next generation of tech professionals.
             </p>
