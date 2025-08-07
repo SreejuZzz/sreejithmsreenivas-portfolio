@@ -27,23 +27,22 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="py-20 relative bg-gradient-to-br from-background via-purple/5 to-orange/5 overflow-hidden scroll-mt-16">
-      <div className="absolute inset-0 bg-gradient-to-r from-pink/10 via-primary/10 to-green/10 opacity-40"></div>
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-          {/* Left Content */}
-          <div className="space-y-8 animate-slide-in-left">
-            <div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6 hover-bounce">
-                About Me
-              </h2>
-              <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-                A journey of continuous learning and technological evolution
-              </p>
-            </div>
-            
-            <div className="glass rounded-2xl p-4 sm:p-6 lg:p-8 neumorphism hover-elastic bg-gradient-to-br from-background/95 to-primary/10">
-              <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-3 sm:mb-4">My Journey</h3>
+    <section id="about" className="py-20 relative">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            About Me
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            A journey of continuous learning and technological evolution
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Story */}
+          <div className="space-y-6">
+            <div className="glass rounded-2xl p-8 neumorphism">
+              <h3 className="text-2xl font-semibold text-foreground mb-4">My Journey</h3>
               <div className="space-y-4 text-muted-foreground">
                 <p>
                   My journey in technology began in 2018 as a <strong className="text-primary">Network Administrator</strong>, 
@@ -66,28 +65,23 @@ export function About() {
             </div>
           </div>
 
-          {/* Right Content */}
-          <div className="relative animate-slide-in-right">
-            <div className="glass rounded-3xl p-4 sm:p-6 lg:p-8 hover-elastic bg-gradient-to-tl from-background/90 to-primary/5">
-              <div className="grid grid-cols-2 gap-3 sm:gap-6 text-center">
-                <div className="hover-bounce">
-                  <div className="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">7+</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground">Years Experience</div>
+          {/* Highlights Grid */}
+          <div className="grid sm:grid-cols-2 gap-6">
+            {highlights.map((item, index) => (
+              <Card
+                key={index}
+                className="glass p-6 hover:scale-105 transition-spring border-0 neumorphism"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="text-center space-y-4">
+                  <div className="mx-auto w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center">
+                    <item.icon className="h-8 w-8 text-white" />
+                  </div>
+                  <h4 className="text-lg font-semibold text-foreground">{item.title}</h4>
+                  <p className="text-sm text-muted-foreground">{item.description}</p>
                 </div>
-                <div className="hover-bounce">
-                  <div className="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">30+</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground">Projects Delivered</div>
-                </div>
-                <div className="hover-bounce">
-                  <div className="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">24/7</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground">Availability</div>
-                </div>
-                <div className="hover-bounce">
-                  <div className="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">99.999%</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground">Uptime</div>
-                </div>
-              </div>
-            </div>
+              </Card>
+            ))}
           </div>
         </div>
 

@@ -11,33 +11,29 @@ export function QuoteRotation() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentQuote((prev) => (prev + 1) % quotes.length);
-    }, 6000); // Increased interval for better UX
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="mt-16 text-center">
-      <div className="glass rounded-2xl p-8 max-w-4xl mx-auto neumorphism">
+      <div className="glass rounded-2xl p-8 max-w-4xl mx-auto neumorphism transition-buttery">
         <div className="relative overflow-hidden h-32 md:h-24">
           {quotes.map((quote, index) => (
             <blockquote
               key={index}
-              className={`absolute inset-0 flex items-center justify-center text-xl md:text-2xl font-medium text-foreground italic transition-opacity duration-500 ${
+              className={`absolute inset-0 flex items-center justify-center text-xl md:text-2xl font-medium text-foreground italic transition-all duration-1000 ${
                 index === currentQuote 
-                  ? 'opacity-100' 
-                  : 'opacity-0'
+                  ? 'opacity-100 transform translate-y-0' 
+                  : 'opacity-0 transform translate-y-full'
               }`}
-              style={{
-                transform: 'translateZ(0)', // GPU acceleration
-                willChange: index === currentQuote || index === (currentQuote - 1 + quotes.length) % quotes.length ? 'opacity' : 'auto'
-              }}
             >
               "{quote}"
             </blockquote>
           ))}
         </div>
-        <cite className="text-primary font-semibold mt-4 block">— Sreejith M S</cite>
+        <cite className="text-primary font-semibold mt-4 block transition-buttery">— Sreejith M S</cite>
       </div>
     </div>
   );
