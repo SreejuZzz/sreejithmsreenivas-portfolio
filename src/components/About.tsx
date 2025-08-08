@@ -60,8 +60,7 @@ export function About() {
                   I focus on streamlining development workflows and infrastructure automation.
                 </p>
                 <p>
-                  Beyond my professional role, I'm passionate about <strong className="text-primary">mentoring</strong> 
-                   students and working professionals, sharing knowledge in cloud technologies, DevOps practices, 
+                  Beyond my professional role, I'm passionate about <strong className="text-primary">mentoring</strong> students and working professionals, sharing knowledge in cloud technologies, DevOps practices, 
                   and infrastructure management.
                 </p>
               </div>
