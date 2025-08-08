@@ -61,7 +61,7 @@ export function About() {
                 </p>
                 <p>
                   Beyond my professional role, I'm passionate about <strong className="text-primary">mentoring</strong> 
-                  students and working professionals, sharing knowledge in cloud technologies, DevOps practices, 
+                   students and working professionals, sharing knowledge in cloud technologies, DevOps practices, 
                   and infrastructure management.
                 </p>
               </div>
