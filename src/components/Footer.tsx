@@ -125,7 +125,7 @@ export function Footer() {
             <span>© {currentYear} Sreejith M S. All rights reserved.</span>
             <span className="hidden sm:block">•</span>
             <div className="flex items-center gap-1">
-              <span>Built with</span>
+              <span>Built by Sreejith with</span>
               <Heart className="h-4 w-4 text-red-500 fill-current" />
               <span>and modern tech</span>
             </div>
