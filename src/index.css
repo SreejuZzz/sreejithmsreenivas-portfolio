@@ -60,6 +60,9 @@
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-spring: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     --transition-buttery: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    --transition-physics: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-bounce: all 0.7s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    --transition-elastic: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
 
@@ -204,6 +207,46 @@
 
   .transition-buttery {
     transition: var(--transition-buttery);
+  }
+
+  .transition-physics {
+    transition: var(--transition-physics);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  .transition-elastic {
+    transition: var(--transition-elastic);
+  }
+
+  /* Physics-based scroll effects */
+  @media (prefers-reduced-motion: no-preference) {
+    .scroll-smooth {
+      scroll-behavior: smooth;
+    }
+    
+    .parallax {
+      transform: translateZ(0);
+      will-change: transform;
+    }
+  }
+
+  /* Enhanced glass effects with physics */
+  .glass-physics {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px) saturate(1.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow-glass);
+    transform: translateZ(0);
+    will-change: transform, opacity;
+  }
+
+  .dark .glass-physics {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px) saturate(1.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   /* Enhanced mobile responsiveness */

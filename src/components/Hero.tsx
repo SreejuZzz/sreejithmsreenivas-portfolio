@@ -8,22 +8,24 @@ export function Hero() {
       {/* Background with gradient overlay */}
       <div className="absolute inset-0 bg-gradient-hero transition-colors duration-500"></div>
       
-      {/* Floating elements for visual interest */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-float"></div>
-      <div className="absolute bottom-20 right-10 w-32 h-32 bg-accent/10 rounded-full blur-xl animate-float" style={{ animationDelay: '1s' }}></div>
+      {/* Floating elements for visual interest with physics */}
+      <div className="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-float hover:scale-150 transition-physics"></div>
+      <div className="absolute bottom-20 right-10 w-32 h-32 bg-accent/10 rounded-full blur-xl animate-float hover:scale-150 transition-physics" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute top-1/2 right-20 w-16 h-16 bg-primary/5 rounded-full blur-lg animate-float hover:scale-125 transition-physics" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute bottom-1/3 left-20 w-24 h-24 bg-accent/5 rounded-full blur-lg animate-float hover:scale-125 transition-physics" style={{ animationDelay: '3s' }}></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center space-y-8 animate-fade-in">
           {/* Profile Photo */}
           <div className="relative mx-auto w-48 h-48 mb-8">
-            <div className="glass rounded-full p-2 neumorphism">
+            <div className="glass-physics rounded-full p-2 neumorphism hover:scale-110 hover:rotate-3 transition-physics cursor-pointer">
               <img
                 src={profilePhoto}
                 alt="Sreejith M S"
-                className="w-full h-full object-cover rounded-full"
+                className="w-full h-full object-cover rounded-full transition-physics"
               />
             </div>
-            <div className="absolute -inset-4 bg-gradient-primary rounded-full blur-md opacity-20"></div>
+            <div className="absolute -inset-4 bg-gradient-primary rounded-full blur-md opacity-20 hover:opacity-40 transition-physics"></div>
           </div>
 
           {/* Main Content */}
@@ -49,12 +51,12 @@ export function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
-              <Button size="lg" className="bg-gradient-primary text-white hover:scale-105 transition-spring px-8">
-                <Mail className="mr-2 h-5 w-5" />
+              <Button size="lg" className="bg-gradient-primary text-white hover:scale-110 hover:-translate-y-2 hover:rotate-1 transition-physics px-8">
+                <Mail className="mr-2 h-5 w-5 transition-physics" />
                 Get In Touch
               </Button>
-              <Button variant="outline" size="lg" className="glass hover:scale-105 transition-spring px-8">
-                <Download className="mr-2 h-5 w-5" />
+              <Button variant="outline" size="lg" className="glass-physics hover:scale-110 hover:-translate-y-2 hover:-rotate-1 transition-physics px-8">
+                <Download className="mr-2 h-5 w-5 transition-physics" />
                 Download CV
               </Button>
             </div>
@@ -65,69 +67,69 @@ export function Hero() {
                 href="https://www.linkedin.com/in/sreejith-sreenivas-110bb217a/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-primary hover:text-white group"
+                className="glass-physics p-3 rounded-full hover:scale-125 hover:-translate-y-2 hover:rotate-12 transition-physics hover:bg-gradient-primary hover:text-white group"
               >
-                <Linkedin className="h-6 w-6 transition-transform group-hover:rotate-12" />
+                <Linkedin className="h-6 w-6 transition-physics group-hover:rotate-12" />
               </a>
               <a
                 href="https://github.com/SreejuZzz"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-primary hover:text-white group"
+                className="glass-physics p-3 rounded-full hover:scale-125 hover:-translate-y-2 hover:rotate-12 transition-physics hover:bg-gradient-primary hover:text-white group"
               >
-                <Github className="h-6 w-6 transition-transform group-hover:rotate-12" />
+                <Github className="h-6 w-6 transition-physics group-hover:rotate-12" />
               </a>
               <a
                 href="https://www.instagram.com/matte_black003/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-instagram hover:text-white group"
+                className="glass-physics p-3 rounded-full hover:scale-125 hover:-translate-y-2 hover:rotate-12 transition-physics hover:bg-gradient-instagram hover:text-white group"
               >
-                <Instagram className="h-6 w-6 transition-transform group-hover:rotate-12" />
+                <Instagram className="h-6 w-6 transition-physics group-hover:rotate-12" />
               </a>
               <a
                 href="https://www.facebook.com/SreejithSreejuZzz"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-facebook hover:text-white group"
+                className="glass-physics p-3 rounded-full hover:scale-125 hover:-translate-y-2 hover:rotate-12 transition-physics hover:bg-gradient-facebook hover:text-white group"
               >
-                <Facebook className="h-6 w-6 transition-transform group-hover:rotate-12" />
+                <Facebook className="h-6 w-6 transition-physics group-hover:rotate-12" />
               </a>
               <a
                 href="https://t.me/Matte_Black"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-telegram hover:text-white group"
+                className="glass-physics p-3 rounded-full hover:scale-125 hover:-translate-y-2 hover:rotate-12 transition-physics hover:bg-gradient-telegram hover:text-white group"
               >
-                <Send className="h-6 w-6 transition-transform group-hover:rotate-12" />
+                <Send className="h-6 w-6 transition-physics group-hover:rotate-12" />
               </a>
               <a
                 href="https://x.com/Matte_Black003"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-twitter hover:text-white group"
+                className="glass-physics p-3 rounded-full hover:scale-125 hover:-translate-y-2 hover:rotate-12 transition-physics hover:bg-gradient-twitter hover:text-white group"
               >
-                <Twitter className="h-6 w-6 transition-transform group-hover:rotate-12" />
+                <Twitter className="h-6 w-6 transition-physics group-hover:rotate-12" />
               </a>
               <a
                 href="https://wa.me/+918848585640"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-whatsapp hover:text-white group"
+                className="glass-physics p-3 rounded-full hover:scale-125 hover:-translate-y-2 hover:rotate-12 transition-physics hover:bg-gradient-whatsapp hover:text-white group"
               >
-                <MessageCircle className="h-6 w-6 transition-transform group-hover:rotate-12" />
+                <MessageCircle className="h-6 w-6 transition-physics group-hover:rotate-12" />
               </a>
               <a
                 href="tel:+918848585640"
-                className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-call hover:text-white group"
+                className="glass-physics p-3 rounded-full hover:scale-125 hover:-translate-y-2 hover:rotate-12 transition-physics hover:bg-gradient-call hover:text-white group"
               >
-                <Phone className="h-6 w-6 transition-transform group-hover:rotate-12" />
+                <Phone className="h-6 w-6 transition-physics group-hover:rotate-12" />
               </a>
               <a
                 href="mailto:sreejithmsreenivas@gmail.com"
-                className="glass p-3 rounded-full hover:scale-110 transition-spring hover:bg-gradient-primary hover:text-white group"
+                className="glass-physics p-3 rounded-full hover:scale-125 hover:-translate-y-2 hover:rotate-12 transition-physics hover:bg-gradient-primary hover:text-white group"
               >
-                <Mail className="h-6 w-6 transition-transform group-hover:rotate-12" />
+                <Mail className="h-6 w-6 transition-physics group-hover:rotate-12" />
               </a>
             </div>
           </div>

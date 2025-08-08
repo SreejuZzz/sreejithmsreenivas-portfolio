@@ -103,12 +103,12 @@ export function Skills() {
           {skillCategories.map((category, index) => (
             <Card
               key={index}
-              className="glass border-0 neumorphism p-6 hover:scale-105 transition-spring"
+              className="glass-physics border-0 neumorphism p-6 hover:scale-105 hover:rotate-1 hover:-translate-y-2 transition-physics cursor-pointer"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center transform hover:rotate-12 hover:scale-110 transition-bounce">
                     <category.icon className="h-5 w-5 text-white" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground">{category.title}</h3>
@@ -133,35 +133,12 @@ export function Skills() {
           ))}
         </div>
 
-        {/* Additional Skills Grid */}
-        <div className="grid lg:grid-cols-2 gap-8">
-          {/* Certifications */}
-          <Card className="glass border-0 neumorphism p-6">
+        {/* Tools & Technologies */}
+        <div className="mb-12">
+          <Card className="glass-physics border-0 neumorphism p-6 hover:scale-[1.02] transition-physics">
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-                  <Shield className="h-5 w-5 text-white" />
-                </div>
-                <h3 className="text-lg font-semibold text-foreground">Certifications & Specializations</h3>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {certifications.map((cert, index) => (
-                  <div
-                    key={index}
-                    className="bg-muted/30 rounded-lg p-3 text-center text-sm font-medium text-foreground hover:bg-primary hover:text-white transition-smooth cursor-pointer"
-                  >
-                    {cert}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Card>
-
-          {/* Tools & Technologies */}
-          <Card className="glass border-0 neumorphism p-6">
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center transform hover:rotate-12 transition-physics">
                   <Zap className="h-5 w-5 text-white" />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground">Tools & Technologies</h3>
@@ -171,7 +148,8 @@ export function Skills() {
                   <Badge
                     key={index}
                     variant="secondary"
-                    className="bg-muted/50 text-foreground hover:bg-primary hover:text-white transition-smooth cursor-pointer"
+                    className="bg-muted/50 text-foreground hover:bg-primary hover:text-white hover:scale-110 hover:-translate-y-1 transition-bounce cursor-pointer"
+                    style={{ animationDelay: `${index * 0.05}s` }}
                   >
                     {tool}
                   </Badge>
@@ -183,10 +161,10 @@ export function Skills() {
 
         {/* Mentoring Skills */}
         <div className="mt-12">
-          <Card className="glass border-0 neumorphism p-8 text-center">
+          <Card className="glass-physics border-0 neumorphism p-8 text-center hover:scale-[1.02] transition-physics">
             <div className="space-y-4">
               <div className="flex items-center justify-center gap-3">
-                <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center transform hover:rotate-12 hover:scale-110 transition-bounce">
                   <Users className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground">Mentoring & Leadership</h3>
@@ -198,7 +176,7 @@ export function Skills() {
               </p>
               <div className="flex flex-wrap justify-center gap-2 pt-4">
                 {["Technical Mentoring", "Career Coaching", "Team Leadership", "Knowledge Transfer", "Training Delivery"].map((skill, index) => (
-                  <Badge key={index} className="bg-accent text-white border-0">
+                  <Badge key={index} className="bg-accent text-white border-0 hover:scale-110 hover:-translate-y-1 transition-bounce">
                     {skill}
                   </Badge>
                 ))}

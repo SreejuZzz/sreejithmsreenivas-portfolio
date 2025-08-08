@@ -89,7 +89,7 @@ export function Contact() {
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <Card className="glass border-0 neumorphism p-8">
+          <Card className="glass-physics border-0 neumorphism p-8 hover:scale-[1.02] transition-physics">
             <div className="space-y-6">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
@@ -157,7 +157,7 @@ export function Contact() {
                 <Button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full bg-gradient-primary text-white hover:scale-105 transition-spring"
+                  className="w-full bg-gradient-primary text-white hover:scale-110 hover:-translate-y-2 transition-physics"
                 >
                   {isLoading ? (
                     "Sending..."
@@ -175,7 +175,7 @@ export function Contact() {
           {/* Contact Information */}
           <div className="space-y-8">
             {/* Experience & Mentoring */}
-            <Card className="glass border-0 neumorphism p-6 transition-buttery">
+            <Card className="glass-physics border-0 neumorphism p-6 hover:scale-[1.02] transition-physics">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
@@ -202,7 +202,7 @@ export function Contact() {
                   ))}
                 </div>
 
-                <Button variant="outline" className="w-full glass hover:bg-primary hover:text-white transition-buttery">
+                <Button variant="outline" className="w-full glass-physics hover:bg-primary hover:text-white hover:scale-105 hover:-translate-y-1 transition-physics">
                   Schedule a Call
                 </Button>
               </div>

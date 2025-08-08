@@ -75,9 +75,9 @@ export function Experience() {
 
                 {/* Content card */}
                 <Card
-                  className={`glass border-0 neumorphism w-full md:w-5/12 ml-12 md:ml-0 ${
+                  className={`glass-physics border-0 neumorphism w-full md:w-5/12 ml-12 md:ml-0 ${
                     index % 2 === 0 ? 'md:mr-auto md:ml-0' : 'md:ml-auto md:mr-0'
-                  } hover:scale-105 transition-buttery`}
+                  } hover:scale-105 hover:rotate-1 hover:-translate-y-2 transition-physics cursor-pointer`}
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
                   <div className="p-6 space-y-4">
@@ -113,11 +113,11 @@ export function Experience() {
                     <div className="space-y-2">
                       <h4 className="text-sm font-medium text-foreground">Key Technologies:</h4>
                       <div className="flex flex-wrap gap-2">
-                        {exp.technologies.map((tech, techIndex) => (
+                         {exp.technologies.map((tech, techIndex) => (
                           <Badge
                             key={techIndex}
                             variant="secondary"
-                            className="bg-muted/50 text-foreground hover:bg-primary hover:text-white transition-smooth"
+                            className="bg-muted/50 text-foreground hover:bg-primary hover:text-white hover:scale-110 hover:-translate-y-1 transition-bounce"
                           >
                             {tech}
                           </Badge>
@@ -133,7 +133,7 @@ export function Experience() {
 
         {/* Mentoring section */}
         <div className="mt-20">
-          <Card className="glass border-0 neumorphism p-8 text-center">
+          <Card className="glass-physics border-0 neumorphism p-8 text-center hover:scale-[1.02] transition-physics">
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold text-foreground">Mentoring & Training</h3>
               <p className="text-muted-foreground max-w-3xl mx-auto">
@@ -143,7 +143,7 @@ export function Experience() {
               </p>
               <div className="flex flex-wrap justify-center gap-2 pt-4">
                 {["DevOps Mentoring", "Cloud Training", "Career Guidance", "Technical Workshops"].map((item, index) => (
-                  <Badge key={index} className="bg-gradient-primary text-white border-0">
+                  <Badge key={index} className="bg-gradient-primary text-white border-0 hover:scale-110 hover:-translate-y-1 transition-bounce">
                     {item}
                   </Badge>
                 ))}

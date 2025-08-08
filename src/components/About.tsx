@@ -41,7 +41,7 @@ export function About() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Story */}
           <div className="space-y-6">
-            <div className="glass rounded-2xl p-8 neumorphism">
+            <div className="glass-physics rounded-2xl p-8 neumorphism hover:scale-[1.02] transition-physics">
               <h3 className="text-2xl font-semibold text-foreground mb-4">My Journey</h3>
               <div className="space-y-4 text-muted-foreground">
                 <p>
@@ -70,11 +70,11 @@ export function About() {
             {highlights.map((item, index) => (
               <Card
                 key={index}
-                className="glass p-6 hover:scale-105 transition-spring border-0 neumorphism"
+                className="glass-physics p-6 hover:scale-105 hover:rotate-1 hover:-translate-y-2 transition-physics border-0 neumorphism cursor-pointer"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="text-center space-y-4">
-                  <div className="mx-auto w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center">
+                  <div className="mx-auto w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center transform hover:rotate-12 hover:scale-110 transition-bounce">
                     <item.icon className="h-8 w-8 text-white" />
                   </div>
                   <h4 className="text-lg font-semibold text-foreground">{item.title}</h4>
