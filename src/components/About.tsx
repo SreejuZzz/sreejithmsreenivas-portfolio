@@ -27,8 +27,11 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="py-20 relative">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-20 relative overflow-hidden">
+      {/* Enhanced gradient backgrounds */}
+      <div className="absolute inset-0 bg-gradient-secondary opacity-30 transition-colors duration-500"></div>
+      <div className="absolute inset-0 bg-gradient-mesh opacity-20 transition-colors duration-500"></div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             About Me
@@ -74,7 +77,7 @@ export function About() {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="text-center space-y-4">
-                  <div className="mx-auto w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center transform hover:rotate-12 hover:scale-110 transition-bounce">
+                  <div className={`mx-auto w-16 h-16 ${index === 0 ? 'bg-gradient-primary' : index === 1 ? 'bg-gradient-secondary' : index === 2 ? 'bg-gradient-tertiary' : 'bg-gradient-primary'} rounded-full flex items-center justify-center transform hover:rotate-12 hover:scale-110 transition-bounce`}>
                     <item.icon className="h-8 w-8 text-white" />
                   </div>
                   <h4 className="text-lg font-semibold text-foreground">{item.title}</h4>

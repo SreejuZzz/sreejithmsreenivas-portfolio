@@ -5,8 +5,9 @@ const profilePhoto = "/lovable-uploads/22c7ffb5-a6c2-4d08-8b79-9db5af73351e.png"
 export function Hero() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden transition-colors duration-500">
-      {/* Background with gradient overlay */}
+      {/* Background with enhanced gradient overlay */}
       <div className="absolute inset-0 bg-gradient-hero transition-colors duration-500"></div>
+      <div className="absolute inset-0 bg-gradient-mesh opacity-30 transition-colors duration-500"></div>
       
       {/* Floating elements for visual interest with physics */}
       <div className="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-float hover:scale-150 transition-physics"></div>
@@ -16,16 +17,28 @@ export function Hero() {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center space-y-8 animate-fade-in">
-          {/* Profile Photo */}
-          <div className="relative mx-auto w-48 h-48 mb-8">
-            <div className="glass-physics rounded-full p-2 neumorphism hover:scale-110 hover:rotate-3 transition-physics cursor-pointer">
+          {/* Profile Photo - Enhanced Foreground */}
+          <div className="relative mx-auto w-48 h-48 mb-8 z-50">
+            {/* Multiple gradient halos */}
+            <div className="absolute -inset-8 bg-gradient-primary rounded-full blur-xl opacity-30 hover:opacity-60 transition-physics animate-pulse"></div>
+            <div className="absolute -inset-6 bg-gradient-secondary rounded-full blur-lg opacity-25 hover:opacity-50 transition-physics animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+            <div className="absolute -inset-4 bg-gradient-tertiary rounded-full blur-md opacity-20 hover:opacity-40 transition-physics animate-pulse" style={{ animationDelay: '1s' }}></div>
+            
+            {/* Main photo container */}
+            <div className="relative glass-physics rounded-full p-3 neumorphism hover:scale-110 hover:rotate-3 transition-physics cursor-pointer border-2 border-primary/20 hover:border-primary/40">
               <img
                 src={profilePhoto}
                 alt="Sreejith M S"
-                className="w-full h-full object-cover rounded-full transition-physics"
+                className="w-full h-full object-cover rounded-full transition-physics relative z-10"
               />
+              {/* Inner glow */}
+              <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-10 hover:opacity-20 transition-physics"></div>
             </div>
-            <div className="absolute -inset-4 bg-gradient-primary rounded-full blur-md opacity-20 hover:opacity-40 transition-physics"></div>
+            
+            {/* Floating particles */}
+            <div className="absolute top-2 right-2 w-3 h-3 bg-primary rounded-full blur-sm opacity-60 animate-float"></div>
+            <div className="absolute bottom-4 left-4 w-2 h-2 bg-accent rounded-full blur-sm opacity-40 animate-float" style={{ animationDelay: '1.5s' }}></div>
+            <div className="absolute top-8 left-2 w-1.5 h-1.5 bg-tertiary rounded-full blur-sm opacity-50 animate-float" style={{ animationDelay: '2.5s' }}></div>
           </div>
 
           {/* Main Content */}

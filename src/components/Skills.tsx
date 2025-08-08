@@ -87,8 +87,11 @@ export function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-20 relative">
-      <div className="container mx-auto px-4">
+    <section id="skills" className="py-20 relative overflow-hidden">
+      {/* Multi-layered gradient backgrounds */}
+      <div className="absolute inset-0 bg-gradient-tertiary opacity-25 transition-colors duration-500"></div>
+      <div className="absolute inset-0 bg-gradient-mesh opacity-15 transition-colors duration-500"></div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Technical Expertise
@@ -108,7 +111,7 @@ export function Skills() {
             >
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center transform hover:rotate-12 hover:scale-110 transition-bounce">
+                  <div className={`w-10 h-10 ${index % 3 === 0 ? 'bg-gradient-primary' : index % 3 === 1 ? 'bg-gradient-secondary' : 'bg-gradient-tertiary'} rounded-lg flex items-center justify-center transform hover:rotate-12 hover:scale-110 transition-bounce`}>
                     <category.icon className="h-5 w-5 text-white" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground">{category.title}</h3>

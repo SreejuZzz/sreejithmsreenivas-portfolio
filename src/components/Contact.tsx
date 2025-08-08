@@ -76,8 +76,11 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-20 relative">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-20 relative overflow-hidden">
+      {/* Rich gradient backgrounds */}
+      <div className="absolute inset-0 bg-gradient-secondary opacity-35 transition-colors duration-500"></div>
+      <div className="absolute inset-0 bg-gradient-mesh opacity-30 transition-colors duration-500"></div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 transition-buttery">
             Get In Touch

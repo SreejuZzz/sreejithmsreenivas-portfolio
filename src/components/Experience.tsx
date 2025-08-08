@@ -43,8 +43,11 @@ export function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-20 relative">
-      <div className="container mx-auto px-4">
+    <section id="experience" className="py-20 relative overflow-hidden">
+      {/* Vibrant gradient overlays */}
+      <div className="absolute inset-0 bg-gradient-primary opacity-20 transition-colors duration-500"></div>
+      <div className="absolute inset-0 bg-gradient-mesh opacity-25 transition-colors duration-500"></div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Professional Journey
