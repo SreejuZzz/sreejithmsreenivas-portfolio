@@ -20,19 +20,19 @@ export function Hero() {
           {/* Profile Photo - Enhanced Foreground */}
           <div className="relative mx-auto w-48 h-48 mb-8 z-50">
             {/* Multiple gradient halos */}
-            <div className="absolute -inset-8 bg-gradient-primary rounded-full blur-xl opacity-30 hover:opacity-60 transition-physics animate-pulse"></div>
-            <div className="absolute -inset-6 bg-gradient-secondary rounded-full blur-lg opacity-25 hover:opacity-50 transition-physics animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-            <div className="absolute -inset-4 bg-gradient-tertiary rounded-full blur-md opacity-20 hover:opacity-40 transition-physics animate-pulse" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute -inset-4 bg-gradient-primary rounded-full blur-xl opacity-15 hover:opacity-30 transition-physics animate-glow"></div>
+            <div className="absolute -inset-3 bg-gradient-secondary rounded-full blur-lg opacity-12 hover:opacity-25 transition-physics animate-glow" style={{ animationDelay: '0.5s' }}></div>
+            <div className="absolute -inset-2 bg-gradient-tertiary rounded-full blur-md opacity-10 hover:opacity-20 transition-physics animate-glow" style={{ animationDelay: '1s' }}></div>
             
             {/* Main photo container */}
-            <div className="relative glass-physics rounded-full p-3 neumorphism hover:scale-110 hover:rotate-3 transition-physics cursor-pointer border-2 border-primary/20 hover:border-primary/40">
+            <div className="relative glass-physics rounded-full p-3 neumorphism hover:scale-110 hover:rotate-3 transition-physics cursor-pointer">
               <img
                 src={profilePhoto}
                 alt="Sreejith M S"
                 className="w-full h-full object-cover rounded-full transition-physics relative z-10"
               />
               {/* Inner glow */}
-              <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-10 hover:opacity-20 transition-physics"></div>
+              <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-5 hover:opacity-10 transition-physics"></div>
             </div>
             
             {/* Floating particles */}

@@ -58,8 +58,20 @@ export function Experience() {
         </div>
 
         <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-primary transform md:-translate-x-1/2"></div>
+          {/* Curved timeline paths */}
+          <div className="absolute inset-0 pointer-events-none">
+            <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="timelineGradient" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.5" />
+                  <stop offset="100%" stopColor="hsl(var(--primary-glow))" stopOpacity="0.5" />
+                </linearGradient>
+              </defs>
+              <path d="M 50 0 C 65 12, 35 24, 50 36 S 65 60, 50 72 S 35 84, 50 100" stroke="url(#timelineGradient)" strokeWidth="1.5" fill="none" />
+              <path d="M 46 0 C 61 14, 31 26, 46 38 S 61 62, 46 74 S 31 86, 46 100" stroke="url(#timelineGradient)" strokeWidth="0.8" opacity="0.35" fill="none" />
+              <path d="M 54 0 C 69 10, 39 22, 54 34 S 69 58, 54 70 S 39 82, 54 100" stroke="url(#timelineGradient)" strokeWidth="0.8" opacity="0.35" fill="none" />
+            </svg>
+          </div>
 
           <div className="space-y-12">
             {experiences.map((exp, index) => (

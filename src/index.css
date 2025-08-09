@@ -96,7 +96,7 @@
 
   .dark {
     /* Dark theme colors */
-    --background: 220 25% 8%;
+    --background: 220 20% 6%;
     --foreground: 220 15% 95%;
 
     --card: 220 20% 12%;
@@ -105,10 +105,10 @@
     --popover: 220 20% 12%;
     --popover-foreground: 220 15% 95%;
 
-    --primary: 210 90% 60%;
+    --primary: 225 80% 55%;
     --primary-foreground: 220 25% 8%;
-    --primary-glow: 210 100% 75%;
-    --primary-variant: 195 85% 65%;
+    --primary-glow: 220 90% 65%;
+    --primary-variant: 210 85% 60%;
 
     --secondary: 220 20% 15%;
     --secondary-foreground: 220 15% 85%;
@@ -168,13 +168,22 @@
 @layer base {
   * {
     @apply border-border;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 0.35s cubic-bezier(0.4,0,0.2,1),
+                color 0.35s cubic-bezier(0.4,0,0.2,1),
+                border-color 0.35s cubic-bezier(0.4,0,0.2,1),
+                fill 0.35s cubic-bezier(0.4,0,0.2,1),
+                stroke 0.35s cubic-bezier(0.4,0,0.2,1),
+                box-shadow 0.35s cubic-bezier(0.4,0,0.2,1),
+                opacity 0.35s cubic-bezier(0.4,0,0.2,1),
+                transform 0.35s cubic-bezier(0.4,0,0.2,1);
   }
 
   body {
     @apply bg-background text-foreground font-sans;
     font-family: 'Inter', sans-serif;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 0.35s cubic-bezier(0.4,0,0.2,1),
+                color 0.35s cubic-bezier(0.4,0,0.2,1),
+                border-color 0.35s cubic-bezier(0.4,0,0.2,1);
   }
 
   html {
