@@ -4,7 +4,7 @@ const profilePhoto = "/lovable-uploads/22c7ffb5-a6c2-4d08-8b79-9db5af73351e.png"
 
 export function Hero() {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden transition-colors duration-500">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden transition-colors duration-500 pt-16">
       {/* Background with enhanced gradient overlay */}
       <div className="absolute inset-0 bg-gradient-hero transition-colors duration-500"></div>
       <div className="absolute inset-0 bg-gradient-mesh opacity-30 transition-colors duration-500"></div>
