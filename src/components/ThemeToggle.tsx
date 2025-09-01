@@ -13,7 +13,7 @@ export function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <Button variant="ghost" size="icon" className="glass">
+      <Button variant="ghost" size="icon" className="glass-sm">
         <Sun className="h-[1.2rem] w-[1.2rem]" />
       </Button>
     );
@@ -24,7 +24,7 @@ export function ThemeToggle() {
       variant="ghost"
       size="icon"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="glass transition-buttery hover:scale-110 dark-mode-transition"
+      className="glass-md transition-buttery hover:scale-105 dark-mode-transition"
     >
       <div className="relative w-[1.2rem] h-[1.2rem] transition-buttery">
         <Sun className={`absolute inset-0 h-[1.2rem] w-[1.2rem] text-primary transition-all duration-500 ${

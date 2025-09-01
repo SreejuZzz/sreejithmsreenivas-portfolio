@@ -17,28 +17,26 @@ export function Hero() {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center space-y-8 animate-fade-in">
-          {/* Profile Photo - Enhanced Foreground */}
+          {/* Profile Photo - Reduced halo and no border */}
           <div className="relative mx-auto w-48 h-48 mb-8 z-50">
-            {/* Multiple gradient halos */}
-            <div className="absolute -inset-4 bg-gradient-primary rounded-full blur-xl opacity-15 hover:opacity-30 transition-physics animate-glow"></div>
-            <div className="absolute -inset-3 bg-gradient-secondary rounded-full blur-lg opacity-12 hover:opacity-25 transition-physics animate-glow" style={{ animationDelay: '0.5s' }}></div>
-            <div className="absolute -inset-2 bg-gradient-tertiary rounded-full blur-md opacity-10 hover:opacity-20 transition-physics animate-glow" style={{ animationDelay: '1s' }}></div>
+            {/* Reduced gradient halos (50% less) */}
+            <div className="absolute -inset-2 bg-gradient-primary rounded-full blur-lg opacity-8 hover:opacity-15 transition-buttery animate-pulse-glow"></div>
+            <div className="absolute -inset-1.5 bg-gradient-secondary rounded-full blur-md opacity-6 hover:opacity-12 transition-buttery animate-pulse-glow" style={{ animationDelay: '0.5s' }}></div>
             
-            {/* Main photo container */}
-            <div className="relative glass-physics rounded-full p-3 neumorphism hover:scale-110 hover:rotate-3 transition-physics cursor-pointer">
+            {/* Main photo container - no border */}
+            <div className="relative glass-lg rounded-full p-1 hover:scale-105 hover:rotate-1 transition-buttery cursor-pointer">
               <img
                 src={profilePhoto}
                 alt="Sreejith M S"
-                className="w-full h-full object-cover rounded-full transition-physics relative z-10"
+                className="w-full h-full object-cover rounded-full transition-buttery relative z-10"
               />
-              {/* Inner glow */}
-              <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-5 hover:opacity-10 transition-physics"></div>
+              {/* Subtle inner glow */}
+              <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-3 hover:opacity-6 transition-buttery"></div>
             </div>
             
             {/* Floating particles */}
-            <div className="absolute top-2 right-2 w-3 h-3 bg-primary rounded-full blur-sm opacity-60 animate-float"></div>
-            <div className="absolute bottom-4 left-4 w-2 h-2 bg-accent rounded-full blur-sm opacity-40 animate-float" style={{ animationDelay: '1.5s' }}></div>
-            <div className="absolute top-8 left-2 w-1.5 h-1.5 bg-tertiary rounded-full blur-sm opacity-50 animate-float" style={{ animationDelay: '2.5s' }}></div>
+            <div className="absolute top-4 right-4 w-2 h-2 bg-primary/60 rounded-full blur-sm animate-float"></div>
+            <div className="absolute bottom-6 left-6 w-1.5 h-1.5 bg-accent/40 rounded-full blur-sm animate-float" style={{ animationDelay: '1.5s' }}></div>
           </div>
 
           {/* Main Content */}
@@ -64,12 +62,12 @@ export function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
-              <Button size="lg" className="bg-gradient-primary text-white hover:scale-110 hover:-translate-y-2 hover:rotate-1 transition-physics px-8">
-                <Mail className="mr-2 h-5 w-5 transition-physics" />
+              <Button size="lg" className="bg-gradient-primary text-white hover:scale-105 hover:-translate-y-1 hover:rotate-1 transition-buttery px-8 glass-hover">
+                <Mail className="mr-2 h-5 w-5 transition-buttery" />
                 Get In Touch
               </Button>
-              <Button variant="outline" size="lg" className="glass-physics hover:scale-110 hover:-translate-y-2 hover:-rotate-1 transition-physics px-8">
-                <Download className="mr-2 h-5 w-5 transition-physics" />
+              <Button variant="outline" size="lg" className="glass-md hover:scale-105 hover:-translate-y-1 hover:-rotate-1 transition-buttery px-8 glass-hover">
+                <Download className="mr-2 h-5 w-5 transition-buttery" />
                 Download CV
               </Button>
             </div>
@@ -80,69 +78,69 @@ export function Hero() {
                 href="https://www.linkedin.com/in/sreejith-sreenivas-110bb217a/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-physics p-3 rounded-full hover:scale-125 hover:-translate-y-2 hover:rotate-12 transition-physics hover:bg-gradient-primary hover:text-white group"
+                className="glass-md p-3 rounded-full hover:scale-110 hover:-translate-y-1 hover:rotate-6 transition-buttery hover:bg-gradient-primary hover:text-white group glass-hover"
               >
-                <Linkedin className="h-6 w-6 transition-physics group-hover:rotate-12" />
+                <Linkedin className="h-6 w-6 transition-buttery group-hover:rotate-6" />
               </a>
               <a
                 href="https://github.com/SreejuZzz"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-physics p-3 rounded-full hover:scale-125 hover:-translate-y-2 hover:rotate-12 transition-physics hover:bg-gradient-primary hover:text-white group"
+                className="glass-md p-3 rounded-full hover:scale-110 hover:-translate-y-1 hover:rotate-6 transition-buttery hover:bg-gradient-primary hover:text-white group glass-hover"
               >
-                <Github className="h-6 w-6 transition-physics group-hover:rotate-12" />
+                <Github className="h-6 w-6 transition-buttery group-hover:rotate-6" />
               </a>
               <a
                 href="https://www.instagram.com/matte_black003/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-physics p-3 rounded-full hover:scale-125 hover:-translate-y-2 hover:rotate-12 transition-physics hover:bg-gradient-instagram hover:text-white group"
+                className="glass-md p-3 rounded-full hover:scale-110 hover:-translate-y-1 hover:rotate-6 transition-buttery hover:bg-gradient-instagram hover:text-white group glass-hover"
               >
-                <Instagram className="h-6 w-6 transition-physics group-hover:rotate-12" />
+                <Instagram className="h-6 w-6 transition-buttery group-hover:rotate-6" />
               </a>
               <a
                 href="https://www.facebook.com/SreejithSreejuZzz"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-physics p-3 rounded-full hover:scale-125 hover:-translate-y-2 hover:rotate-12 transition-physics hover:bg-gradient-facebook hover:text-white group"
+                className="glass-md p-3 rounded-full hover:scale-110 hover:-translate-y-1 hover:rotate-6 transition-buttery hover:bg-gradient-facebook hover:text-white group glass-hover"
               >
-                <Facebook className="h-6 w-6 transition-physics group-hover:rotate-12" />
+                <Facebook className="h-6 w-6 transition-buttery group-hover:rotate-6" />
               </a>
               <a
                 href="https://t.me/Matte_Black"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-physics p-3 rounded-full hover:scale-125 hover:-translate-y-2 hover:rotate-12 transition-physics hover:bg-gradient-telegram hover:text-white group"
+                className="glass-md p-3 rounded-full hover:scale-110 hover:-translate-y-1 hover:rotate-6 transition-buttery hover:bg-gradient-telegram hover:text-white group glass-hover"
               >
-                <Send className="h-6 w-6 transition-physics group-hover:rotate-12" />
+                <Send className="h-6 w-6 transition-buttery group-hover:rotate-6" />
               </a>
               <a
                 href="https://x.com/Matte_Black003"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-physics p-3 rounded-full hover:scale-125 hover:-translate-y-2 hover:rotate-12 transition-physics hover:bg-gradient-twitter hover:text-white group"
+                className="glass-md p-3 rounded-full hover:scale-110 hover:-translate-y-1 hover:rotate-6 transition-buttery hover:bg-gradient-twitter hover:text-white group glass-hover"
               >
-                <Twitter className="h-6 w-6 transition-physics group-hover:rotate-12" />
+                <Twitter className="h-6 w-6 transition-buttery group-hover:rotate-6" />
               </a>
               <a
                 href="https://wa.me/+918848585640"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-physics p-3 rounded-full hover:scale-125 hover:-translate-y-2 hover:rotate-12 transition-physics hover:bg-gradient-whatsapp hover:text-white group"
+                className="glass-md p-3 rounded-full hover:scale-110 hover:-translate-y-1 hover:rotate-6 transition-buttery hover:bg-gradient-whatsapp hover:text-white group glass-hover"
               >
-                <MessageCircle className="h-6 w-6 transition-physics group-hover:rotate-12" />
+                <MessageCircle className="h-6 w-6 transition-buttery group-hover:rotate-6" />
               </a>
               <a
                 href="tel:+918848585640"
-                className="glass-physics p-3 rounded-full hover:scale-125 hover:-translate-y-2 hover:rotate-12 transition-physics hover:bg-gradient-call hover:text-white group"
+                className="glass-md p-3 rounded-full hover:scale-110 hover:-translate-y-1 hover:rotate-6 transition-buttery hover:bg-gradient-call hover:text-white group glass-hover"
               >
-                <Phone className="h-6 w-6 transition-physics group-hover:rotate-12" />
+                <Phone className="h-6 w-6 transition-buttery group-hover:rotate-6" />
               </a>
               <a
                 href="mailto:sreejithmsreenivas@gmail.com"
-                className="glass-physics p-3 rounded-full hover:scale-125 hover:-translate-y-2 hover:rotate-12 transition-physics hover:bg-gradient-primary hover:text-white group"
+                className="glass-md p-3 rounded-full hover:scale-110 hover:-translate-y-1 hover:rotate-6 transition-buttery hover:bg-gradient-primary hover:text-white group glass-hover"
               >
-                <Mail className="h-6 w-6 transition-physics group-hover:rotate-12" />
+                <Mail className="h-6 w-6 transition-buttery group-hover:rotate-6" />
               </a>
             </div>
           </div>
