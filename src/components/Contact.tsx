@@ -1,16 +1,20 @@
 import { useState } from "react";
-import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
+import { useInView } from "@/hooks/useInView";
 import { 
   Mail, 
   Phone, 
   MapPin, 
   Linkedin, 
   Github, 
+  Clock,
+  CheckCircle,
   Send,
   MessageCircle,
   Calendar
@@ -18,13 +22,15 @@ import {
 
 export function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
+  const { ref: titleRef, isInView: titleInView } = useInView({ threshold: 0.3 });
+  const { ref: contentRef, isInView: contentInView } = useInView({ threshold: 0.1 });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -77,23 +83,35 @@ export function Contact() {
 
   return (
     <section id="contact" className="py-20 relative overflow-hidden">
-      {/* Rich gradient backgrounds */}
-      <div className="absolute inset-0 bg-gradient-secondary opacity-35 transition-colors duration-500"></div>
-      <div className="absolute inset-0 bg-gradient-mesh opacity-30 transition-colors duration-500"></div>
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 transition-buttery">
-            Get In Touch
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 via-transparent to-primary/5"></div>
+      <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }}></div>
+      <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "5s" }}></div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative z-10">
+        <div 
+          ref={titleRef}
+          className={`text-center mb-16 transition-all duration-700 ${
+            titleInView ? 'animate-reveal-up' : 'opacity-0'
+          }`}
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            Let's Connect
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto transition-buttery">
-            Ready to discuss your next project or explore mentoring opportunities? I'd love to hear from you.
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Ready to discuss your next project or explore collaboration opportunities?
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div 
+          ref={contentRef}
+          className={`grid lg:grid-cols-2 gap-12 transition-all duration-700 ${
+            contentInView ? 'animate-reveal-up' : 'opacity-0'
+          }`}
+        >
           {/* Contact Form */}
-          <Card className="glass-physics border-0 neumorphism p-8 hover:scale-[1.02] transition-physics">
-            <div className="space-y-6">
+          <Card className="glass-md glass-hover border-primary/20 hover:border-primary/30 transition-all duration-300">
+            <CardContent className="p-8">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
                   <MessageCircle className="h-5 w-5 text-white" />
@@ -172,7 +190,7 @@ export function Contact() {
                   )}
                 </Button>
               </form>
-            </div>
+            </CardContent>
           </Card>
 
           {/* Contact Information */}

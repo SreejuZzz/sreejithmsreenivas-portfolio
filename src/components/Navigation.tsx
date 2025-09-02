@@ -24,8 +24,12 @@ export function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-physics transition-physics backdrop-blur-md border-b border-white/10">
-      <div className="max-w-4xl mx-auto px-4">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      scrolled 
+        ? 'glass-xl shadow-lg shadow-primary/10' 
+        : 'glass-physics'
+    }`}>
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="text-xl font-bold text-primary">
@@ -62,7 +66,7 @@ export function Navigation() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden glass rounded-lg mt-2 p-4 animate-slide-up">
+          <div className="md:hidden glass-md rounded-lg mt-2 p-4 animate-glass-pop">
             {navItems.map((item) => (
               <a
                 key={item.href}

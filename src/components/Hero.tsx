@@ -17,26 +17,21 @@ export function Hero() {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center space-y-8 animate-fade-in">
-          {/* Profile Photo - Reduced halo and no border */}
-          <div className="relative mx-auto w-48 h-48 mb-8 z-50">
-            {/* Reduced gradient halos (50% less) */}
-            <div className="absolute -inset-2 bg-gradient-primary rounded-full blur-lg opacity-8 hover:opacity-15 transition-buttery animate-pulse-glow"></div>
-            <div className="absolute -inset-1.5 bg-gradient-secondary rounded-full blur-md opacity-6 hover:opacity-12 transition-buttery animate-pulse-glow" style={{ animationDelay: '0.5s' }}></div>
-            
-            {/* Main photo container - no border */}
-            <div className="relative glass-lg rounded-full p-1 hover:scale-105 hover:rotate-1 transition-buttery cursor-pointer">
-              <img
-                src={profilePhoto}
-                alt="Sreejith M S"
-                className="w-full h-full object-cover rounded-full transition-buttery relative z-10"
-              />
-              {/* Subtle inner glow */}
-              <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-3 hover:opacity-6 transition-buttery"></div>
+          {/* Profile Photo with reduced halo */}
+          <div className="relative mb-8 animate-glass-pop">
+            <div className="relative w-40 h-40 mx-auto">
+              {/* Reduced halo effect - 50% less intense */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/15 via-primary/10 to-transparent blur-lg animate-glow opacity-60"></div>
+              
+              {/* Photo container with borderless glass */}
+              <div className="relative w-full h-full rounded-full overflow-hidden glass-borderless shadow-xl shadow-primary/20">
+                <img
+                  src={profilePhoto}
+                  alt="Sreejith M S - DevOps Engineer"
+                  className="w-full h-full object-cover transition-transform duration-700 motion-safe:hover:scale-105"
+                />
+              </div>
             </div>
-            
-            {/* Floating particles */}
-            <div className="absolute top-4 right-4 w-2 h-2 bg-primary/60 rounded-full blur-sm animate-float"></div>
-            <div className="absolute bottom-6 left-6 w-1.5 h-1.5 bg-accent/40 rounded-full blur-sm animate-float" style={{ animationDelay: '1.5s' }}></div>
           </div>
 
           {/* Main Content */}
@@ -60,89 +55,36 @@ export function Hero() {
               Transforming ideas into scalable, reliable infrastructure solutions while empowering the next generation of tech professionals.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
-              <Button size="lg" className="bg-gradient-primary text-white hover:scale-105 hover:-translate-y-1 hover:rotate-1 transition-buttery px-8 glass-hover">
-                <Mail className="mr-2 h-5 w-5 transition-buttery" />
-                Get In Touch
-              </Button>
-              <Button variant="outline" size="lg" className="glass-md hover:scale-105 hover:-translate-y-1 hover:-rotate-1 transition-buttery px-8 glass-hover">
-                <Download className="mr-2 h-5 w-5 transition-buttery" />
-                Download CV
-              </Button>
-            </div>
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-reveal-up" style={{ animationDelay: "0.6s" }}>
+            <Button 
+              size="lg" 
+              className="glass-md glass-hover bg-primary/90 hover:bg-primary text-primary-foreground border-primary/30 shadow-lg transition-all duration-300 hover:shadow-primary/30"
+            >
+              Get In Touch
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="glass-md glass-hover border-primary/30 text-primary hover:bg-primary/20 shadow-lg transition-all duration-300 hover:shadow-primary/20"
+            >
+              Download CV
+            </Button>
+          </div>
 
-            {/* Social Links */}
-            <div className="flex justify-center flex-wrap gap-4 pt-8">
+          {/* Social Links */}
+          <div className="flex flex-wrap justify-center gap-3 mb-16 animate-reveal-up" style={{ animationDelay: "0.8s" }}>
+            {socialLinks.map((link, index) => (
               <a
-                href="https://www.linkedin.com/in/sreejith-sreenivas-110bb217a/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass-md p-3 rounded-full hover:scale-110 hover:-translate-y-1 hover:rotate-6 transition-buttery hover:bg-gradient-primary hover:text-white group glass-hover"
+                key={index}
+                href={link.href}
+                className="glass-sm glass-hover p-3 rounded-full transition-all duration-300 md:hover:scale-110 hover:shadow-lg hover:shadow-primary/30 group will-change-transform"
+                aria-label={link.label}
               >
-                <Linkedin className="h-6 w-6 transition-buttery group-hover:rotate-6" />
+                <link.icon className="w-5 h-5 text-foreground group-hover:text-primary transition-colors duration-300" />
               </a>
-              <a
-                href="https://github.com/SreejuZzz"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass-md p-3 rounded-full hover:scale-110 hover:-translate-y-1 hover:rotate-6 transition-buttery hover:bg-gradient-primary hover:text-white group glass-hover"
-              >
-                <Github className="h-6 w-6 transition-buttery group-hover:rotate-6" />
-              </a>
-              <a
-                href="https://www.instagram.com/matte_black003/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass-md p-3 rounded-full hover:scale-110 hover:-translate-y-1 hover:rotate-6 transition-buttery hover:bg-gradient-instagram hover:text-white group glass-hover"
-              >
-                <Instagram className="h-6 w-6 transition-buttery group-hover:rotate-6" />
-              </a>
-              <a
-                href="https://www.facebook.com/SreejithSreejuZzz"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass-md p-3 rounded-full hover:scale-110 hover:-translate-y-1 hover:rotate-6 transition-buttery hover:bg-gradient-facebook hover:text-white group glass-hover"
-              >
-                <Facebook className="h-6 w-6 transition-buttery group-hover:rotate-6" />
-              </a>
-              <a
-                href="https://t.me/Matte_Black"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass-md p-3 rounded-full hover:scale-110 hover:-translate-y-1 hover:rotate-6 transition-buttery hover:bg-gradient-telegram hover:text-white group glass-hover"
-              >
-                <Send className="h-6 w-6 transition-buttery group-hover:rotate-6" />
-              </a>
-              <a
-                href="https://x.com/Matte_Black003"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass-md p-3 rounded-full hover:scale-110 hover:-translate-y-1 hover:rotate-6 transition-buttery hover:bg-gradient-twitter hover:text-white group glass-hover"
-              >
-                <Twitter className="h-6 w-6 transition-buttery group-hover:rotate-6" />
-              </a>
-              <a
-                href="https://wa.me/+918848585640"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass-md p-3 rounded-full hover:scale-110 hover:-translate-y-1 hover:rotate-6 transition-buttery hover:bg-gradient-whatsapp hover:text-white group glass-hover"
-              >
-                <MessageCircle className="h-6 w-6 transition-buttery group-hover:rotate-6" />
-              </a>
-              <a
-                href="tel:+918848585640"
-                className="glass-md p-3 rounded-full hover:scale-110 hover:-translate-y-1 hover:rotate-6 transition-buttery hover:bg-gradient-call hover:text-white group glass-hover"
-              >
-                <Phone className="h-6 w-6 transition-buttery group-hover:rotate-6" />
-              </a>
-              <a
-                href="mailto:sreejithmsreenivas@gmail.com"
-                className="glass-md p-3 rounded-full hover:scale-110 hover:-translate-y-1 hover:rotate-6 transition-buttery hover:bg-gradient-primary hover:text-white group glass-hover"
-              >
-                <Mail className="h-6 w-6 transition-buttery group-hover:rotate-6" />
-              </a>
-            </div>
+            ))}
+          </div>
           </div>
         </div>
       </div>

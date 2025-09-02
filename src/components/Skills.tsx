@@ -1,14 +1,20 @@
 import { Badge } from "@/components/ui/badge";
-import {
-  Cloud,
-  Container,
-  GitBranch,
-  Monitor,
-  Code,
-  Server,
+import { useInView } from "@/hooks/useInView";
+import { 
+  Cloud, 
+  Container, 
+  GitBranch, 
+  Shield, 
+  Monitor, 
+  Code2, 
+  Database, 
+  Wrench 
 } from "lucide-react";
 
 export function Skills() {
+  const { ref: titleRef, isInView: titleInView } = useInView({ threshold: 0.3 });
+  const { ref: skillsRef, isInView: skillsInView } = useInView({ threshold: 0.1 });
+
   const skillCategories = [
     {
       title: "Cloud Platforms",
@@ -30,7 +36,7 @@ export function Skills() {
     },
     {
       title: "Infrastructure as Code",
-      icon: Code,
+      icon: Code2,
       gradient: "bg-gradient-primary",
       skills: ["Terraform", "Ansible", "CloudFormation"],
     },
@@ -42,7 +48,7 @@ export function Skills() {
     },
     {
       title: "Systems",
-      icon: Server,
+      icon: Database,
       gradient: "bg-gradient-tertiary",
       skills: ["Linux", "Windows Server", "Unix"],
     },
@@ -50,53 +56,58 @@ export function Skills() {
 
   return (
     <section id="skills" className="py-20 relative overflow-hidden">
-      {/* Background accents */}
-      <div className="absolute inset-0 bg-gradient-tertiary opacity-10 transition-colors duration-500"></div>
-      <div className="absolute inset-0 bg-gradient-mesh opacity-8 transition-colors duration-500"></div>
-
-      <div className="container mx-auto px-4 relative z-10">
-        <header className="text-center mb-12 md:mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-3 animate-reveal-up">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-primary/5"></div>
+      <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-float"></div>
+      <div className="absolute bottom-1/3 left-1/3 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float" style={{ animationDelay: "3s" }}></div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative z-10">
+        <div 
+          ref={titleRef}
+          className={`text-center mb-16 transition-all duration-700 ${
+            titleInView ? 'animate-reveal-up' : 'opacity-0'
+          }`}
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Technical Expertise
           </h2>
-          <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto animate-reveal-up" style={{ animationDelay: '0.1s' }}>
-            Compact, high-signal overview of core capabilities
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            A comprehensive toolkit for modern DevOps and cloud infrastructure
           </p>
-        </header>
+        </div>
 
-        {/* Compact gradient tiles */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        {/* Skills Grid - Compact tiles */}
+        <div 
+          ref={skillsRef}
+          className={`grid sm:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-700 ${
+            skillsInView ? 'animate-reveal-up' : 'opacity-0'
+          }`}
+        >
           {skillCategories.map((category, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-xl shadow-sm transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-md animate-glass-pop"
+              className="glass-sm glass-hover rounded-xl p-6 group will-change-transform transition-all duration-300"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Gradient background */}
-              <div className={`absolute inset-0 ${category.gradient} opacity-90`}></div>
-              {/* Glass overlay for readability */}
-              <div className="absolute inset-0 glass-borderless"></div>
-
-              <div className="relative z-10 flex items-start gap-3 p-4 md:p-5">
-                <div className="shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-lg glass-sm flex items-center justify-center shadow-sm transition-transform duration-300 group-hover:scale-105">
-                  <category.icon className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors duration-300">
+                  <category.icon className="w-5 h-5 text-primary" />
                 </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-base md:text-lg font-semibold text-foreground mb-2 leading-tight">
-                    {category.title}
-                  </h3>
-                  <div className="flex flex-wrap gap-1.5 md:gap-2">
-                    {category.skills.map((name, i) => (
-                      <Badge
-                        key={i}
-                        variant="secondary"
-                        className="glass-sm text-xs bg-background/30 text-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105"
-                      >
-                        {name}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
+                <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+                  {category.title}
+                </h3>
+              </div>
+              
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((skill, skillIndex) => (
+                  <Badge
+                    key={skillIndex}
+                    variant="secondary"
+                    className="bg-background/50 text-foreground border-primary/20 hover:border-primary/40 transition-colors duration-300 text-xs"
+                  >
+                    {skill}
+                  </Badge>
+                ))}
               </div>
             </div>
           ))}
