@@ -64,62 +64,26 @@ export function Hero() {
           <div className="space-y-6">
             <div className="space-y-2 relative">
               {/* Orbital Profile Photo - positioned to overlap name */}
-                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 z-10">
-  <div className="relative w-48 h-48">
-    {/* Sun (your profile photo) */}
-    <div className="absolute inset-16 rounded-full overflow-hidden glass-borderless shadow-xl shadow-primary/30">
-      <img
-        src={profilePhoto}
-        alt="Sreejith M S - DevOps Engineer"
-        className="w-full h-full object-cover rounded-full"
-      />
-    </div>
-
-    {/* Mercury */}
-    <div className="absolute inset-0 flex items-center justify-center animate-[spin_3s_linear_infinite]">
-      <div className="w-1.5 h-1.5 bg-gray-400 rounded-full translate-x-[28px]"></div>
-    </div>
-
-    {/* Venus */}
-    <div className="absolute inset-0 flex items-center justify-center animate-[spin_6s_linear_infinite]">
-      <div className="w-2 h-2 bg-yellow-400 rounded-full translate-x-[40px]"></div>
-    </div>
-
-    {/* Earth */}
-    <div className="absolute inset-0 flex items-center justify-center animate-[spin_10s_linear_infinite]">
-      <div className="w-2.5 h-2.5 bg-blue-500 rounded-full translate-x-[55px]"></div>
-    </div>
-
-    {/* Mars */}
-    <div className="absolute inset-0 flex items-center justify-center animate-[spin_15s_linear_infinite]">
-      <div className="w-2 h-2 bg-red-500 rounded-full translate-x-[70px]"></div>
-    </div>
-
-    {/* Jupiter */}
-    <div className="absolute inset-0 flex items-center justify-center animate-[spin_30s_linear_infinite]">
-      <div className="w-4 h-4 bg-orange-400 rounded-full translate-x-[95px]"></div>
-    </div>
-
-    {/* Saturn */}
-    <div className="absolute inset-0 flex items-center justify-center animate-[spin_40s_linear_infinite]">
-      <div className="w-3.5 h-3.5 bg-yellow-300 rounded-full translate-x-[115px] relative">
-        {/* Saturn ring */}
-        <div className="absolute inset-[-2px] border border-yellow-200 rounded-full"></div>
-      </div>
-    </div>
-
-    {/* Uranus */}
-    <div className="absolute inset-0 flex items-center justify-center animate-[spin_60s_linear_infinite]">
-      <div className="w-3 h-3 bg-cyan-400 rounded-full translate-x-[135px]"></div>
-    </div>
-
-    {/* Neptune */}
-    <div className="absolute inset-0 flex items-center justify-center animate-[spin_80s_linear_infinite]">
-      <div className="w-3 h-3 bg-blue-300 rounded-full translate-x-[155px]"></div>
-    </div>
-  </div>
-</div>
-</div>
+              <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 z-10">
+                <div className="relative w-24 h-24">
+                  {/* Orbital ring */}
+                  <div className="absolute inset-0 rounded-full border-2 border-primary/30 animate-[spin_20s_linear_infinite]"></div>
+                  <div className="absolute inset-2 rounded-full border border-primary/20 animate-[spin_15s_linear_infinite_reverse]"></div>
+                  
+                  {/* Photo container */}
+                  <div className="absolute inset-3 rounded-full overflow-hidden glass-borderless shadow-xl shadow-primary/20">
+                    <img
+                      src={profilePhoto}
+                      alt="Sreejith M S - DevOps Engineer"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  
+                  {/* Orbital dots */}
+                  <div className="absolute top-0 left-1/2 w-2 h-2 bg-primary rounded-full animate-[spin_20s_linear_infinite] origin-[50%_48px]"></div>
+                  <div className="absolute bottom-0 right-1/2 w-1.5 h-1.5 bg-accent rounded-full animate-[spin_15s_linear_infinite_reverse] origin-[50%_-36px]"></div>
+                </div>
+              </div>
 
               <h1 className="text-5xl md:text-7xl font-bold relative z-20 drop-shadow-2xl pt-16">
                 <span className="bg-gradient-primary bg-clip-text text-transparent transition-buttery">
