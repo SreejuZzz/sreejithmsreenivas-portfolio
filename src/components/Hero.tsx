@@ -2,6 +2,49 @@ import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Download, Instagram, Facebook, Send, Twitter, Phone, MessageCircle } from "lucide-react";
 const profilePhoto = "/lovable-uploads/22c7ffb5-a6c2-4d08-8b79-9db5af73351e.png";
 
+const socialLinks = [
+  {
+    href: "https://github.com/sreejithms",
+    icon: Github,
+    label: "GitHub"
+  },
+  {
+    href: "https://linkedin.com/in/sreejithms",
+    icon: Linkedin,
+    label: "LinkedIn"
+  },
+  {
+    href: "mailto:sreejith@example.com",
+    icon: Mail,
+    label: "Email"
+  },
+  {
+    href: "https://instagram.com/sreejithms",
+    icon: Instagram,
+    label: "Instagram"
+  },
+  {
+    href: "https://facebook.com/sreejithms",
+    icon: Facebook,
+    label: "Facebook"
+  },
+  {
+    href: "https://twitter.com/sreejithms",
+    icon: Twitter,
+    label: "Twitter"
+  },
+  {
+    href: "tel:+1234567890",
+    icon: Phone,
+    label: "Phone"
+  },
+  {
+    href: "https://wa.me/1234567890",
+    icon: MessageCircle,
+    label: "WhatsApp"
+  }
+];
+
 export function Hero() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden transition-colors duration-500 pt-16">

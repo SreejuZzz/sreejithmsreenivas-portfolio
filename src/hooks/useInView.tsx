@@ -12,7 +12,7 @@ export function useInView({
   triggerOnce = true,
 }: UseInViewOptions = {}) {
   const [isInView, setIsInView] = useState(false);
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const element = ref.current;
