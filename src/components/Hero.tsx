@@ -59,25 +59,33 @@ export function Hero() {
       <div className="absolute bottom-1/3 left-20 w-24 h-24 bg-accent/5 rounded-full blur-lg animate-float hover:scale-125 transition-physics" style={{ animationDelay: '3s' }}></div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center space-y-8 animate-fade-in">
-          {/* Profile Photo */}
-          <div className="relative mb-8 animate-glass-pop">
-            <div className="relative w-32 h-32 mx-auto">
-              {/* Simple photo container */}
-              <div className="relative w-full h-full rounded-full overflow-hidden shadow-xl shadow-primary/20">
-                <img
-                  src={profilePhoto}
-                  alt="Sreejith M S - DevOps Engineer"
-                  className="w-full h-full object-cover transition-transform duration-700 motion-safe:hover:scale-105"
-                />
-              </div>
-            </div>
-          </div>
-
+        <div className="text-center space-y-8 animate-fade-in relative">
           {/* Main Content */}
           <div className="space-y-6">
-            <div className="space-y-2">
-              <h1 className="text-5xl md:text-7xl font-bold relative z-20 drop-shadow-2xl">
+            <div className="space-y-2 relative">
+              {/* Orbital Profile Photo - positioned to overlap name */}
+              <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 z-10">
+                <div className="relative w-24 h-24">
+                  {/* Orbital ring */}
+                  <div className="absolute inset-0 rounded-full border-2 border-primary/30 animate-[spin_20s_linear_infinite]"></div>
+                  <div className="absolute inset-2 rounded-full border border-primary/20 animate-[spin_15s_linear_infinite_reverse]"></div>
+                  
+                  {/* Photo container */}
+                  <div className="absolute inset-3 rounded-full overflow-hidden glass-borderless shadow-xl shadow-primary/20">
+                    <img
+                      src={profilePhoto}
+                      alt="Sreejith M S - DevOps Engineer"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  
+                  {/* Orbital dots */}
+                  <div className="absolute top-0 left-1/2 w-2 h-2 bg-primary rounded-full animate-[spin_20s_linear_infinite] origin-[50%_48px]"></div>
+                  <div className="absolute bottom-0 right-1/2 w-1.5 h-1.5 bg-accent rounded-full animate-[spin_15s_linear_infinite_reverse] origin-[50%_-36px]"></div>
+                </div>
+              </div>
+
+              <h1 className="text-5xl md:text-7xl font-bold relative z-20 drop-shadow-2xl pt-16">
                 <span className="bg-gradient-primary bg-clip-text text-transparent transition-buttery">
                   Sreejith M S
                 </span>
@@ -99,7 +107,7 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 mb-12 justify-center animate-reveal-up" style={{ animationDelay: "0.6s" }}>
             <Button 
               size="lg" 
-              className="glass-lg glass-hover bg-primary text-primary-foreground hover:bg-primary/90 border-0 shadow-xl hover:shadow-primary/40 transition-all duration-300"
+              className="glass-lg glass-hover bg-primary text-white hover:bg-primary/90 border-0 shadow-xl hover:shadow-primary/40 transition-all duration-300"
             >
               Get In Touch
             </Button>

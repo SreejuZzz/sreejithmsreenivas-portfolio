@@ -76,34 +76,34 @@ export function Skills() {
           </p>
         </div>
 
-        {/* Skills Grid - Compact tiles */}
+        {/* Skills Grid - Neumorphic cards */}
         <div 
           ref={skillsRef}
-          className={`grid sm:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-700 ${
+          className={`grid sm:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-700 ${
             skillsInView ? 'animate-reveal-up' : 'opacity-0'
           }`}
         >
           {skillCategories.map((category, index) => (
             <div
               key={index}
-              className="glass-sm glass-hover rounded-xl p-6 group will-change-transform transition-all duration-300"
+              className="neuro-card group will-change-transform transition-all duration-300 hover:scale-105"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors duration-300">
-                  <category.icon className="w-5 h-5 text-primary" />
+              <div className="flex items-center gap-4 mb-6">
+                <div className="neuro-icon-container">
+                  <category.icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+                <h3 className="font-bold text-foreground group-hover:text-primary transition-colors duration-300 text-lg">
                   {category.title}
                 </h3>
               </div>
               
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-3">
                 {category.skills.map((skill, skillIndex) => (
                   <Badge
                     key={skillIndex}
                     variant="secondary"
-                    className="bg-background/50 text-foreground border-primary/20 hover:border-primary/40 transition-colors duration-300 text-xs"
+                    className="neuro-badge transition-all duration-300 hover:scale-105 hover:-translate-y-0.5"
                   >
                     {skill}
                   </Badge>

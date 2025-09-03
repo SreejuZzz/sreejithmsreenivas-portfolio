@@ -489,21 +489,97 @@
     background: var(--gradient-call);
   }
 
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px;
+  /* Neumorphism Effects */
+  .neuro-card {
+    @apply p-8 rounded-2xl;
+    background: linear-gradient(145deg, hsl(var(--background)), hsl(var(--muted)));
+    box-shadow: 
+      12px 12px 24px rgba(0, 0, 0, 0.1),
+      -12px -12px 24px rgba(255, 255, 255, 0.8),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.3);
   }
 
-  ::-webkit-scrollbar-track {
-    background: hsl(var(--muted));
+  .neuro-card:hover {
+    box-shadow: 
+      8px 8px 16px rgba(0, 0, 0, 0.15),
+      -8px -8px 16px rgba(255, 255, 255, 0.9),
+      inset 0 0 0 2px rgba(59, 130, 246, 0.2);
   }
 
-  ::-webkit-scrollbar-thumb {
-    background: hsl(var(--primary));
-    border-radius: 4px;
+  .neuro-icon-container {
+    @apply w-14 h-14 rounded-xl flex items-center justify-center;
+    background: linear-gradient(145deg, hsl(var(--muted)), hsl(var(--background)));
+    box-shadow: 
+      6px 6px 12px rgba(0, 0, 0, 0.1),
+      -6px -6px 12px rgba(255, 255, 255, 0.8);
   }
 
-  ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--primary-glow));
+  .neuro-badge {
+    @apply px-4 py-2 rounded-full text-sm font-medium;
+    background: linear-gradient(145deg, hsl(var(--background)), hsl(var(--muted)));
+    box-shadow: 
+      4px 4px 8px rgba(0, 0, 0, 0.08),
+      -4px -4px 8px rgba(255, 255, 255, 0.7);
+  }
+
+  .neuro-module {
+    @apply p-8 rounded-3xl;
+    background: linear-gradient(145deg, hsl(var(--background)), hsl(var(--card)));
+    box-shadow: 
+      20px 20px 40px rgba(0, 0, 0, 0.1),
+      -20px -20px 40px rgba(255, 255, 255, 0.8),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+  }
+
+  .neuro-module:hover {
+    box-shadow: 
+      16px 16px 32px rgba(0, 0, 0, 0.15),
+      -16px -16px 32px rgba(255, 255, 255, 0.9),
+      inset 0 0 0 2px rgba(59, 130, 246, 0.2);
+  }
+
+  /* Dark mode neumorphism */
+  .dark .neuro-card {
+    background: linear-gradient(145deg, hsl(var(--background)), hsl(var(--card)));
+    box-shadow: 
+      12px 12px 24px rgba(0, 0, 0, 0.4),
+      -12px -12px 24px rgba(255, 255, 255, 0.02),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+
+  .dark .neuro-card:hover {
+    box-shadow: 
+      8px 8px 16px rgba(0, 0, 0, 0.5),
+      -8px -8px 16px rgba(255, 255, 255, 0.03),
+      inset 0 0 0 2px rgba(59, 130, 246, 0.3);
+  }
+
+  .dark .neuro-icon-container {
+    background: linear-gradient(145deg, hsl(var(--card)), hsl(var(--background)));
+    box-shadow: 
+      6px 6px 12px rgba(0, 0, 0, 0.4),
+      -6px -6px 12px rgba(255, 255, 255, 0.02);
+  }
+
+  .dark .neuro-badge {
+    background: linear-gradient(145deg, hsl(var(--background)), hsl(var(--card)));
+    box-shadow: 
+      4px 4px 8px rgba(0, 0, 0, 0.3),
+      -4px -4px 8px rgba(255, 255, 255, 0.02);
+  }
+
+  .dark .neuro-module {
+    background: linear-gradient(145deg, hsl(var(--background)), hsl(var(--card)));
+    box-shadow: 
+      20px 20px 40px rgba(0, 0, 0, 0.5),
+      -20px -20px 40px rgba(255, 255, 255, 0.02),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+
+  .dark .neuro-module:hover {
+    box-shadow: 
+      16px 16px 32px rgba(0, 0, 0, 0.6),
+      -16px -16px 32px rgba(255, 255, 255, 0.03),
+      inset 0 0 0 2px rgba(59, 130, 246, 0.4);
   }
 }
