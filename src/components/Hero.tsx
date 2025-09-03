@@ -4,22 +4,22 @@ const profilePhoto = "/lovable-uploads/22c7ffb5-a6c2-4d08-8b79-9db5af73351e.png"
 
 const socialLinks = [
   {
-    href: "https://github.com/sreejithms",
+    href: "https://github.com/SreejuZzz",
     icon: Github,
     label: "GitHub"
   },
   {
-    href: "https://linkedin.com/in/sreejithms",
+    href: "https://www.linkedin.com/in/sreejith-sreenivas-110bb217a",
     icon: Linkedin,
     label: "LinkedIn"
   },
   {
-    href: "mailto:sreejith@example.com",
+    href: "mailto:sreejithmsreenivas@gmail.com",
     icon: Mail,
     label: "Email"
   },
   {
-    href: "https://instagram.com/sreejithms",
+    href: "https://instagram.com/matte_black003",
     icon: Instagram,
     label: "Instagram"
   },
@@ -29,17 +29,17 @@ const socialLinks = [
     label: "Facebook"
   },
   {
-    href: "https://twitter.com/sreejithms",
+    href: "https://twitter.com/Matte_Black003",
     icon: Twitter,
     label: "Twitter"
   },
   {
-    href: "tel:+1234567890",
+    href: "tel:+918848585640",
     icon: Phone,
     label: "Phone"
   },
   {
-    href: "https://wa.me/1234567890",
+    href: "https://wa.me/918848585640",
     icon: MessageCircle,
     label: "WhatsApp"
   }
