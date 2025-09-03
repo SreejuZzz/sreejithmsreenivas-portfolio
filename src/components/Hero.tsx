@@ -60,14 +60,11 @@ export function Hero() {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center space-y-8 animate-fade-in">
-          {/* Profile Photo with reduced halo */}
+          {/* Profile Photo */}
           <div className="relative mb-8 animate-glass-pop">
-            <div className="relative w-40 h-40 mx-auto">
-              {/* Reduced halo effect - 50% less intense */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/15 via-primary/10 to-transparent blur-lg animate-glow opacity-60"></div>
-              
-              {/* Photo container with borderless glass */}
-              <div className="relative w-full h-full rounded-full overflow-hidden glass-borderless shadow-xl shadow-primary/20">
+            <div className="relative w-32 h-32 mx-auto">
+              {/* Simple photo container */}
+              <div className="relative w-full h-full rounded-full overflow-hidden shadow-xl shadow-primary/20">
                 <img
                   src={profilePhoto}
                   alt="Sreejith M S - DevOps Engineer"
@@ -99,29 +96,29 @@ export function Hero() {
             </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-reveal-up" style={{ animationDelay: "0.6s" }}>
+          <div className="flex flex-col sm:flex-row gap-4 mb-12 justify-center animate-reveal-up" style={{ animationDelay: "0.6s" }}>
             <Button 
               size="lg" 
-              className="glass-md glass-hover bg-primary/90 hover:bg-primary text-primary-foreground border-primary/30 shadow-lg transition-all duration-300 hover:shadow-primary/30"
+              className="glass-lg glass-hover bg-primary text-primary-foreground hover:bg-primary/90 border-0 shadow-xl hover:shadow-primary/40 transition-all duration-300"
             >
               Get In Touch
             </Button>
             <Button 
               variant="outline" 
               size="lg"
-              className="glass-md glass-hover border-primary/30 text-primary hover:bg-primary/20 shadow-lg transition-all duration-300 hover:shadow-primary/20"
+              className="glass-lg glass-hover border-primary/20 text-foreground hover:text-primary hover:bg-primary/10 shadow-xl hover:shadow-primary/30 transition-all duration-300"
             >
               Download CV
             </Button>
           </div>
 
           {/* Social Links */}
-          <div className="flex flex-wrap justify-center gap-3 mb-16 animate-reveal-up" style={{ animationDelay: "0.8s" }}>
+          <div className="flex flex-wrap justify-center gap-4 animate-reveal-up" style={{ animationDelay: "0.8s" }}>
             {socialLinks.map((link, index) => (
               <a
                 key={index}
                 href={link.href}
-                className="glass-sm glass-hover p-3 rounded-full transition-all duration-300 md:hover:scale-110 hover:shadow-lg hover:shadow-primary/30 group will-change-transform"
+                className="glass-md glass-hover p-3 rounded-xl transition-all duration-300 md:hover:scale-110 hover:shadow-xl hover:shadow-primary/30 group will-change-transform"
                 aria-label={link.label}
               >
                 <link.icon className="w-5 h-5 text-foreground group-hover:text-primary transition-colors duration-300" />
@@ -132,12 +129,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
-        </div>
-      </div>
     </section>
   );
 }

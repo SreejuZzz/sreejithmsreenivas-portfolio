@@ -29,7 +29,7 @@ export function Navigation() {
         ? 'glass-xl shadow-lg shadow-primary/10' 
         : 'glass-physics'
     }`}>
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="text-xl font-bold text-primary">
