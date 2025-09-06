@@ -64,24 +64,39 @@ export function Hero() {
           <div className="space-y-6">
             <div className="space-y-2 relative">
               {/* Orbital Profile Photo - positioned to overlap name */}
-              <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 z-10">
-                <div className="relative w-24 h-24">
-                  {/* Orbital ring */}
-                  <div className="absolute inset-0 rounded-full border-2 border-primary/30 animate-[spin_20s_linear_infinite]"></div>
-                  <div className="absolute inset-2 rounded-full border border-primary/20 animate-[spin_15s_linear_infinite_reverse]"></div>
+              {/* Orbital Profile Photo - completely redesigned */}
+              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 z-10">
+                <div className="relative w-32 h-32">
+                  {/* Magnetic field lines */}
+                  <div className="absolute inset-0">
+                    {/* Outer magnetic field */}
+                    <div className="absolute inset-0 rounded-full border-2 border-primary/20 animate-[spin_25s_linear_infinite]"></div>
+                    <div className="absolute inset-1 rounded-full border border-accent/30 animate-[spin_20s_linear_infinite_reverse]"></div>
+                    <div className="absolute inset-3 rounded-full border border-primary/40 animate-[spin_15s_linear_infinite]"></div>
+                    
+                    {/* Energy particles */}
+                    <div className="absolute top-2 left-1/2 w-1 h-1 bg-primary rounded-full animate-[spin_25s_linear_infinite] origin-[50%_60px] shadow-lg shadow-primary/50"></div>
+                    <div className="absolute bottom-2 right-1/2 w-1 h-1 bg-accent rounded-full animate-[spin_20s_linear_infinite_reverse] origin-[50%_-60px] shadow-lg shadow-accent/50"></div>
+                    <div className="absolute right-2 top-1/2 w-0.5 h-0.5 bg-primary/80 rounded-full animate-[spin_15s_linear_infinite] origin-[-60px_50%] shadow-md shadow-primary/40"></div>
+                    <div className="absolute left-2 bottom-1/2 w-0.5 h-0.5 bg-accent/80 rounded-full animate-[spin_18s_linear_infinite_reverse] origin-[60px_50%] shadow-md shadow-accent/40"></div>
+                  </div>
                   
-                  {/* Photo container */}
-                  <div className="absolute inset-3 rounded-full overflow-hidden glass-borderless shadow-xl shadow-primary/20">
+                  {/* Core photo with energy field */}
+                  <div className="absolute inset-6 rounded-full overflow-hidden glass backdrop-blur-lg border-2 border-primary/30 shadow-2xl shadow-primary/20 relative group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full animate-pulse"></div>
                     <img
                       src={profilePhoto}
                       alt="Sreejith M S - DevOps Engineer"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover relative z-10 group-hover:scale-110 transition-transform duration-500"
                     />
+                    {/* Energy glow overlay */}
+                    <div className="absolute inset-0 bg-gradient-radial from-transparent via-primary/10 to-primary/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </div>
                   
-                  {/* Orbital dots */}
-                  <div className="absolute top-0 left-1/2 w-2 h-2 bg-primary rounded-full animate-[spin_20s_linear_infinite] origin-[50%_48px]"></div>
-                  <div className="absolute bottom-0 right-1/2 w-1.5 h-1.5 bg-accent rounded-full animate-[spin_15s_linear_infinite_reverse] origin-[50%_-36px]"></div>
+                  {/* Quantum dots with varying speeds */}
+                  <div className="absolute top-0 left-1/2 w-1.5 h-1.5 bg-gradient-to-r from-primary to-accent rounded-full animate-[spin_25s_linear_infinite] origin-[50%_64px] shadow-lg shadow-primary/60"></div>
+                  <div className="absolute bottom-1 right-1/3 w-1 h-1 bg-gradient-to-r from-accent to-primary rounded-full animate-[spin_18s_linear_infinite_reverse] origin-[50%_-56px] shadow-lg shadow-accent/60"></div>
+                  <div className="absolute right-1 top-1/3 w-1.5 h-1.5 bg-primary rounded-full animate-[spin_22s_linear_infinite] origin-[-56px_50%] shadow-lg shadow-primary/50"></div>
                 </div>
               </div>
 

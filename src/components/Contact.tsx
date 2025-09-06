@@ -91,16 +91,18 @@ export function Contact() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative z-10">
         <div 
           ref={titleRef}
-          className={`text-center mb-16 transition-all duration-700 ${
-            titleInView ? 'animate-reveal-up' : 'opacity-0'
+          className={`text-center mb-16 transition-all duration-1000 ${
+            titleInView ? 'animate-reveal-up' : 'opacity-0 translate-y-10'
           }`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Let's Connect
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to discuss your next project or explore collaboration opportunities?
-          </p>
+          <div className="glass-borderless backdrop-blur-xl rounded-3xl p-12 bg-gradient-to-r from-background/40 via-background/60 to-background/40 border border-primary/10">
+            <h2 className="text-5xl md:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-6">
+              Let's Connect
+            </h2>
+            <p className="text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Ready to discuss your next project or explore collaboration opportunities?
+            </p>
+          </div>
         </div>
 
         <div 
