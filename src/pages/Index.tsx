@@ -12,9 +12,13 @@ const Index = () => {
       <Navigation />
       <main className="transition-buttery">
         <Hero />
+        <div className="py-16 md:py-24"></div>
         <About />
+        <div className="py-12 md:py-20"></div>
         <Experience />
+        <div className="py-12 md:py-20"></div>
         <Skills />
+        <div className="py-12 md:py-20"></div>
         <Contact />
       </main>
       <Footer />
