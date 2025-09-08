@@ -986,4 +986,12 @@
   .bg-gradient-radial {
     background: radial-gradient(var(--tw-gradient-stops));
   }
+
+  /* Text Shadows */
+  .text-shadow-strong {
+    text-shadow: 
+      2px 2px 4px rgba(0, 0, 0, 0.8),
+      0 0 10px rgba(var(--primary), 0.3),
+      0 0 20px rgba(var(--primary), 0.2);
+  }
 }

@@ -52,10 +52,9 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden transition-colors duration-500 pt-16 pb-12">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden transition-colors duration-500 pt-20 pb-12">
       {/* Background with enhanced gradient overlay */}
       <div className="absolute inset-0 bg-gradient-hero transition-colors duration-500"></div>
-      <div className="absolute inset-0 bg-gradient-mesh opacity-20 transition-colors duration-500"></div>
       
       {/* Left Solar System - Enhanced */}
       <div className="absolute left-12 top-1/2 transform -translate-y-1/2 w-80 h-80 animate-physics-rotate-slow">
@@ -110,8 +109,8 @@ export function Hero() {
                 </div>
               </div>
 
-              <h1 className="text-5xl md:text-7xl font-bold relative z-10 mt-8 drop-shadow-3xl animate-text-emerge" style={{ animationDelay: '0.3s' }}>
-                <span className="bg-gradient-primary bg-clip-text text-transparent transition-buttery relative block">
+              <h1 className="text-5xl md:text-7xl font-bold relative z-10 mt-16 drop-shadow-3xl animate-text-emerge" style={{ animationDelay: '0.3s' }}>
+                <span className="bg-gradient-primary bg-clip-text text-transparent transition-buttery relative block text-shadow-strong">
                   Sreejith M S
                 </span>
               </h1>
@@ -158,7 +157,7 @@ export function Hero() {
                 aria-label={link.label}
                 style={{ animationDelay: `${1.5 + index * 0.1}s` }}
               >
-                <link.icon className="w-6 h-6 bg-gradient-primary bg-clip-text text-transparent group-hover:scale-110 transition-all duration-500 group-hover:rotate-12 filter drop-shadow-lg" />
+                <link.icon className="w-6 h-6 text-primary group-hover:text-primary-glow group-hover:scale-110 transition-all duration-500 group-hover:rotate-12 filter drop-shadow-lg" />
               </a>
             ))}
           </div>
