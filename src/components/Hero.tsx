@@ -96,20 +96,18 @@ export function Hero() {
                     <div className="absolute bottom-3/4 left-3/4 w-1.5 h-1.5 bg-primary rounded-full animate-physics-orbit-8 shadow-md shadow-primary/50 blur-sm"></div>
                   </div>
                   
-                  {/* Core photo with enhanced quantum glass effect */}
-                  <div className="absolute inset-4 rounded-full overflow-hidden glass-quantum backdrop-blur-3xl border-3 border-primary/50 shadow-3xl shadow-primary/40 relative group neumorphism">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-accent/20 to-primary/25 rounded-full animate-quantum-glow"></div>
+                  {/* Core photo - Clean circular design */}
+                  <div className="absolute inset-4 rounded-full overflow-hidden border-2 border-primary/30 shadow-2xl shadow-primary/30 relative group">
                     <img
                       src={profilePhoto}
                       alt="Sreejith M S - DevOps Engineer"
                       className="w-full h-full object-cover relative z-20 group-hover:scale-110 transition-all duration-1000 ease-out"
                     />
-                    <div className="absolute inset-0 bg-gradient-radial from-transparent via-primary/10 to-primary/20 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-1000"></div>
                   </div>
                 </div>
               </div>
 
-              <h1 className="text-5xl md:text-7xl font-bold relative z-10 mt-16 drop-shadow-3xl animate-text-emerge" style={{ animationDelay: '0.3s' }}>
+              <h1 className="text-5xl md:text-7xl font-bold relative z-10 mt-32 drop-shadow-3xl animate-text-emerge" style={{ animationDelay: '0.3s' }}>
                 <span className="bg-gradient-primary bg-clip-text text-transparent transition-buttery relative block text-shadow-strong">
                   Sreejith M S
                 </span>
