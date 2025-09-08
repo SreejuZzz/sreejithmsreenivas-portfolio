@@ -52,8 +52,8 @@ const journeyMilestones = [
   },
   {
     year: "2020",
-    title: "Junior DevOps Engineer",
-    company: "Tech Solutions Inc",
+    title: "Junior DevOps Engineer", 
+    company: "Synnefo Solutions",
     period: "2020 - 2022",
     type: "learning",
     description: "Started DevOps journey focusing on infrastructure automation and learning cloud technologies.",
@@ -70,7 +70,7 @@ const journeyMilestones = [
   {
     year: "2018",
     title: "System Administrator",
-    company: "StartTech Corp",
+    company: "Previous Organization",
     period: "2018 - 2020",
     type: "foundation",
     description: "Managed server infrastructure and gained hands-on experience with Linux systems and network administration.",

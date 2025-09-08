@@ -96,8 +96,10 @@ export function Contact() {
           }`}
         >
           <div className="glass-borderless backdrop-blur-xl rounded-3xl p-12 bg-gradient-to-r from-background/40 via-background/60 to-background/40 border border-primary/10">
-            <h2 className="text-5xl md:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-6">
-              Let's Connect
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+              <span className="bg-gradient-primary bg-clip-text text-transparent drop-shadow-2xl">
+                Let's Connect
+              </span>
             </h2>
             <p className="text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Ready to discuss your next project or explore collaboration opportunities?

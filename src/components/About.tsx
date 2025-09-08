@@ -112,6 +112,18 @@ export function About() {
                     Today, as a DevOps Engineer, I specialize in creating scalable, reliable, and 
                     secure cloud infrastructures using AWS, Kubernetes, Docker, and Terraform.
                   </p>
+                  <div className="glass-quantum rounded-xl p-4 bg-gradient-to-r from-primary/10 to-accent/10 neumorphism">
+                    <h4 className="text-primary font-bold mb-2 flex items-center gap-2">
+                      <Award className="w-5 h-5" />
+                      Certification
+                    </h4>
+                    <p className="text-foreground font-semibold">
+                      Red Hat Certified System Administrator (RHCSA)
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      Certification ID: 250-136-470
+                    </p>
+                  </div>
                 </div>
                 <div className="glass-sm backdrop-blur-lg rounded-2xl p-8 bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20">
                   <p className="text-primary font-semibold text-lg leading-relaxed">
