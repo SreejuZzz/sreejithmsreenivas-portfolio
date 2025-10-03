@@ -97,7 +97,7 @@ export function Hero() {
                   </div>
                   
                   {/* Core photo - Clean circular design */}
-                  <div className="absolute inset-4 rounded-full overflow-hidden border-2 border-primary/30 shadow-2xl shadow-primary/30 relative group">
+                  <div className="absolute inset-4 rounded-full overflow-hidden relative group">
                     <img
                       src={profilePhoto}
                       alt="Sreejith M S - DevOps Engineer"
@@ -107,7 +107,7 @@ export function Hero() {
                 </div>
               </div>
 
-              <h1 className="text-5xl md:text-7xl font-bold relative z-10 mt-32 drop-shadow-3xl animate-text-emerge" style={{ animationDelay: '0.3s' }}>
+              <h1 className="text-5xl md:text-7xl font-bold relative z-10 mt-48 drop-shadow-3xl animate-text-emerge" style={{ animationDelay: '0.3s' }}>
                 <span className="bg-gradient-primary bg-clip-text text-transparent transition-buttery relative block text-shadow-strong">
                   Sreejith M S
                 </span>
