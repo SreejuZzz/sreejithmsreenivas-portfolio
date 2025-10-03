@@ -78,10 +78,10 @@ export function Hero() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center space-y-8 relative">
           {/* Main Content */}
-          <div className="space-y-12">
-            <div className="space-y-12 relative">
-              {/* Redesigned Profile Photo with Planetary System */}
-              <div className="relative z-30 mb-6">
+            <div className="space-y-10">
+            <div className="space-y-8 relative">
+              {/* Profile Photo with Planetary System */}
+              <div className="relative z-30">
                 <div className="relative w-44 h-44 mx-auto">
                   {/* Planetary system around photo */}
                   <div className="absolute inset-0">
@@ -107,46 +107,46 @@ export function Hero() {
                 </div>
               </div>
 
-              <h1 className="text-5xl md:text-7xl font-bold relative z-10 mt-24 pt-12 drop-shadow-[0_10px_30px_rgba(0,0,0,0.9)] animate-text-emerge" style={{ animationDelay: '0.3s' }}>
-                <span className="bg-gradient-primary bg-clip-text text-transparent transition-buttery relative block" style={{ 
-                  textShadow: '0 4px 20px rgba(59, 130, 246, 0.5), 0 0 40px rgba(59, 130, 246, 0.3)',
-                  WebkitTextStroke: '1px rgba(59, 130, 246, 0.1)'
+              <h1 className="text-5xl md:text-7xl font-bold relative z-10 -mt-8 animate-text-emerge" style={{ animationDelay: '0.3s' }}>
+                <span className="bg-gradient-primary bg-clip-text text-transparent font-extrabold" style={{ 
+                  textShadow: '0 2px 8px rgba(59, 130, 246, 0.3)',
+                  WebkitTextStroke: '0.5px rgba(59, 130, 246, 0.15)'
                 }}>
                   Sreejith M S
                 </span>
               </h1>
-              <div className="text-xl md:text-2xl text-primary font-semibold relative z-20 drop-shadow-lg animate-text-emerge" style={{ animationDelay: '0.5s' }}>
+              <div className="text-xl md:text-2xl text-primary font-semibold relative z-20 animate-text-emerge" style={{ animationDelay: '0.5s' }}>
                 DevOps Engineer & Cloud Architect
               </div>
-              <div className="text-lg text-muted-foreground relative z-20 drop-shadow-lg animate-text-emerge" style={{ animationDelay: '0.7s' }}>
+              <div className="text-lg text-muted-foreground relative z-20 animate-text-emerge" style={{ animationDelay: '0.7s' }}>
                 Synnefo Solutions • 7+ Years Experience
               </div>
             </div>
 
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed relative z-20 drop-shadow-lg transition-buttery animate-text-emerge" style={{ animationDelay: '0.9s' }}>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed relative z-20 animate-text-emerge" style={{ animationDelay: '0.9s' }}>
               Passionate DevOps Engineer with expertise in cloud architecture, automation, and mentoring. 
               Transforming ideas into scalable, reliable infrastructure solutions while empowering the next generation of tech professionals.
             </p>
 
-          {/* CTA Buttons with enhanced glass and physics */}
+          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 mb-12 justify-center animate-quantum-rise" style={{ animationDelay: "1.1s" }}>
             <Button 
               size="lg" 
               onClick={scrollToContact}
-              className="glass-quantum glass-hover bg-gradient-primary text-white hover:bg-primary/90 border-0 shadow-3xl hover:shadow-primary/60 transition-all duration-700 hover:scale-110 hover:-translate-y-2 neuro-button font-bold text-lg px-8 py-6"
+              className="glass-quantum glass-hover bg-gradient-primary text-white border-0 hover:scale-110 hover:-translate-y-2 font-bold text-lg px-8 py-6 transition-all duration-500"
             >
               Get In Touch
             </Button>
             <Button 
               variant="outline" 
               size="lg"
-              className="glass-quantum glass-hover border-2 border-primary/40 text-foreground hover:text-white hover:bg-gradient-primary shadow-3xl hover:shadow-primary/50 transition-all duration-700 hover:scale-110 hover:-translate-y-2 neuro-button-outline font-bold text-lg px-8 py-6"
+              className="glass-quantum glass-hover border-2 border-primary/40 text-foreground hover:text-white hover:bg-gradient-primary hover:scale-110 hover:-translate-y-2 font-bold text-lg px-8 py-6 transition-all duration-500"
             >
               Download CV
             </Button>
           </div>
 
-          {/* Social Links with gradient effects and enhanced glass */}
+          {/* Social Links */}
           <div className="flex flex-wrap justify-center gap-6 animate-quantum-rise" style={{ animationDelay: "1.3s" }}>
             {socialLinks.map((link, index) => (
               <a
@@ -154,11 +154,10 @@ export function Hero() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-quantum glass-hover p-4 rounded-2xl transition-all duration-700 hover:scale-125 hover:shadow-3xl hover:shadow-primary/50 group will-change-transform neuro-social neumorphism hover:-translate-y-2"
+                className="glass-quantum glass-hover p-4 rounded-2xl hover:scale-125 hover:-translate-y-2 group transition-all duration-500 neuro-social"
                 aria-label={link.label}
-                style={{ animationDelay: `${1.5 + index * 0.1}s` }}
               >
-                <link.icon className="w-6 h-6 text-primary group-hover:text-primary-glow group-hover:scale-110 transition-all duration-500 group-hover:rotate-12 filter drop-shadow-2xl" />
+                <link.icon className="w-6 h-6 text-primary group-hover:text-primary-glow group-hover:scale-110 transition-all duration-500 group-hover:rotate-12" />
               </a>
             ))}
           </div>
