@@ -58,42 +58,42 @@ export function Hero() {
       
       {/* Left Solar System - Enhanced */}
       <div className="absolute left-12 top-1/2 transform -translate-y-1/2 w-80 h-80 animate-physics-rotate-slow">
-        <div className="w-6 h-6 bg-primary/20 rounded-full blur-lg animate-physics-orbit-1 absolute" style={{ animationDelay: '0s' }}></div>
-        <div className="w-4 h-4 bg-accent/25 rounded-full blur-md animate-physics-orbit-2 absolute" style={{ animationDelay: '1s' }}></div>
-        <div className="w-3 h-3 bg-primary-glow/30 rounded-full blur-sm animate-physics-orbit-3 absolute" style={{ animationDelay: '2s' }}></div>
-        <div className="w-5 h-5 bg-primary/15 rounded-full blur-lg animate-physics-orbit-4 absolute" style={{ animationDelay: '3s' }}></div>
+        <div className="w-6 h-6 bg-primary/20 rounded-full blur-sm animate-physics-orbit-1 absolute" style={{ animationDelay: '0s' }}></div>
+        <div className="w-4 h-4 bg-accent/25 rounded-full blur-sm animate-physics-orbit-2 absolute" style={{ animationDelay: '1s' }}></div>
+        <div className="w-3 h-3 bg-primary-glow/30 rounded-full animate-physics-orbit-3 absolute" style={{ animationDelay: '2s' }}></div>
+        <div className="w-5 h-5 bg-primary/15 rounded-full blur-sm animate-physics-orbit-4 absolute" style={{ animationDelay: '3s' }}></div>
         <div className="w-2 h-2 bg-accent/35 rounded-full animate-physics-orbit-5 absolute" style={{ animationDelay: '4s' }}></div>
       </div>
       
       {/* Right Solar System - New */}
       <div className="absolute right-12 top-1/2 transform -translate-y-1/2 w-80 h-80 animate-physics-rotate-medium-reverse">
-        <div className="w-7 h-7 bg-accent/20 rounded-full blur-lg animate-physics-orbit-1 absolute" style={{ animationDelay: '0.5s' }}></div>
-        <div className="w-3 h-3 bg-primary/30 rounded-full blur-md animate-physics-orbit-2 absolute" style={{ animationDelay: '1.5s' }}></div>
-        <div className="w-5 h-5 bg-primary-glow/25 rounded-full blur-sm animate-physics-orbit-3 absolute" style={{ animationDelay: '2.5s' }}></div>
-        <div className="w-4 h-4 bg-accent/20 rounded-full blur-lg animate-physics-orbit-4 absolute" style={{ animationDelay: '3.5s' }}></div>
+        <div className="w-7 h-7 bg-accent/20 rounded-full blur-sm animate-physics-orbit-1 absolute" style={{ animationDelay: '0.5s' }}></div>
+        <div className="w-3 h-3 bg-primary/30 rounded-full blur-sm animate-physics-orbit-2 absolute" style={{ animationDelay: '1.5s' }}></div>
+        <div className="w-5 h-5 bg-primary-glow/25 rounded-full animate-physics-orbit-3 absolute" style={{ animationDelay: '2.5s' }}></div>
+        <div className="w-4 h-4 bg-accent/20 rounded-full blur-sm animate-physics-orbit-4 absolute" style={{ animationDelay: '3.5s' }}></div>
         <div className="w-2.5 h-2.5 bg-primary/25 rounded-full animate-physics-orbit-5 absolute" style={{ animationDelay: '4.5s' }}></div>
         <div className="w-1.5 h-1.5 bg-accent/40 rounded-full animate-physics-orbit-6 absolute" style={{ animationDelay: '5.5s' }}></div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center space-y-8 animate-quantum-emerge relative">
+        <div className="text-center space-y-8 relative">
           {/* Main Content */}
-          <div className="space-y-8">
-            <div className="space-y-8 relative">
+          <div className="space-y-12">
+            <div className="space-y-12 relative">
               {/* Redesigned Profile Photo with Planetary System */}
-              <div className="relative z-30 mb-6 animate-quantum-pulse">
+              <div className="relative z-30 mb-6">
                 <div className="relative w-44 h-44 mx-auto">
                   {/* Planetary system around photo */}
                   <div className="absolute inset-0">
                     {/* Multiple planets revolving around the photo */}
-                    <div className="absolute top-2 left-1/2 w-3 h-3 bg-gradient-to-r from-primary to-primary-glow rounded-full animate-physics-orbit-1 shadow-2xl shadow-primary/80 blur-sm"></div>
-                    <div className="absolute bottom-2 right-1/2 w-2.5 h-2.5 bg-gradient-to-r from-accent to-primary rounded-full animate-physics-orbit-2 shadow-2xl shadow-accent/80 blur-sm"></div>
-                    <div className="absolute right-2 top-1/3 w-2 h-2 bg-gradient-to-r from-primary-glow to-accent rounded-full animate-physics-orbit-3 shadow-xl shadow-primary/70 blur-sm"></div>
-                    <div className="absolute left-2 bottom-1/3 w-2.5 h-2.5 bg-gradient-to-r from-accent to-primary-glow rounded-full animate-physics-orbit-4 shadow-xl shadow-accent/70 blur-sm"></div>
-                    <div className="absolute top-1/4 right-1/4 w-1.5 h-1.5 bg-primary rounded-full animate-physics-orbit-5 shadow-lg shadow-primary/60 blur-sm"></div>
-                    <div className="absolute bottom-1/4 left-1/4 w-2 h-2 bg-accent rounded-full animate-physics-orbit-6 shadow-lg shadow-accent/60 blur-sm"></div>
-                    <div className="absolute top-3/4 right-3/4 w-1 h-1 bg-primary-glow rounded-full animate-physics-orbit-7 shadow-md shadow-primary/50 blur-sm"></div>
-                    <div className="absolute bottom-3/4 left-3/4 w-1.5 h-1.5 bg-primary rounded-full animate-physics-orbit-8 shadow-md shadow-primary/50 blur-sm"></div>
+                    <div className="absolute top-2 left-1/2 w-3 h-3 bg-gradient-to-r from-primary to-primary-glow rounded-full animate-physics-orbit-1"></div>
+                    <div className="absolute bottom-2 right-1/2 w-2.5 h-2.5 bg-gradient-to-r from-accent to-primary rounded-full animate-physics-orbit-2"></div>
+                    <div className="absolute right-2 top-1/3 w-2 h-2 bg-gradient-to-r from-primary-glow to-accent rounded-full animate-physics-orbit-3"></div>
+                    <div className="absolute left-2 bottom-1/3 w-2.5 h-2.5 bg-gradient-to-r from-accent to-primary-glow rounded-full animate-physics-orbit-4"></div>
+                    <div className="absolute top-1/4 right-1/4 w-1.5 h-1.5 bg-primary rounded-full animate-physics-orbit-5"></div>
+                    <div className="absolute bottom-1/4 left-1/4 w-2 h-2 bg-accent rounded-full animate-physics-orbit-6"></div>
+                    <div className="absolute top-3/4 right-3/4 w-1 h-1 bg-primary-glow rounded-full animate-physics-orbit-7"></div>
+                    <div className="absolute bottom-3/4 left-3/4 w-1.5 h-1.5 bg-primary rounded-full animate-physics-orbit-8"></div>
                   </div>
                   
                   {/* Core photo - Clean circular design */}
@@ -107,8 +107,11 @@ export function Hero() {
                 </div>
               </div>
 
-              <h1 className="text-5xl md:text-7xl font-bold relative z-10 mt-48 drop-shadow-3xl animate-text-emerge" style={{ animationDelay: '0.3s' }}>
-                <span className="bg-gradient-primary bg-clip-text text-transparent transition-buttery relative block text-shadow-strong">
+              <h1 className="text-5xl md:text-7xl font-bold relative z-10 mt-24 pt-12 drop-shadow-[0_10px_30px_rgba(0,0,0,0.9)] animate-text-emerge" style={{ animationDelay: '0.3s' }}>
+                <span className="bg-gradient-primary bg-clip-text text-transparent transition-buttery relative block" style={{ 
+                  textShadow: '0 4px 20px rgba(59, 130, 246, 0.5), 0 0 40px rgba(59, 130, 246, 0.3)',
+                  WebkitTextStroke: '1px rgba(59, 130, 246, 0.1)'
+                }}>
                   Sreejith M S
                 </span>
               </h1>
@@ -151,11 +154,11 @@ export function Hero() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-quantum glass-hover p-4 rounded-2xl transition-all duration-700 hover:scale-125 hover:shadow-3xl hover:shadow-primary/50 group will-change-transform neuro-social neumorphism hover:-translate-y-2 bg-gradient-to-br from-primary/10 to-accent/10"
+                className="glass-quantum glass-hover p-4 rounded-2xl transition-all duration-700 hover:scale-125 hover:shadow-3xl hover:shadow-primary/50 group will-change-transform neuro-social neumorphism hover:-translate-y-2"
                 aria-label={link.label}
                 style={{ animationDelay: `${1.5 + index * 0.1}s` }}
               >
-                <link.icon className="w-6 h-6 text-primary group-hover:text-primary-glow group-hover:scale-110 transition-all duration-500 group-hover:rotate-12 filter drop-shadow-lg" />
+                <link.icon className="w-6 h-6 text-primary group-hover:text-primary-glow group-hover:scale-110 transition-all duration-500 group-hover:rotate-12 filter drop-shadow-2xl" />
               </a>
             ))}
           </div>
