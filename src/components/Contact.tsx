@@ -82,11 +82,9 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-20 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 via-transparent to-primary/5"></div>
-      <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }}></div>
-      <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "5s" }}></div>
+    <section id="contact" className="py-24 md:py-32 relative overflow-hidden">
+      {/* Simplified background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-secondary/3 via-transparent to-primary/3"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative z-10">
         <div 
@@ -182,7 +180,7 @@ export function Contact() {
                 <Button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full bg-gradient-primary text-white hover:scale-110 hover:-translate-y-2 transition-physics"
+                  className="w-full bg-gradient-primary text-white hover:scale-105 transition-all duration-300"
                 >
                   {isLoading ? (
                     "Sending..."

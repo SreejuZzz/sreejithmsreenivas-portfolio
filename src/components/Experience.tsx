@@ -100,15 +100,9 @@ export function Experience() {
   const { ref: skillsRef, isInView: skillsInView } = useInView();
 
   return (
-    <section id="experience" className="py-20 md:py-32 relative overflow-hidden">
-      {/* Background with physics effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-muted/20"></div>
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
-      
-      {/* Floating quantum particles */}
-      <div className="absolute top-20 left-10 w-2 h-2 bg-primary/20 rounded-full animate-physics-float blur-sm"></div>
-      <div className="absolute bottom-32 right-16 w-3 h-3 bg-accent/20 rounded-full animate-physics-orbit blur-sm" style={{ animationDelay: '2s' }}></div>
-      <div className="absolute top-1/2 right-8 w-1 h-1 bg-primary/30 rounded-full animate-physics-spiral blur-sm" style={{ animationDelay: '4s' }}></div>
+    <section id="experience" className="py-24 md:py-32 relative overflow-hidden">
+      {/* Simplified background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted/10"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
@@ -158,10 +152,8 @@ export function Experience() {
             timelineInView ? 'animate-quantum-emerge' : 'opacity-0'
           }`}
         >
-          {/* Central quantum flow line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-accent to-primary-glow opacity-30 hidden md:block">
-            <div className="absolute inset-0 bg-gradient-to-b from-primary via-accent to-primary-glow animate-pulse blur-sm opacity-50"></div>
-          </div>
+          {/* Simplified central line */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/20 via-accent/20 to-primary/20 hidden md:block"></div>
 
           <div className="space-y-16 md:space-y-24">
             {journeyMilestones.map((milestone, index) => {
@@ -178,7 +170,7 @@ export function Experience() {
                 >
                   {/* Timeline Content */}
                   <div className={`w-full md:w-5/12 ${isLeft ? 'md:pr-12' : 'md:pl-12'}`}>
-                    <div className="glass-quantum rounded-3xl p-8 neuro-module hover:scale-[1.02] transition-all duration-700 group">
+                    <div className="glass rounded-2xl p-6 border border-primary/15 hover:scale-[1.01] transition-all duration-300 group">
                       {/* Year Badge */}
                       <div className={`inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6 bg-gradient-to-r ${milestone.gradient} text-white shadow-lg`}>
                         <Icon className="w-4 h-4" />

@@ -37,17 +37,13 @@ export function About() {
   const stats = [
     { number: "7+", label: "Years Experience", icon: Code2 },
     { number: "50+", label: "Projects Delivered", icon: Layers },
-    { number: "20+", label: "Cloud Migrations", icon: Cloud },
-    { number: "100+", label: "Deployments", icon: GitBranch }
+    { number: "20+", label: "Cloud Migrations", icon: Cloud }
   ];
 
   return (
-    <section id="about" className="py-32 relative overflow-hidden">
-      {/* Enhanced Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-transparent to-accent/3"></div>
-      <div className="absolute top-20 left-10 w-80 h-80 bg-primary/8 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/8 rounded-full blur-3xl animate-float" style={{ animationDelay: "3s" }}></div>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary/5 to-transparent rounded-full blur-2xl"></div>
+    <section id="about" className="py-24 md:py-32 relative overflow-hidden">
+      {/* Simplified background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Header Section */}
@@ -70,17 +66,16 @@ export function About() {
         {/* Stats Section */}
         <div 
           ref={statsRef}
-          className={`grid grid-cols-2 md:grid-cols-4 gap-6 mb-20 transition-all duration-1000 ${
-            statsInView ? 'animate-reveal-up' : 'opacity-0 translate-y-10'
+          className={`grid grid-cols-3 gap-6 mb-20 transition-all duration-700 ${
+            statsInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
           {stats.map((stat, index) => (
             <div 
               key={index}
-              className="glass backdrop-blur-xl rounded-2xl p-6 text-center group hover:scale-105 transition-all duration-500 border border-primary/20"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="glass backdrop-blur-xl rounded-xl p-6 text-center group hover:scale-105 transition-all duration-300 border border-primary/15"
             >
-              <stat.icon className="w-8 h-8 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform duration-300" />
+              <stat.icon className="w-7 h-7 text-primary mx-auto mb-3 group-hover:scale-105 transition-transform duration-300" />
               <div className="text-3xl font-bold text-foreground mb-2">{stat.number}</div>
               <div className="text-sm text-muted-foreground font-medium">{stat.label}</div>
             </div>
@@ -135,23 +130,22 @@ export function About() {
             </div>
           </div>
 
-          {/* Highlights Grid */}
-          <div className="grid md:grid-cols-2 gap-8">
+          {/* Highlights Grid - simplified styling */}
+          <div className="grid md:grid-cols-2 gap-6">
             {highlights.map((highlight, index) => (
               <div 
                 key={index}
-                className={`glass backdrop-blur-xl rounded-2xl p-8 group hover:scale-105 transition-all duration-500 border border-primary/20 bg-gradient-to-br ${highlight.gradient} hover:shadow-2xl hover:shadow-primary/10`}
-                style={{ animationDelay: `${index * 0.15}s` }}
+                className="glass backdrop-blur-xl rounded-xl p-6 group hover:scale-[1.02] transition-all duration-300 border border-primary/15"
               >
-                <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/30 to-accent/30 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-all duration-300 border border-primary/30">
-                    <highlight.icon className="w-8 h-8 text-primary" />
+                <div className="flex items-start gap-5">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-105 transition-all duration-300">
+                    <highlight.icon className="w-6 h-6 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                    <h4 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
                       {highlight.title}
                     </h4>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground text-sm leading-relaxed">
                       {highlight.description}
                     </p>
                   </div>

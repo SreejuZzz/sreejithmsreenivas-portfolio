@@ -52,27 +52,15 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden transition-colors duration-500 pt-20 pb-12">
-      {/* Background with enhanced gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-hero transition-colors duration-500"></div>
-      
-      {/* Left Solar System - Enhanced */}
-      <div className="absolute left-12 top-1/2 transform -translate-y-1/2 w-80 h-80 animate-physics-rotate-slow">
-        <div className="w-6 h-6 bg-primary/20 rounded-full blur-sm animate-physics-orbit-1 absolute" style={{ animationDelay: '0s' }}></div>
-        <div className="w-4 h-4 bg-accent/25 rounded-full blur-sm animate-physics-orbit-2 absolute" style={{ animationDelay: '1s' }}></div>
-        <div className="w-3 h-3 bg-primary-glow/30 rounded-full animate-physics-orbit-3 absolute" style={{ animationDelay: '2s' }}></div>
-        <div className="w-5 h-5 bg-primary/15 rounded-full blur-sm animate-physics-orbit-4 absolute" style={{ animationDelay: '3s' }}></div>
-        <div className="w-2 h-2 bg-accent/35 rounded-full animate-physics-orbit-5 absolute" style={{ animationDelay: '4s' }}></div>
-      </div>
-      
-      {/* Right Solar System - New */}
-      <div className="absolute right-12 top-1/2 transform -translate-y-1/2 w-80 h-80 animate-physics-rotate-medium-reverse">
-        <div className="w-7 h-7 bg-accent/20 rounded-full blur-sm animate-physics-orbit-1 absolute" style={{ animationDelay: '0.5s' }}></div>
-        <div className="w-3 h-3 bg-primary/30 rounded-full blur-sm animate-physics-orbit-2 absolute" style={{ animationDelay: '1.5s' }}></div>
-        <div className="w-5 h-5 bg-primary-glow/25 rounded-full animate-physics-orbit-3 absolute" style={{ animationDelay: '2.5s' }}></div>
-        <div className="w-4 h-4 bg-accent/20 rounded-full blur-sm animate-physics-orbit-4 absolute" style={{ animationDelay: '3.5s' }}></div>
-        <div className="w-2.5 h-2.5 bg-primary/25 rounded-full animate-physics-orbit-5 absolute" style={{ animationDelay: '4.5s' }}></div>
-        <div className="w-1.5 h-1.5 bg-accent/40 rounded-full animate-physics-orbit-6 absolute" style={{ animationDelay: '5.5s' }}></div>
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden py-20">
+      {/* Simplified background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5"></div>
+
+      {/* Minimal floating particles - reduced from 8 to 3 */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 right-1/3 w-2 h-2 bg-primary/20 rounded-full animate-physics-float blur-sm" />
+        <div className="absolute bottom-1/3 left-1/4 w-1.5 h-1.5 bg-accent/15 rounded-full animate-physics-float blur-sm" style={{ animationDelay: "2s" }} />
+        <div className="absolute top-2/3 right-1/4 w-1 h-1 bg-primary/25 rounded-full animate-physics-float blur-sm" style={{ animationDelay: "4s" }} />
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
@@ -80,87 +68,74 @@ export function Hero() {
           {/* Main Content */}
             <div className="space-y-10">
             <div className="space-y-8 relative">
-              {/* Profile Photo with Planetary System */}
-              <div className="relative z-30">
-                <div className="relative w-44 h-44 mx-auto">
-                  {/* Planetary system around photo */}
-                  <div className="absolute inset-0">
-                    {/* Multiple planets revolving around the photo */}
-                    <div className="absolute top-2 left-1/2 w-3 h-3 bg-gradient-to-r from-primary to-primary-glow rounded-full animate-physics-orbit-1"></div>
-                    <div className="absolute bottom-2 right-1/2 w-2.5 h-2.5 bg-gradient-to-r from-accent to-primary rounded-full animate-physics-orbit-2"></div>
-                    <div className="absolute right-2 top-1/3 w-2 h-2 bg-gradient-to-r from-primary-glow to-accent rounded-full animate-physics-orbit-3"></div>
-                    <div className="absolute left-2 bottom-1/3 w-2.5 h-2.5 bg-gradient-to-r from-accent to-primary-glow rounded-full animate-physics-orbit-4"></div>
-                    <div className="absolute top-1/4 right-1/4 w-1.5 h-1.5 bg-primary rounded-full animate-physics-orbit-5"></div>
-                    <div className="absolute bottom-1/4 left-1/4 w-2 h-2 bg-accent rounded-full animate-physics-orbit-6"></div>
-                    <div className="absolute top-3/4 right-3/4 w-1 h-1 bg-primary-glow rounded-full animate-physics-orbit-7"></div>
-                    <div className="absolute bottom-3/4 left-3/4 w-1.5 h-1.5 bg-primary rounded-full animate-physics-orbit-8"></div>
-                  </div>
-                  
-                  {/* Core photo - Clean circular design */}
-                  <div className="absolute inset-4 rounded-full overflow-hidden relative group">
-                    <img
-                      src={profilePhoto}
-                      alt="Sreejith M S - DevOps Engineer"
-                      className="w-full h-full object-cover relative z-20 group-hover:scale-110 transition-all duration-1000 ease-out"
-                    />
-                  </div>
+              {/* Simplified profile photo */}
+              <div className="relative group mb-6">
+                <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-all duration-500"></div>
+                <div className="relative w-44 h-44 md:w-52 md:h-52 rounded-full overflow-hidden ring-2 ring-primary/20 group-hover:ring-primary/40 transition-all duration-300 shadow-xl">
+                  <img
+                    src={profilePhoto}
+                    alt="Sreejith M S - DevOps Engineer"
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
               </div>
 
-              <h1 className="text-5xl md:text-7xl font-bold relative z-10 -mt-8 animate-text-emerge" style={{ animationDelay: '0.3s' }}>
-                <span className="bg-gradient-primary bg-clip-text text-transparent font-extrabold" style={{ 
-                  textShadow: '0 2px 8px rgba(59, 130, 246, 0.3)',
-                  WebkitTextStroke: '0.5px rgba(59, 130, 246, 0.15)'
-                }}>
+              {/* Cleaner name styling */}
+              <h1 className="text-5xl md:text-7xl font-bold mb-4 -mt-6 relative z-10" 
+                  style={{ 
+                    textShadow: '0 2px 6px rgba(0,0,0,0.1)'
+                  }}>
+                <span className="bg-gradient-primary bg-clip-text text-transparent">
                   Sreejith M S
                 </span>
               </h1>
-              <div className="text-xl md:text-2xl text-primary font-semibold relative z-20 animate-text-emerge" style={{ animationDelay: '0.5s' }}>
+              <div className="text-xl md:text-2xl text-primary font-semibold mb-2">
                 DevOps Engineer & Cloud Architect
               </div>
-              <div className="text-lg text-muted-foreground relative z-20 animate-text-emerge" style={{ animationDelay: '0.7s' }}>
+              <div className="text-lg text-muted-foreground mb-6">
                 Synnefo Solutions • 7+ Years Experience
               </div>
             </div>
 
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed relative z-20 animate-text-emerge" style={{ animationDelay: '0.9s' }}>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
               Passionate DevOps Engineer with expertise in cloud architecture, automation, and mentoring. 
-              Transforming ideas into scalable, reliable infrastructure solutions while empowering the next generation of tech professionals.
+              Transforming ideas into scalable, reliable infrastructure solutions.
             </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 mb-12 justify-center animate-quantum-rise" style={{ animationDelay: "1.1s" }}>
-            <Button 
-              size="lg" 
-              onClick={scrollToContact}
-              className="glass-quantum glass-hover bg-gradient-primary text-white border-0 hover:scale-110 hover:-translate-y-2 font-bold text-lg px-8 py-6 transition-all duration-500"
-            >
-              Get In Touch
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="glass-quantum glass-hover border-2 border-primary/40 text-foreground hover:text-white hover:bg-gradient-primary hover:scale-110 hover:-translate-y-2 font-bold text-lg px-8 py-6 transition-all duration-500"
-            >
-              Download CV
-            </Button>
-          </div>
-
-          {/* Social Links */}
-          <div className="flex flex-wrap justify-center gap-6 animate-quantum-rise" style={{ animationDelay: "1.3s" }}>
-            {socialLinks.map((link, index) => (
-              <a
-                key={index}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass-quantum glass-hover p-4 rounded-2xl hover:scale-125 hover:-translate-y-2 group transition-all duration-500 neuro-social"
-                aria-label={link.label}
+            {/* CTA Buttons - simplified animations */}
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              <Button
+                onClick={scrollToContact}
+                size="lg"
+                className="bg-gradient-primary text-white hover:scale-105 transition-all duration-300 shadow-lg"
               >
-                <link.icon className="w-6 h-6 text-primary group-hover:text-primary-glow group-hover:scale-110 transition-all duration-500 group-hover:rotate-12" />
-              </a>
-            ))}
-          </div>
+                Get In Touch
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="glass hover:scale-105 transition-all duration-300 border-primary/30 hover:border-primary/50"
+              >
+                <Download className="mr-2 h-4 w-4" />
+                Download CV
+              </Button>
+            </div>
+
+            {/* Social Links - reduced to 5 most important */}
+            <div className="flex gap-4 justify-center">
+              {socialLinks.slice(0, 5).map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className="w-11 h-11 rounded-full glass flex items-center justify-center hover:scale-105 transition-all duration-300 group border border-primary/15 hover:border-primary/30"
+                >
+                  <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
