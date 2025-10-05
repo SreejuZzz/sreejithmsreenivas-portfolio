@@ -81,9 +81,9 @@ export function Hero() {
               </div>
 
               {/* Cleaner name styling */}
-              <h1 className="text-5xl md:text-7xl font-bold mb-4 -mt-6 relative z-10" 
+              <h1 className="text-5xl md:text-7xl font-bold mb-4 -mt-3 relative z-10" 
                   style={{ 
-                    textShadow: '0 2px 6px rgba(0,0,0,0.1)'
+                    textShadow: '0 4px 12px rgba(0,0,0,0.25), 0 2px 4px rgba(0,0,0,0.15)'
                   }}>
                 <span className="bg-gradient-primary bg-clip-text text-transparent">
                   Sreejith M S

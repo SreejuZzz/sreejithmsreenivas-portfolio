@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const quotes = [
   "Technology is best when it brings people together. My mission is to bridge the gap between complex infrastructure and practical solutions while empowering others to grow.",
-  "Just because you don't give up doesn't mean you will make it."
+  "Success in DevOps isn't just about tools and automation—it's about building systems that empower teams to deliver value consistently and reliably."
 ];
 
 export function QuoteRotation() {

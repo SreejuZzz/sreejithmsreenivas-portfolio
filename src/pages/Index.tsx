@@ -14,11 +14,11 @@ const Index = () => {
         <Hero />
         <div className="py-16 md:py-24"></div>
         <About />
-        <div className="py-12 md:py-20"></div>
+        <div className="py-16 md:py-24"></div>
         <Experience />
-        <div className="py-12 md:py-20"></div>
+        <div className="py-16 md:py-24"></div>
         <Skills />
-        <div className="py-12 md:py-20"></div>
+        <div className="py-16 md:py-24"></div>
         <Contact />
       </main>
       <Footer />
