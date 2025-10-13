@@ -86,215 +86,133 @@ const journeyMilestones = [
   }
 ];
 
-const skills = [
-  { name: "Cloud Architecture", level: 95, color: "bg-primary" },
-  { name: "Container Orchestration", level: 90, color: "bg-accent" },
-  { name: "CI/CD Automation", level: 88, color: "bg-primary-glow" },
-  { name: "Infrastructure as Code", level: 85, color: "bg-accent" },
-  { name: "Mentoring & Leadership", level: 92, color: "bg-primary" }
-];
-
 export function Experience() {
   const { ref: headerRef, isInView: headerInView } = useInView();
-  const { ref: timelineRef, isInView: timelineInView } = useInView();
-  const { ref: skillsRef, isInView: skillsInView } = useInView();
+  const { ref: gridRef, isInView: gridInView } = useInView();
+
+  // Accent colors for border-left
+  const accentColors = [
+    "border-primary",
+    "border-accent", 
+    "border-primary-glow",
+    "border-muted-foreground"
+  ];
 
   return (
     <section id="experience" className="py-24 md:py-32 relative overflow-hidden">
-      {/* Simplified background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted/10"></div>
-
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div 
           ref={headerRef}
-          className={`text-center mb-16 md:mb-24 transition-all duration-1000 ${
-            headerInView ? 'animate-quantum-emerge' : 'opacity-0'
+          className={`text-center mb-16 transition-all duration-700 ${
+            headerInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <div className="inline-flex items-center gap-3 glass-quantum rounded-full px-6 py-3 mb-6 neuro-badge">
-            <Target className="w-5 h-5 text-primary animate-pulse" />
+          <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-5 py-2 mb-4">
+            <Target className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">Professional Journey</span>
           </div>
           
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-primary bg-clip-text text-transparent">
-              Evolution in Tech
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+            Experience
           </h2>
           
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            From curious beginner to DevOps leader - a journey of continuous learning, 
-            innovation, and empowering others in the tech ecosystem.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            7+ years transforming infrastructure and mentoring teams
           </p>
 
-          {/* Journey Stats */}
-          <div className="flex flex-wrap justify-center gap-6 mt-12">
-            <div className="glass-quantum rounded-2xl p-6 neuro-card hover:scale-105 transition-all duration-500">
-              <div className="text-3xl font-bold text-primary mb-2">7+</div>
-              <div className="text-sm text-muted-foreground">Years Experience</div>
+          {/* Condensed Stats */}
+          <div className="flex flex-wrap justify-center gap-6 mt-8">
+            <div className="flex items-center gap-2">
+              <div className="text-2xl font-bold text-primary">7+</div>
+              <div className="text-sm text-muted-foreground">Years</div>
             </div>
-            <div className="glass-quantum rounded-2xl p-6 neuro-card hover:scale-105 transition-all duration-500">
-              <div className="text-3xl font-bold text-accent mb-2">50+</div>
-              <div className="text-sm text-muted-foreground">Projects Delivered</div>
+            <div className="w-px h-8 bg-border"></div>
+            <div className="flex items-center gap-2">
+              <div className="text-2xl font-bold text-accent">50+</div>
+              <div className="text-sm text-muted-foreground">Projects</div>
             </div>
-            <div className="glass-quantum rounded-2xl p-6 neuro-card hover:scale-105 transition-all duration-500">
-              <div className="text-3xl font-bold text-primary-glow mb-2">15+</div>
-              <div className="text-sm text-muted-foreground">People Mentored</div>
+            <div className="w-px h-8 bg-border"></div>
+            <div className="flex items-center gap-2">
+              <div className="text-2xl font-bold text-primary-glow">15+</div>
+              <div className="text-sm text-muted-foreground">Mentored</div>
             </div>
           </div>
         </div>
 
-        {/* Journey Timeline - Completely Redesigned */}
+        {/* Grid Layout */}
         <div 
-          ref={timelineRef}
-          className={`relative transition-all duration-1000 ${
-            timelineInView ? 'animate-quantum-emerge' : 'opacity-0'
+          ref={gridRef}
+          className={`grid grid-cols-1 md:grid-cols-2 gap-6 transition-all duration-700 ${
+            gridInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          {/* Simplified central line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/20 via-accent/20 to-primary/20 hidden md:block"></div>
-
-          <div className="space-y-16 md:space-y-24">
-            {journeyMilestones.map((milestone, index) => {
-              const Icon = milestone.icon;
-              const isLeft = index % 2 === 0;
-              
-              return (
-                <div
-                  key={index}
-                  className={`relative flex items-center ${
-                    isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
-                  } animate-quantum-rise`}
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
-                  {/* Timeline Content */}
-                  <div className={`w-full md:w-5/12 ${isLeft ? 'md:pr-12' : 'md:pl-12'}`}>
-                    <div className="glass rounded-2xl p-6 border border-primary/15 hover:scale-[1.01] transition-all duration-300 group">
-                      {/* Year Badge */}
-                      <div className={`inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6 bg-gradient-to-r ${milestone.gradient} text-white shadow-lg`}>
-                        <Icon className="w-4 h-4" />
-                        <span className="font-bold text-sm">{milestone.year}</span>
-                      </div>
-
-                      {/* Content */}
-                      <div className="space-y-4">
-                        <div>
-                          <h3 className="text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
-                            {milestone.title}
-                          </h3>
-                          <div className="flex items-center gap-2 text-primary font-semibold mb-1">
-                            <Globe className="w-4 h-4" />
-                            <span>{milestone.company}</span>
-                          </div>
-                          <div className="text-sm text-muted-foreground">{milestone.period}</div>
-                        </div>
-
-                        <p className="text-muted-foreground leading-relaxed">
-                          {milestone.description}
-                        </p>
-
-                        {/* Impact */}
-                        <div className="glass rounded-xl p-4 bg-gradient-to-r from-primary/5 to-accent/5">
-                          <div className="text-lg font-semibold text-foreground">{milestone.impact}</div>
-                        </div>
-
-                        {/* Achievements */}
-                        <div className="space-y-2">
-                          <h4 className="text-sm font-semibold text-primary flex items-center gap-2">
-                            <Trophy className="w-4 h-4" />
-                            Key Achievements
-                          </h4>
-                          <ul className="space-y-1">
-                            {milestone.achievements.map((achievement, i) => (
-                              <li key={i} className="text-sm text-muted-foreground flex items-center gap-2">
-                                <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                                {achievement}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        {/* Technologies */}
-                        <div className="space-y-3">
-                          <h4 className="text-sm font-semibold text-accent flex items-center gap-2">
-                            <Code className="w-4 h-4" />
-                            Technologies
-                          </h4>
-                          <div className="flex flex-wrap gap-2">
-                            {milestone.technologies.map((tech, i) => (
-                              <Badge 
-                                key={i}
-                                variant="secondary"
-                                className="glass text-xs px-3 py-1.5 hover:scale-105 transition-all duration-300 hover:bg-primary/10 hover:text-primary border border-primary/20 font-medium"
-                              >
-                                {tech}
-                              </Badge>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Central Timeline Node */}
-                  <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center">
-                    <div className={`w-16 h-16 rounded-full glass-quantum border-4 border-primary/30 flex items-center justify-center bg-gradient-to-br ${milestone.gradient} shadow-2xl hover:scale-110 transition-all duration-500 group`}>
-                      <Icon className="w-8 h-8 text-white group-hover:rotate-12 transition-transform duration-300" />
-                    </div>
-                  </div>
-
-                  {/* Mobile Timeline Node */}
-                  <div className="md:hidden absolute -left-4 top-8">
-                    <div className={`w-12 h-12 rounded-full glass border-3 border-primary/30 flex items-center justify-center bg-gradient-to-br ${milestone.gradient} shadow-xl`}>
-                      <Icon className="w-6 h-6 text-white" />
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Skills Visualization */}
-        <div 
-          ref={skillsRef}
-          className={`mt-24 md:mt-32 transition-all duration-1000 ${
-            skillsInView ? 'animate-quantum-emerge' : 'opacity-0'
-          }`}
-        >
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Core Expertise
-              </span>
-            </h3>
-            <p className="text-muted-foreground">Skills that drive innovation and excellence</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {skills.map((skill, index) => (
+          {journeyMilestones.map((milestone, index) => {
+            const Icon = milestone.icon;
+            
+            return (
               <div
                 key={index}
-                className="glass-quantum rounded-2xl p-6 neuro-card hover:scale-105 transition-all duration-500"
+                className={`group bg-card/50 backdrop-blur-sm rounded-xl p-6 border-l-4 ${accentColors[index]} border-t border-r border-b border-border/50 hover:bg-card/80 hover:shadow-lg hover:border-border transition-all duration-300`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="flex items-center justify-between mb-3">
-                  <span className="font-semibold text-foreground">{skill.name}</span>
-                  <span className="text-sm text-primary font-bold">{skill.level}%</span>
+                {/* Year Badge - Only element with gradient */}
+                <div className={`inline-flex items-center gap-2 rounded-full px-3 py-1.5 mb-4 bg-gradient-to-r ${milestone.gradient}`}>
+                  <Icon className="w-3.5 h-3.5 text-white" />
+                  <span className="font-bold text-xs text-white">{milestone.year}</span>
                 </div>
-                <div className="w-full bg-muted/30 rounded-full h-2 overflow-hidden">
-                  <div
-                    className={`h-full ${skill.color} rounded-full transition-all duration-1000 ease-out animate-pulse`}
-                    style={{ 
-                      width: skillsInView ? `${skill.level}%` : '0%',
-                      animationDelay: `${index * 0.2}s`
-                    }}
-                  ></div>
+
+                {/* Title & Company - Always Visible */}
+                <div className="mb-3">
+                  <h3 className="text-xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
+                    {milestone.title}
+                  </h3>
+                  <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
+                    <Globe className="w-3.5 h-3.5" />
+                    <span>{milestone.company}</span>
+                    <span className="text-xs">• {milestone.period}</span>
+                  </div>
+                </div>
+
+                {/* Description - Always Visible */}
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  {milestone.description}
+                </p>
+
+                {/* Hover Reveal: Achievements & Tech */}
+                <div className="max-h-0 overflow-hidden group-hover:max-h-96 transition-all duration-500 ease-in-out space-y-4">
+                  {/* Key Achievement */}
+                  <div>
+                    <div className="flex items-center gap-2 text-xs font-semibold text-primary mb-2">
+                      <Trophy className="w-3.5 h-3.5" />
+                      Key Achievement
+                    </div>
+                    <div className="text-sm text-muted-foreground pl-5">
+                      {milestone.achievements[0]}
+                    </div>
+                  </div>
+
+                  {/* Technologies */}
+                  <div>
+                    <div className="flex items-center gap-2 text-xs font-semibold text-accent mb-2">
+                      <Code className="w-3.5 h-3.5" />
+                      Tech Stack
+                    </div>
+                    <div className="flex flex-wrap gap-1.5 pl-5">
+                      {milestone.technologies.slice(0, 5).map((tech, i) => (
+                        <span 
+                          key={i}
+                          className="text-xs px-2 py-1 bg-muted/50 rounded-md text-muted-foreground font-medium"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>
