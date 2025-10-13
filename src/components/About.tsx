@@ -42,9 +42,6 @@ export function About() {
 
   return (
     <section id="about" className="py-24 md:py-32 relative overflow-hidden">
-      {/* Simplified background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5"></div>
-      
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Header Section */}
         <div 
@@ -53,7 +50,7 @@ export function About() {
             titleInView ? 'animate-reveal-up' : 'opacity-0 translate-y-10'
           }`}
         >
-          <div className="glass-borderless rounded-3xl p-12 backdrop-blur-xl bg-gradient-to-r from-background/40 via-background/60 to-background/40 border border-primary/10">
+          <div className="glass backdrop-blur-xl rounded-3xl p-12 border border-primary/15">
             <h2 className="text-5xl md:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-6">
               About Me
             </h2>
@@ -91,7 +88,7 @@ export function About() {
         >
           {/* Journey Section */}
           <div className="mb-16">
-            <div className="glass backdrop-blur-2xl rounded-3xl p-12 bg-gradient-to-br from-background/50 to-background/30 border border-primary/15 shadow-2xl">
+            <div className="glass backdrop-blur-xl rounded-3xl p-12 border border-primary/15 shadow-lg">
               <h3 className="text-3xl font-bold text-primary mb-8 flex items-center gap-3">
                 <Target className="w-8 h-8" />
                 My Journey
@@ -107,7 +104,7 @@ export function About() {
                     Today, as a DevOps Engineer, I specialize in creating scalable, reliable, and 
                     secure cloud infrastructures using AWS, Kubernetes, Docker, and Terraform.
                   </p>
-                  <div className="glass-quantum rounded-xl p-4 bg-gradient-to-r from-primary/10 to-accent/10 neumorphism">
+                  <div className="glass rounded-xl p-4 border border-primary/20 bg-primary/5">
                     <h4 className="text-primary font-bold mb-2 flex items-center gap-2">
                       <Award className="w-5 h-5" />
                       Certification
@@ -120,8 +117,8 @@ export function About() {
                     </p>
                   </div>
                 </div>
-                <div className="glass-sm backdrop-blur-lg rounded-2xl p-8 bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20">
-                  <p className="text-primary font-semibold text-lg leading-relaxed">
+                <div className="glass backdrop-blur-lg rounded-2xl p-8 border border-primary/20 bg-accent/5">
+                  <p className="text-accent font-semibold text-lg leading-relaxed">
                     "What drives me most is mentoring others and sharing knowledge. I believe that 
                     empowering teams with the right tools creates lasting impact beyond any single project."
                   </p>

@@ -83,9 +83,6 @@ export function Contact() {
 
   return (
     <section id="contact" className="py-24 md:py-32 relative overflow-hidden">
-      {/* Simplified background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-secondary/3 via-transparent to-primary/3"></div>
-      
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative z-10">
         <div 
           ref={titleRef}
@@ -93,7 +90,7 @@ export function Contact() {
             titleInView ? 'animate-reveal-up' : 'opacity-0 translate-y-10'
           }`}
         >
-          <div className="glass-borderless backdrop-blur-xl rounded-3xl p-12 bg-gradient-to-r from-background/40 via-background/60 to-background/40 border border-primary/10">
+          <div className="glass backdrop-blur-xl rounded-3xl p-12 border border-primary/15">
             <h2 className="text-5xl md:text-6xl font-bold mb-6">
               <span className="bg-gradient-primary bg-clip-text text-transparent drop-shadow-2xl">
                 Let's Connect

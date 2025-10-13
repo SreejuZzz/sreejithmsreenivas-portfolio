@@ -66,9 +66,6 @@ export function Skills() {
 
   return (
     <section id="skills" className="py-24 md:py-32 relative overflow-hidden">
-      {/* Simplified background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-primary/5"></div>
-      
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Header Section */}
         <div 
@@ -77,7 +74,7 @@ export function Skills() {
             titleInView ? 'animate-reveal-up' : 'opacity-0 translate-y-10'
           }`}
         >
-          <div className="glass-borderless backdrop-blur-xl rounded-3xl p-12 bg-gradient-to-r from-background/40 via-background/60 to-background/40 border border-primary/10">
+          <div className="glass backdrop-blur-xl rounded-3xl p-12 border border-primary/15">
             <h2 className="text-5xl md:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-6">
               Technical Expertise
             </h2>
@@ -141,7 +138,7 @@ export function Skills() {
 
         {/* Additional Certifications/Learning Section */}
         <div className="mt-20">
-          <div className="glass backdrop-blur-2xl rounded-3xl p-12 bg-gradient-to-br from-background/50 to-background/30 border border-primary/15 shadow-2xl text-center neumorphism">
+          <div className="glass backdrop-blur-xl rounded-3xl p-12 border border-primary/15 shadow-lg text-center">
             <div className="flex items-center justify-center gap-3 mb-6">
               <div className="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center">
                 <Settings className="w-8 h-8 text-white" />
@@ -155,7 +152,7 @@ export function Skills() {
               {["AWS Certified", "Azure Certified", "Kubernetes CKA", "HashiCorp Terraform", "Docker Certified", "Linux Professional"].map((cert, index) => (
                 <Badge 
                   key={index} 
-                  className="glass-sm backdrop-blur-md bg-gradient-to-r from-primary/20 to-accent/20 text-foreground border border-primary/30 hover:border-primary/60 hover:scale-105 hover:-translate-y-1 transition-all duration-300 px-6 py-3 text-base font-medium"
+                  className="glass backdrop-blur-md bg-muted text-foreground border border-primary/20 hover:border-primary/40 hover:bg-primary/10 hover:scale-105 hover:-translate-y-1 transition-all duration-300 px-6 py-3 text-base font-medium"
                 >
                   {cert}
                 </Badge>
