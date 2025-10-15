@@ -2,17 +2,23 @@ import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { Experience } from "@/components/Experience";
+import { Skills } from "@/components/Skills";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-hero transition-buttery dark-mode-transition">
       <Navigation />
-      <main>
+      <main className="transition-buttery">
         <Hero />
+        <div className="py-16 md:py-24"></div>
         <About />
+        <div className="py-12 md:py-20"></div>
         <Experience />
+        <div className="py-12 md:py-20"></div>
+        <Skills />
+        <div className="py-12 md:py-20"></div>
         <Contact />
       </main>
       <Footer />
