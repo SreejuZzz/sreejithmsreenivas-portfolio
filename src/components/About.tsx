@@ -36,7 +36,7 @@ export function About() {
 
   const stats = [
     { number: "7+", label: "Years Experience", icon: Code2 },
-    { number: "60+", label: "Projects Delivered", icon: Layers },
+    { number: "50+", label: "Projects Delivered", icon: Layers },
     { number: "20+", label: "Cloud Migrations", icon: Cloud },
     { number: "100+", label: "Deployments", icon: GitBranch }
   ];
